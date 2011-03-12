@@ -1,0 +1,23 @@
+<% title "Parcelles" %>
+
+<table>
+  <tr>
+    <th>Section</th>
+    <th>Numero</th>
+    <th>Surface</th>
+    <th>Immeuble</th>
+  </tr>
+  <% for parcelle in @parcelles %>
+    <tr>
+      <td><%= parcelle.section %></td>
+      <td><%= parcelle.numero %></td>
+      <td><%= parcelle.surface %></td>
+      <td><%= parcelle.immeuble_id %></td>
+      <td><%= link_to "Show", parcelle %></td>
+      <td><%= link_to "Edit", edit_parcelle_path(parcelle) %></td>
+      <td><%= link_to "Destroy", parcelle, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Parcelle", new_parcelle_path %></p>

@@ -1,0 +1,21 @@
+<%= form_for @liste_piece do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :piece %><br />
+    <%= f.text_field :piece %>
+  </p>
+  <p>
+    <%= f.label :details %><br />
+    <%= f.text_field :details %>
+  </p>
+  <p>
+    <%= f.label :surface %><br />
+    <%= f.text_field :surface %>
+  </p>
+  <p>
+    <%= f.label :genEU %><br />
+    <%= f.check_box :genEU %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
+

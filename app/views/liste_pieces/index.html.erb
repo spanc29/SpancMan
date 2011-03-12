@@ -1,0 +1,25 @@
+<% title "Liste Pieces" %>
+
+<table>
+  <tr>
+    <th>Piece</th>
+    <th>Details</th>
+    <th>Surface</th>
+    <th>Geneu</th>
+    <th>Immeuble</th>
+  </tr>
+  <% for liste_piece in @liste_pieces %>
+    <tr>
+      <td><%= liste_piece.piece %></td>
+      <td><%= liste_piece.details %></td>
+      <td><%= liste_piece.surface %></td>
+      <td><%= liste_piece.genEU %></td>
+      <td><%= liste_piece.immeuble_id %></td>
+      <td><%= link_to "Show", liste_piece %></td>
+      <td><%= link_to "Edit", edit_liste_piece_path(liste_piece) %></td>
+      <td><%= link_to "Destroy", liste_piece, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Liste Piece", new_liste_piece_path %></p>

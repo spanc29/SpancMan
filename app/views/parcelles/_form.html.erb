@@ -1,0 +1,20 @@
+<%= form_for @parcelle do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :section %><br />
+    <%= f.text_field :section %>
+  </p>
+  <p>
+    <%= f.label :numero %><br />
+    <%= f.text_field :numero %>
+  </p>
+  <p>
+    <%= f.label :surface %><br />
+    <%= f.text_field :surface %>
+  </p>
+  <p>
+    <%= f.label :immeuble_id %><br />
+    <%= f.text_field :immeuble_id %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

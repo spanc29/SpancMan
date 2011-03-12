@@ -1,0 +1,34 @@
+<h1><%= @dossier.reference %></h1>
+<hr/>
+menu tab
+<%= link_to "retour à la liste", dossiers_path %>
+<p>
+  <strong>Etat:</strong>
+  <%= @dossier.etat %>
+</p>
+<p>
+  <strong>Archivage:</strong>
+  <%= @dossier.archivage %>
+</p>
+<p>
+  <strong>Secteur:</strong>
+  <%= @dossier.secteur %>
+</p>
+<p>
+  <strong>Coordx:</strong>
+  <%= @dossier.coordx %>
+</p>
+<p>
+  <strong>Coordy:</strong>
+  <%= @dossier.coordy %>
+</p>
+<p>
+  <strong>Commentaire:</strong>
+  <%= @dossier.commentaire %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_dossier_path(@dossier) %> |
+  <%= link_to "Destroy", @dossier, :confirm => 'Are you sure?', :method => :delete %> |
+
+</p>

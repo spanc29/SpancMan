@@ -1,0 +1,17 @@
+<% title "Listes" %>
+
+<table>
+  <tr>
+    <th>Pour</th>
+    <th>Nom</th>
+  </tr>
+  <% for liste in @listes %>
+    <tr>
+      <td><%= liste.pour %></td>
+      <td><%= liste.nom %></td>
+      <td><%= link_to "Edit", edit_liste_path(liste) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Liste", new_liste_path %></p>

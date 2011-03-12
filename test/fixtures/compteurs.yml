@@ -1,0 +1,17 @@
+one:
+  type_alimentation: 1
+  ref_compteur: MyString
+  declare: false
+  conso_moyenne: 1
+  analyse_OK: false
+  immeuble_id: 1
+  commentaire: MyText
+
+two:
+  type_alimentation: 1
+  ref_compteur: MyString
+  declare: false
+  conso_moyenne: 1
+  analyse_OK: false
+  immeuble_id: 1
+  commentaire: MyText

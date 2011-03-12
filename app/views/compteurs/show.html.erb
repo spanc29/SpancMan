@@ -1,0 +1,36 @@
+<% title "Compteur" %>
+
+<p>
+  <strong>Type Alimentation:</strong>
+  <%= @compteur.type_alimentation %>
+</p>
+<p>
+  <strong>Ref Compteur:</strong>
+  <%= @compteur.ref_compteur %>
+</p>
+<p>
+  <strong>Declare:</strong>
+  <%= @compteur.declare %>
+</p>
+<p>
+  <strong>Conso Moyenne:</strong>
+  <%= @compteur.conso_moyenne %>
+</p>
+<p>
+  <strong>Analyse Ok:</strong>
+  <%= @compteur.analyse_OK %>
+</p>
+<p>
+  <strong>Immeuble:</strong>
+  <%= @compteur.immeuble_id %>
+</p>
+<p>
+  <strong>Commentaire:</strong>
+  <%= @compteur.commentaire %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_compteur_path(@compteur) %> |
+  <%= link_to "Destroy", @compteur, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", compteurs_path %>
+</p>

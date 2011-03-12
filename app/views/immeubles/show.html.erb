@@ -1,0 +1,48 @@
+<% title "Immeuble" %>
+
+<p>
+  <strong>Numero Rue:</strong>
+  <%= @immeuble.numero_rue %>
+</p>
+<p>
+  <strong>Adress:</strong>
+  <%= @immeuble.adress %>
+</p>
+<p>
+  <strong>Code Postal:</strong>
+  <%= @immeuble.code_postal %>
+</p>
+<p>
+  <strong>Commune:</strong>
+  <%= @immeuble.commune %>
+</p>
+<p>
+  <strong>Residence:</strong>
+  <%= @immeuble.residence %>
+</p>
+<p>
+  <strong>Taux Occupation:</strong>
+  <%= @immeuble.taux_occupation %>
+</p>
+<p>
+  <strong>Annee Constr:</strong>
+  <%= @immeuble.annee_constr %>
+</p>
+<p>
+  <strong>Nb Piece Princ:</strong>
+  <%= @immeuble.nb_piece_princ %>
+</p>
+<p>
+  <strong>Nb Eq Hab:</strong>
+  <%= @immeuble.nb_eq_hab %>
+</p>
+<p>
+  <strong>Dossier:</strong>
+  <%= @immeuble.dossier_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_immeuble_path(@immeuble) %> |
+  <%= link_to "Destroy", @immeuble, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", immeubles_path %>
+</p>

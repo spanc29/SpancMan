@@ -1,0 +1,23 @@
+one:
+  numero_rue: MyString
+  adress: MyText
+  code_postal: MyString
+  commune: MyString
+  residence: MyString
+  taux_occupation: MyString
+  annee_constr: MyString
+  nb_piece_princ: 1
+  nb_eq_hab: 1
+  dossier_id: 1
+
+two:
+  numero_rue: MyString
+  adress: MyText
+  code_postal: MyString
+  commune: MyString
+  residence: MyString
+  taux_occupation: MyString
+  annee_constr: MyString
+  nb_piece_princ: 1
+  nb_eq_hab: 1
+  dossier_id: 1

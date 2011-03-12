@@ -1,0 +1,24 @@
+<% title "Parcelle" %>
+
+<p>
+  <strong>Section:</strong>
+  <%= @parcelle.section %>
+</p>
+<p>
+  <strong>Numero:</strong>
+  <%= @parcelle.numero %>
+</p>
+<p>
+  <strong>Surface:</strong>
+  <%= @parcelle.surface %>
+</p>
+<p>
+  <strong>Immeuble:</strong>
+  <%= @parcelle.immeuble_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_parcelle_path(@parcelle) %> |
+  <%= link_to "Destroy", @parcelle, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", parcelles_path %>
+</p>

@@ -1,0 +1,13 @@
+one:
+  piece: MyString
+  details: MyString
+  surface: 1
+  genEU: false
+  immeuble_id: 1
+
+two:
+  piece: MyString
+  details: MyString
+  surface: 1
+  genEU: false
+  immeuble_id: 1

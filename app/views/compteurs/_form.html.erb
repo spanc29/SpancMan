@@ -1,0 +1,32 @@
+<%= form_for @compteur do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :type_alimentation %><br />
+    <%= f.text_field :type_alimentation %>
+  </p>
+  <p>
+    <%= f.label :ref_compteur %><br />
+    <%= f.text_field :ref_compteur %>
+  </p>
+  <p>
+    <%= f.label :declare %><br />
+    <%= f.check_box :declare %>
+  </p>
+  <p>
+    <%= f.label :conso_moyenne %><br />
+    <%= f.text_field :conso_moyenne %>
+  </p>
+  <p>
+    <%= f.label :analyse_OK %><br />
+    <%= f.check_box :analyse_OK %>
+  </p>
+  <p>
+    <%= f.label :immeuble_id %><br />
+    <%= f.text_field :immeuble_id %>
+  </p>
+  <p>
+    <%= f.label :commentaire %><br />
+    <%= f.text_area :commentaire %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

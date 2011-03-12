@@ -1,0 +1,17 @@
+one:
+  etat: MyString
+  reference: MyString
+  archivage: MyString
+  secteur: MyString
+  coordx: MyString
+  coordy: MyString
+  commentaire: MyText
+
+two:
+  etat: MyString
+  reference: MyString
+  archivage: MyString
+  secteur: MyString
+  coordx: MyString
+  coordy: MyString
+  commentaire: MyText

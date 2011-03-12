@@ -1,0 +1,11 @@
+one:
+  section: MyString
+  numero: 1
+  surface: 1
+  immeuble_id: 1
+
+two:
+  section: MyString
+  numero: 1
+  surface: 1
+  immeuble_id: 1

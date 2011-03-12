@@ -1,0 +1,28 @@
+<% title "Liste Piece" %>
+
+<p>
+  <strong>Piece:</strong>
+  <%= @liste_piece.piece %>
+</p>
+<p>
+  <strong>Details:</strong>
+  <%= @liste_piece.details %>
+</p>
+<p>
+  <strong>Surface:</strong>
+  <%= @liste_piece.surface %>
+</p>
+<p>
+  <strong>Geneu:</strong>
+  <%= @liste_piece.genEU %>
+</p>
+<p>
+  <strong>Immeuble:</strong>
+  <%= @liste_piece.immeuble_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_liste_piece_path(@liste_piece) %> |
+  <%= link_to "Destroy", @liste_piece, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", liste_pieces_path %>
+</p>

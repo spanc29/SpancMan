@@ -1,0 +1,44 @@
+<%= form_for @immeuble do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :numero_rue %><br />
+    <%= f.text_field :numero_rue %>
+  </p>
+  <p>
+    <%= f.label :adress %><br />
+    <%= f.text_area :adress %>
+  </p>
+  <p>
+    <%= f.label :code_postal %><br />
+    <%= f.text_field :code_postal %>
+  </p>
+  <p>
+    <%= f.label :commune %><br />
+    <%= f.text_field :commune %>
+  </p>
+  <p>
+    <%= f.label :residence %><br />
+    <%= f.text_field :residence %>
+  </p>
+  <p>
+    <%= f.label :taux_occupation %><br />
+    <%= f.text_field :taux_occupation %>
+  </p>
+  <p>
+    <%= f.label :annee_constr %><br />
+    <%= f.text_field :annee_constr %>
+  </p>
+  <p>
+    <%= f.label :nb_piece_princ %><br />
+    <%= f.text_field :nb_piece_princ %>
+  </p>
+  <p>
+    <%= f.label :nb_eq_hab %><br />
+    <%= f.text_field :nb_eq_hab %>
+  </p>
+  <p>
+    <%= f.label :dossier_id %><br />
+    <%= f.text_field :dossier_id %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
