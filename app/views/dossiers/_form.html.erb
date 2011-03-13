@@ -5,6 +5,7 @@
   <p><%= f.input :archivage %></p>
   <p><%= f.input :secteur, :collection => Liste.secteur.all(:order => 'nom'), :label_method => 'nom' %></p>
   <p><%= f.input :coordx, :label => 'x: '%>, <%= f.input :coordy, :label => 'y: '%></p>
+  <p><%= f.input :tag_list %></p>
   <p><%= f.input :commentaire, :input_html => { :rows => 3, :cols => 60 }%></p>
   <%= f.button :submit%>
 <%end%>
