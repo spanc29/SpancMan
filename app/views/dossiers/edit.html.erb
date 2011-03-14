@@ -1,8 +1,15 @@
-<% title "Edit Dossier" %>
+<div class="columns on-5 same-height">
+  <div class="column span-4 content">
+    <div class="container full-height">
+      <% title "Edit Dossier" %>
+      <%= render 'form' %>
+    </div>
+  </div>
+    <div class="column sidebar">
+      <div class="box">
+        <%= link_to "Show", @dossier %><br/>
+        <%= link_to "View All", dossiers_path %>
+      </div>
+    </div>
+</div>
 
-<%= render 'form' %>
-
-<p>
-  <%= link_to "Show", @dossier %> |
-  <%= link_to "View All", dossiers_path %>
-</p>

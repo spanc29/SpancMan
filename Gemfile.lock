@@ -31,6 +31,7 @@ GEM
     arel (2.0.9)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
+    cancan (1.5.1)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     i18n (0.5.0)
@@ -88,6 +89,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby
+  cancan
   meta_search
   meta_where
   mocha

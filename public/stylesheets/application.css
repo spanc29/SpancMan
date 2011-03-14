@@ -1,41 +1,55 @@
+/* Default font settings.
+   The font-size percentage is of 16px. (0.75 * 16px = 12px) */
+html { font-size:100.01%; }
+
 body {
   background-color: #4B7399;
   background-image: url(../images/fond2.jpg);
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
-
 a img {
   border: none;
 }
-
 a {
   color: #0000FF;
 }
-
 .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
 
-#container {
+/* mise en page*/
+#main {
+  clear: both;
   width: 90%;
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 20px;
   border: solid 1px black;
-  margin-top: 20px;
-}
-
-
-#footer {
-  width: 90%;
-  margin: 0 auto;
-  background-color: #FFF;
-  padding: 5px 20px;
-  border: solid 1px black;
   margin-top: 10px;
+}
+#main.footer {font-size: 0.9em; padding: 5px 20px; color: #aaa; text-align:center; background:#fff;}
+
+.menu {border-bottom: 1px solid #ddd;}
+
+
+#top-menu {background: #2C4056; color: #fff; height:1.8em; font-size: 0.8em; padding: 2px 2px 0px 6px;}
+#top-menu ul {margin: 0;  padding: 0;}
+#top-menu li {
+  float:left;
+  list-style-type:none;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  white-space:nowrap;
+}
+#top-menu a {color: #fff; margin-right: 8px; font-weight: bold;}
+#top-menu #loggedas { float: right; margin-right: 0.5em; color: #fff; }
+#account {float:right;}
+
+.container{
+  padding: 20px;
 }
 
 #flash_notice, #flash_error, #flash_alert {
@@ -56,7 +70,6 @@ a {
 .fieldWithErrors {
   display: inline;
 }
-
 .error_messages {
   width: 400px;
   border: 2px solid #CF0000;
@@ -66,7 +79,6 @@ a {
   background-color: #f0f0f0;
   font-size: 12px;
 }
-
 .error_messages h2 {
   text-align: left;
   font-weight: bold;
@@ -76,7 +88,6 @@ a {
   background-color: #c00;
   color: #fff;
 }
-
 .error_messages p {
   margin: 8px 10px;
 }
@@ -84,7 +95,6 @@ a {
 .error_messages ul {
   margin: 0;
 }
-
 
 .odd {
     -moz-border-radius: 1em 1em 1em 1em;
@@ -107,7 +117,7 @@ a {
     padding: 12px 15px;
 }
 
-
+/*ecran de login*/
 #login_form {
   text-align: center;
   width: 50%;
@@ -126,40 +136,68 @@ a {
   font-weight:bold;
 }
 
+/* formulaire simple_form*/
 
+label {
+  display: inline;
+  width: 70px;
+  float: left;
+  padding-right: 1%;
+  text-align: right;
+}
+input {
+  margin-left: 1%;
+  width: 100%;
+}
+div.boolean, input[type='submit']{
+  margin: 0 auto;
+}
+
+div.boolean label {
+float: none;
+margin: 0;
+}
+
+fieldset    { padding:0 1.2em; margin: 0 1.2em 1.2em 0; border: 1px solid #ccc; }
+legend      { padding:0 1.2em;font-size:0.8em; margin-top:-0.2em; margin-bottom:1em; color: #ccc }
+
+fieldset, #IE8#HACK { padding-top:1.4em; }
+legend, #IE8#HACK { margin-top:0; margin-bottom:0; }
+/*----------*/
+.border {
+  border-right: 1px solid #ddd;
+}
+.box {
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  background: #e5eCf9;
+}
 /* --------------------------------------------------------------
 
-   typography.css
+   typography.css from blueprint
    * Sets up some sensible default typography.
 
 -------------------------------------------------------------- */
 
-/* Default font settings.
-   The font-size percentage is of 16px. (0.75 * 16px = 12px) */
-html { font-size:100.01%; }
-
 /* Headings
 -------------------------------------------------------------- */
 
+
 h1,h2,h3,h4,h5,h6 { font-weight: normal; color: #111; }
 
-h1 { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
-h2 { font-size: 2em; margin-bottom: 0.75em; }
-h3 { font-size: 1.5em; line-height: 1; margin-bottom: 1em; }
-h4 { font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em; }
-h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
+h1 { font-size: 3em; line-height: 1; margin: 0.2em; }
+h2 { font-size: 2em; margin: 0.2em; }
+h3 { font-size: 1.5em; line-height: 1; margin: 0.2em; }
+h4 { font-size: 1.2em; line-height: 1.25; margin: 0.2em; }
+h5 { font-size: 1em; font-weight: bold; margin: 0.2em; }
 h6 { font-size: 1em; font-weight: bold; }
 
-h1 img, h2 img, h3 img,
-h4 img, h5 img, h6 img {
-  margin: 0;
-}
+h1 img, h2 img, h3 img,h4 img, h5 img, h6 img {  margin: 0;}
 
 
 /* Text elements
 -------------------------------------------------------------- */
-
-p           { margin: 0 0 1.5em; }
+p           { margin: 0 0 1em; }
 /*
   These can be used to pull an image at the start of a paragraph, so
   that the text flows around it (usage: <p><img class="left">Text</p>)

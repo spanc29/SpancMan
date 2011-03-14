@@ -1,6 +1,7 @@
-<div class="columns on-5 same-height">
+
+<div class="columns on-5">
   <div class="column span-4 content">
-    <div class="container full-height">
+    <div class="container border">
 
     <% title "LISTE DES DOSSIERS" %>
     <!--
@@ -11,7 +12,7 @@
     <%= f.input :reference_contains, :as => :search, :label => false %>
     <%= f.input :secteur_contains, :label => false, :collection => Liste.secteur , :label_method => 'nom', :prompt => 'Par secteur' %>
 
-    <%= f.submit 'cherche' %>
+    <%= f.button :submit %>
     <% end %>
     <%= link_to 'RAZ', root_path %>
     <!--
@@ -28,13 +29,13 @@
           <%= t.nom %>
           <%end%>
       <p><%= dossier.archivage  %></p>
-      <p><%= dossier.updated_at.to_date %></p>
+      <p><%= l(dossier.updated_at.to_date) %></p>
       </div>
     <%end%>
   </div>
     </div>
 
   <div class="column sidebar">
-    <div class="container full-height"> <%= link_to 'creer un dossier', new_dossier_path %></div>
+    <div class="container full-height box"> <%= link_to 'creer un dossier', new_dossier_path %></div>
   </div>
 </div>

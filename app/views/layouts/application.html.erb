@@ -11,35 +11,38 @@
     <%= yield(:head) %>
   </head>
   <body>
-  <div id="container">
+
+  <div id="top-menu">
+      <ul>
+      <% if logged_in? %>
+          <li>Bienvenue <%= current_user.username%> -- </li>
+          <li><%= link_to 'Nouvel article', root_path%></li>
+          <li><%= link_to 'modif password', edit_user_path(current_user) %></li>
+          <li><%= link_to 'logout', logout_path %></li>
+        <% else %>
+          <li><%= link_to 'login', login_path %></li>
+        <% end %>
+      </ul>
+  </div>
+  <div id="main">
     <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
 
-    <div class="unit header">
-      <div class="container">header
-      </div>
-    </div>
-
     <div class="unit body">
-        <%= content_tag :h1, yield(:title) if show_title? %>
+    <%= content_tag :h1, yield(:title) if show_title? %>
+        <div class="unit menu">
+          <div class="container">
+            contenu du header
+          </div>
+        </div>
         <%= yield %>
     </div>
   </div>
 
-  <div id="footer">
+  <div id="main" class="footer">
       <span class="small quiet left"> <%= Date.today %></span>
       <span class="small quiet">SpancMan - propulsé par Rails !</span>
-      <div id="user_bar" class ="small right">
-        <% if logged_in? %>
-          <%= current_user.username%>
-          <%= link_to 'Nouvel article', root_path%> <>&nbsp;
-          <%= link_to 'modif password', edit_user_path(current_user) %> <>&nbsp;
-          <%= link_to 'logout', logout_path %>
-        <% else %>
-          <%= link_to 'login', login_path %>
-        <% end %>
-      </div>
-    </div>
+  </div>
   </body>
 </html>

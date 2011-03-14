@@ -34,7 +34,7 @@ gem 'nifty-generators', :group => :development
 gem 'paper_trail'
 
 #essai
-
+gem 'cancan'
 
 
 # Bundle gems for the local environment. Make sure to

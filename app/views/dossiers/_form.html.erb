@@ -1,11 +1,24 @@
+<div class="columns on-2 same-height">
 <%= simple_form_for @dossier do |f|%>
   <%= f.error_messages %>
-  <p><%= f.input :etat %></p>
-  <p><%= f.input :reference %></p>
-  <p><%= f.input :archivage %></p>
-  <p><%= f.input :secteur, :collection => Liste.secteur.all(:order => 'nom'), :label_method => 'nom' %></p>
-  <p><%= f.input :coordx, :label => 'x: '%>, <%= f.input :coordy, :label => 'y: '%></p>
-  <p><%= f.input :tag_list %></p>
-  <p><%= f.input :commentaire, :input_html => { :rows => 3, :cols => 60 }%></p>
+  <div class="column elastic">
+    <fieldset>
+    <legend> dossier </legend>
+    <%= f.input :etat %>
+    <%= f.input :reference %>
+    <%= f.input :archivage %>
+    <%= f.input :secteur, :collection => Liste.secteur.all(:order => 'nom'), :label_method => 'nom' %>
+    <%= f.input :coordx, :label => 'x: '%>, <%= f.input :coordy, :label => 'y: '%>
+    </fieldset>
+  </div>
+  <div class="column">
+  <fieldset>
+    <legend>commentaire</legend>
+    <p><%= f.input :tag_list %></p>
+    <p><%= f.input :commentaire, :input_html => { :rows => 3, :cols => 60 }%></p>
+  </fieldset>
   <%= f.button :submit%>
+  </div>
+
+</div>
 <%end%>
