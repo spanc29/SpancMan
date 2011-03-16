@@ -1,13 +1,10 @@
 
-<div class="columns on-5">
-  <div class="column span-4 content">
-    <div class="container border">
-
+<div class="six_column section">
+  <div class="five column">
     <% title "LISTE DES DOSSIERS" %>
     <!--
     recherche
     -->
-
     <%= simple_form_for @search do |f| %>
     <%= f.input :reference_contains, :as => :search, :label => false %>
     <%= f.input :secteur_contains, :label => false, :collection => Liste.secteur , :label_method => 'nom', :prompt => 'Par secteur' %>
@@ -18,7 +15,6 @@
     <!--
     fin recherche
     -->
-
 
 
     <p> trier par : <%= sort_link(@search, 'reference', 'Réf.SPANC') %> // <%= sort_link(@search, 'archivage') %> // <%= sort_link(@search, 'secteur','secteur') %></p>
@@ -33,9 +29,8 @@
       </div>
     <%end%>
   </div>
-    </div>
 
-  <div class="column sidebar">
-    <div class="container full-height box"> <%= link_to 'creer un dossier', new_dossier_path %></div>
+  <div class="aside">
+    <div class="container box"> <%= link_to 'creer un dossier', new_dossier_path %></div>
   </div>
 </div>

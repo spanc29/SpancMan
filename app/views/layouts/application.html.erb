@@ -2,10 +2,10 @@
 <html>
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= stylesheet_link_tag "reset.css","forms.css","typography.css","fluid.gs.css", :media => 'screen, projection' %>
     <%= stylesheet_link_tag 'application.css', :media => 'screen, projection' %>
-    <%= stylesheet_link_tag 'elastic.css', :media => 'screen, projection' %>
-    <%= stylesheet_link_tag 'elastic.print.css', :media => 'print' %>
-    <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/smoothness/jquery-ui.css", "application" %>
+    <%= stylesheet_link_tag 'print.css', :media => 'print' %>
+    <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/capitano/jquery-ui.css"%>
     <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js", "application","elastic" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
@@ -29,9 +29,9 @@
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
 
-    <div class="unit body">
+    <div class="body">
     <%= content_tag :h1, yield(:title) if show_title? %>
-        <div class="unit menu">
+        <div id="nav">
           <div class="container">
             contenu du header
           </div>
@@ -40,8 +40,8 @@
     </div>
   </div>
 
-  <div id="main" class="footer">
-      <span class="small quiet left"> <%= Date.today %></span>
+  <div id="footer">
+      <span class="small quiet left"> <%= l(Date.today, :format => :long) %></span>
       <span class="small quiet">SpancMan - propulsé par Rails !</span>
   </div>
   </body>
