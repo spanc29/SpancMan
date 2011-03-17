@@ -11,27 +11,16 @@
     <%= yield(:head) %>
   </head>
   <body>
-
   <div id="top-menu">
-      <ul>
-      <% if logged_in? %>
-          <li>Bienvenue <%= current_user.username%> -- </li>
-          <li><%= link_to 'Nouvel article', root_path%></li>
-          <li><%= link_to 'modif password', edit_user_path(current_user) %></li>
-          <li><%= link_to 'logout', logout_path %></li>
-          <li><%= link_to "retour à la liste", dossiers_path %></li>
-        <% else %>
-          <li><%= link_to 'login', login_path %></li>
-        <% end %>
-      </ul>
+    <%= render ('layouts/topmenu') %>
   </div>
   <div id="main">
     <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
     <div class="body">
-    <%= content_tag :h1, yield(:title) if show_title? %>
-    <%= yield %>
+      <%= content_tag :h1, yield(:title) if show_title? %>
+      <%= yield %>
     </div>
   </div>
 

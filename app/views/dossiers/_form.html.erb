@@ -1,15 +1,13 @@
+<div class="two column">
 <%= simple_form_for @dossier do |f|%>
   <%= f.error_messages %>
-  <div class="section">
-
-  <div class="two column">
     <fieldset>
     <legend>dossier</legend>
       <%= f.input :etat %>
-      <%= f.input :reference, :hint => 'No special characters.' %>
+      <%= f.input :reference, :hint => 'obligatoire' %>
       <%= f.input :archivage %>
 
-      <%= f.input :secteur, :collection => Liste.secteur.all(:order => 'nom'), :label_method => 'nom', :as => :radio %><br/>
+      <%= f.input :secteur, :collection => Liste.secteur.all(:order => 'nom'), :label_method => 'nom', :as => :radio %><br/><br/>
 
       <fieldset>
       <legend>coordonnées</legend>
@@ -17,14 +15,13 @@
       <%= f.input :coordy, :label => 'y ', :input_html => { :size => '8'}%>
       </fieldset>
     </fieldset>
-  </div>
-  <div class="two column">
+</div>
+<div class="two column">
   <fieldset>
     <legend>commentaire</legend>
     <%= f.input :tag_list %>
     <%= f.input :commentaire, :input_html => { :rows => 3, :cols => 60 }%>
   </fieldset>
   <%= f.button :submit%>
-  </div>
-</div></div>
+</div>
 <%end%>

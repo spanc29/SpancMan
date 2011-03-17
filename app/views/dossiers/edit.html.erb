@@ -1,13 +1,13 @@
+<% title "Modifier le dossier" %>
+<%= render ('layouts/navigation') %>
+
 <div class="six_column section">
-  <div class="column_content">
-      <% title "Edit Dossier" %>
       <%= render 'form' %>
-  </div>
-    <div class="sidebar">
+  <div class="two column">
       <div class="box">
         <%= link_to "Show", @dossier %><br/>
         <%= link_to "View All", dossiers_path %>
       </div>
-    </div>
+  </div>
 </div>
 

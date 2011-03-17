@@ -1,12 +1,5 @@
 <% title @dossier.reference %>
-<div id="nav">
-  <% tabs_tag do |tab| %>
-    <%= tab.dossier      'Dossier', @dossier %>
-    <%= tab.immeuble 'Immeuble', @dossier_immeubles_path %>
-    <%= tab.liste   'Liste', listes_path %>
-  <% end %>
-</div>
-
+<%= render ('layouts/navigation') %>
 <div class="six_column section">
   <div class="five column border">
     <%= render @dossier %>
@@ -14,8 +7,8 @@
   <div class="aside">
     <div class="container box">
     <ul>
-      <li><%= link_to "Modifier le dossier", edit_dossier_path(@dossier), :class =>'link_update'%></li>
-      <li><%= link_to "Detruire le dossier", @dossier, :confirm => 'certain?', :method => :delete, :class => 'link_delete' %></li>
+      <li><%= link_to "Modifier le dossier", edit_dossier_path(@dossier), :class =>'link update'%></li>
+      <li><%= link_to "Detruire le dossier", @dossier, :confirm => 'certain?', :method => :delete, :class => 'link delete' %></li>
     </ul>
 
 

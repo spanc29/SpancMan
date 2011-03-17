@@ -62,14 +62,3 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 }
 .odd {background-color: white}
 .even {background-color: #ddd;}
-
-.even h2 a {
-    -moz-border-radius-topleft: 1em;
-    -moz-border-radius-topright: 1em;
-    background-color: #222222;
-    color: white;
-    font-family: Helvetica,Arial,"Droid Sans",sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 12px 15px;
-}

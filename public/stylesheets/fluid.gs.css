@@ -1,0 +1,41 @@
+/*
+ * Fluid Grid System
+ * http://fluid.gs/
+ * http://fluid.newgoldleaf.com/
+ *
+ * Copyright (c) 2009 Joseph Silvashy and New Gold Leaf LP
+ * Licensed under the MIT, GPL, and CC licenses.
+ *
+ * Date: 2009-06-22 (Mon, 22 Jun 2009)
+ * Revision: 3
+ *
+ * Modifications and fixes made from:
+ * http://meyerweb.com/eric/tools/css/reset/
+ * http://code.google.com/p/blueprintcss/
+ */
+
+
+/* .fluid_grid_layout is the main wrapper for grid system, comment out for 100% width of body */
+.fluid_grid_layout {width:80%; margin:0 10%; position:relative;}
+
+/* .section and .column are required in your HTML */
+div.section {display:table; width:100%; border-collapse:collapse;}
+div.column {display: table-cell;}
+
+/* .column widths, -10% of "precived width" for 6 column layouts */
+div.six_column.section div.one {width:15%;}
+div.six_column.section div.two {width:30%;}
+div.six_column.section div.three {width:45%;}
+div.six_column.section div.four {width:60%;}
+div.six_column.section div.five {width:75%;}
+div.six_column.section div.six {width:90%;}
+
+div.nine_column.section div.one {width:10%;}
+div.nine_column.section div.two {width:20%;}
+div.nine_column.section div.three {width:30%;}
+div.nine_column.section div.four {width:40%;}
+div.nine_column.section div.five {width:50%;}
+div.nine_column.section div.six {width:60%;}
+div.nine_column.section div.seven {width:70%;}
+div.nine_column.section div.eight {width:80%;}
+div.nine_column.section div.nine {width:90%;}

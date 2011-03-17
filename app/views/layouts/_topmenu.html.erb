@@ -1,0 +1,14 @@
+<ul>
+  <% if logged_in? %>
+    <li><%= link_to "ACCUEIL", dossiers_path %></li>
+    <li><%= link_to 'CALENDRIER', root_path%></li>
+    <li><%= link_to 'CONTACTS', edit_user_path(current_user) %></li>
+
+    <span class="right">
+    <li><%= link_to current_user.username, edit_user_path(current_user) %></li>
+    <li><%= link_to 'logout', logout_path %></li>
+    </span>
+  <% else %>
+    <li class="right"><%= link_to 'login', login_path %></li>
+  <% end %>
+</ul>

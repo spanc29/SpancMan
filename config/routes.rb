@@ -1,24 +1,19 @@
 SpancMan1::Application.routes.draw do
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user
-
   match 'signup' => 'users#new', :as => :signup
-
   match 'logout' => 'sessions#destroy', :as => :logout
-
   match 'login' => 'sessions#new', :as => :login
-
-  resources :sessions
-
+  resource :sessions
   resources :users
 
   root :to => 'dossiers#index'
 
   resources :listes
+  resources :immeubles
+  resources :dossiers
 
-  resources :dossiers do
-    resources :immeubles
-  end
+  match 'immeubles/:id' =>'immeuble#show', :as => 'immeuble'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
