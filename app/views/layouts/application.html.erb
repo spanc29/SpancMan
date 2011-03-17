@@ -19,6 +19,7 @@
           <li><%= link_to 'Nouvel article', root_path%></li>
           <li><%= link_to 'modif password', edit_user_path(current_user) %></li>
           <li><%= link_to 'logout', logout_path %></li>
+          <li><%= link_to "retour à la liste", dossiers_path %></li>
         <% else %>
           <li><%= link_to 'login', login_path %></li>
         <% end %>
@@ -28,15 +29,9 @@
     <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
-
     <div class="body">
     <%= content_tag :h1, yield(:title) if show_title? %>
-        <div id="nav">
-          <div class="container">
-            contenu du header
-          </div>
-        </div>
-        <%= yield %>
+    <%= yield %>
     </div>
   </div>
 

@@ -1,34 +1,24 @@
 <% title @dossier.reference %>
-<hr/>
-menu tab
-<%= link_to "retour à la liste", dossiers_path %>
-<p>
-  <strong>Etat:</strong>
-  <%= @dossier.etat %>
-</p>
-<p>
-  <strong>Archivage:</strong>
-  <%= @dossier.archivage %>
-</p>
-<p>
-  <strong>Secteur:</strong>
-  <%= @dossier.secteur %>
-</p>
-<p>
-  <strong>Coordx:</strong>
-  <%= @dossier.coordx %>
-</p>
-<p>
-  <strong>Coordy:</strong>
-  <%= @dossier.coordy %>
-</p>
-<p>
-  <strong>Commentaire:</strong>
-  <%= @dossier.commentaire %>
-</p>
+<div id="nav">
+  <% tabs_tag do |tab| %>
+    <%= tab.dossier      'Dossier', @dossier %>
+    <%= tab.immeuble 'Immeuble', @dossier_immeubles_path %>
+    <%= tab.liste   'Liste', listes_path %>
+  <% end %>
+</div>
 
-<p>
-  <%= link_to "Edit", edit_dossier_path(@dossier) %> |
-  <%= link_to "Destroy", @dossier, :confirm => 'Are you sure?', :method => :delete %> |
+<div class="six_column section">
+  <div class="five column border">
+    <%= render @dossier %>
+  </div>
+  <div class="aside">
+    <div class="container box">
+    <ul>
+      <li><%= link_to "Modifier le dossier", edit_dossier_path(@dossier), :class =>'link_update'%></li>
+      <li><%= link_to "Detruire le dossier", @dossier, :confirm => 'certain?', :method => :delete, :class => 'link_delete' %></li>
+    </ul>
 
-</p>
+
+    </div>
+  </div>
+</div>

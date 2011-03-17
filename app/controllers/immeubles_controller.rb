@@ -1,18 +1,20 @@
 class ImmeublesController < ApplicationController
+  before_filter :load_dossier
+
   def index
-    @immeubles = Immeuble.all
+    @immeubles = @dossier.immeubles.all
   end
 
   def show
-    @immeuble = Immeuble.find(params[:id])
+    @immeuble = @dossier.immeubles.find(params[:id])
   end
 
   def new
-    @immeuble = Immeuble.new
+    @immeuble = @dossier.immeubles.new
   end
 
   def create
-    @immeuble = Immeuble.new(params[:immeuble])
+    @immeuble = @dossier.immeubles.new(params[:immeuble])
     if @immeuble.save
       redirect_to @immeuble, :notice => "Successfully created immeuble."
     else
@@ -37,5 +39,10 @@ class ImmeublesController < ApplicationController
     @immeuble = Immeuble.find(params[:id])
     @immeuble.destroy
     redirect_to immeubles_url, :notice => "Successfully destroyed immeuble."
+  end
+
+private
+  def load_dossier
+    @dossier = Dossier.find(params[:dossier_id])
   end
 end

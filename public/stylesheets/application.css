@@ -3,10 +3,10 @@ body {
   font-family: Verdana, Helvetica, Arial;
 }
 /*liens*/
-a {color: #0000FF;}
+a, a:link, a:visited{ color: #2A5685; text-decoration: none; }
+a:hover, a:active{ color: #458dd9; text-decoration: underline;}
 
 /* mise en page*/
-
 #top-menu {background: #2C4056; color: #fff; height:1.8em; font-size: 0.8em; padding: 2px 2px 0px 6px;}
 #top-menu ul {margin: 0;  padding: 0;}
 #top-menu li {
@@ -19,66 +19,50 @@ a {color: #0000FF;}
 #top-menu a {color: #fff; margin-right: 8px; font-weight: bold;}
 #top-menu #loggedas { float: right; margin-right: 0.5em; color: #fff; }
 #account {float:right;}
-
 #main {clear: both;width: 90%;margin: 0 auto;background-color: #FFF;padding: 20px 20px;border: solid 1px black;margin-top: 10px;}
 #footer {clear: both;width: 90%;margin: 0 auto;background-color: #FFF;padding: 20px 20px;border: solid 1px black;margin-top: 10px;font-size: 0.9em; padding: 5px 20px; color: #aaa; text-align:center;}
 
-#nav {width: 100%;border-bottom: 1px #ddd solid;}
 
-#flash_notice, #flash_error, #flash_alert {
-  padding: 5px 8px;
-  margin: 10px 0;
-}
+.container {margin: 0.5em;padding:0.5em;}
+.box {padding:1em;margin-bottom:0.5em;background:#e5eCf9;-moz-border-radius: 1em;-webkit-border-radius: 1em;border-radius: 1em;}
+.outline {padding:1em;margin-bottom:0.5em;border: 1px solid #ddd;-moz-border-radius: 1em;-webkit-border-radius: 1em;border-radius: 1em;}
+.important {background-color: #f00;padding:1em;margin-bottom:0.5em;-moz-border-radius: 1em;-webkit-border-radius: 1em;border-radius: 1em;}
 
-#flash_notice {
-  background-color: #CFC;
-  border: solid 1px #6C6;
-}
+hr {background:#ddd;color:#ddd;clear:both;float:none;width:100%;height:1px;margin:0 0 1.45em;border:none;}
+hr.space {background:#fff;color:#fff;visibility:hidden;}
+.clearfix:after, .container:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
+.clearfix, .container {display:block;}
+.clear {clear:both;}
+.border {padding-right:4px;margin-right:5px;border-right:1px solid #ddd;}
 
-#flash_error, #flash_alert {
-  background-color: #FCC;
-  border: solid 1px #C66;
-}
+/*navigation*/
+#nav{float:left;width:100%;background:#2C4056;font-size: 1.2em line-height:normal; border-left:1px solid #2C4056;border-right:1px solid #2C4056;}
+#nav ul {margin:0;padding:0;}
+#nav li, #nav li.current {float:left;list-style-type:none;margin: 0px 2px 0px 0px;padding: 0px 0px 0px 0px;white-space:nowrap;}
+#nav li a,#nav li.current a {display: block;color: #fff;text-decoration: none;font-weight: bold;margin: 0;padding: 4px 10px 4px 10px;}
+#nav li.current, #nav li.current:hover {background:#fff; color:#555;border-top: 1px solid #2C4056;}
+#nav li a:hover,#nav li.current a:hover {background:#759FCF; color:#fff;}
+#nav li span {display: block;color: #000;text-decoration: none;font-weight: bold;margin: 0;padding: 4px 10px 4px 10px;}
 
-.fieldWithErrors {
-  display: inline;
-}
-.error_messages {
-  width: 400px;
-  border: 2px solid #CF0000;
-  padding: 0px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-  font-size: 12px;
-}
-.error_messages h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 10px;
-  font-size: 12px;
-  margin: 0;
-  background-color: #c00;
-  color: #fff;
-}
-.error_messages p {
-  margin: 8px 10px;
-}
+/*message error*/
+#flash_notice, #flash_error, #flash_alert {padding: 5px 8px;margin: 10px 0;}
+#flash_notice {background-color: #CFC;border: solid 1px #6C6;}
+#flash_error, #flash_alert {background-color: #FCC;border: solid 1px #C66;}
+.fieldWithErrors {display: inline;}
+.error_messages {width: 400px;border: 2px solid #CF0000;padding: 0px;padding-bottom: 12px;margin-bottom: 20px;background-color: #f0f0f0;font-size: 12px;}
+.error_messages h2 {text-align: left;font-weight: bold;padding: 5px 10px;font-size: 12px;margin: 0;background-color: #c00;color: #fff;}
+.error_messages p {margin: 8px 10px;}
+.error_messages ul {margin: 0;}
 
-.error_messages ul {
-  margin: 0;
-}
-
-.odd {
-    -moz-border-radius: 1em 1em 1em 1em;
-    background-color: white;
+.odd, .even{
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
     margin-bottom: 20px;
 }
-.even {
-    -moz-border-radius: 1em 1em 1em 1em;
-    background-color: #ddd;
-    margin-bottom: 20px;
-}
+.odd {background-color: white}
+.even {background-color: #ddd;}
+
 .even h2 a {
     -moz-border-radius-topleft: 1em;
     -moz-border-radius-topright: 1em;

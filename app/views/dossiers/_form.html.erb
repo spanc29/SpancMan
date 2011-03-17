@@ -9,7 +9,7 @@
       <%= f.input :reference, :hint => 'No special characters.' %>
       <%= f.input :archivage %>
 
-      <%= f.input :secteur, :collection => Liste.secteur.all(:order => 'nom'), :label_method => 'nom', :as => :radio %>
+      <%= f.input :secteur, :collection => Liste.secteur.all(:order => 'nom'), :label_method => 'nom', :as => :radio %><br/>
 
       <fieldset>
       <legend>coordonnées</legend>

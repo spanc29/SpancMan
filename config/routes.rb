@@ -15,6 +15,7 @@ SpancMan1::Application.routes.draw do
   root :to => 'dossiers#index'
 
   resources :listes
+
   resources :dossiers do
     resources :immeubles
   end
