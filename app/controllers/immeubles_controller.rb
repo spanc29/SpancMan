@@ -1,6 +1,6 @@
 class ImmeublesController < ApplicationController
   before_filter :load_dossier
-
+  set_tab :immeuble
   def index
     @immeubles = @dossier.immeubles.all
   end

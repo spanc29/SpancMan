@@ -16,80 +16,32 @@
     <!--
     fin recherche
     -->
-    <div class="section">
-
-    <div class="one column">
-    <div class="box">
-    1
-    </div>
-  </div>  <div class="one column">
-    <div class="box">
-    1
-    </div>
-  </div>  <div class="one column">
-    <div class="box">
-    1
-    </div>
-  </div>  <div class="one column">
-    <div class="box">
-    1
-    </div>
-  </div>  <div class="one column">
-    <div class="box">
-    1
-    </div>
-  </div>  <div class="one column">
-    <div class="box">
-    1
-    </div>
-  </div>  <div class="one column">
-    <div class="box">
-    1
-    </div>
-  </div>
-  </div>
-  <div class="six_column section">
-    <div class="one column">
-    <div class="box">
-    Some of the page layout examples used in tutorials on the About Desktop Publishing site contain the Lorem ipsum text or other dummy text in order to highlight the overall look of the page without the distraction of recognizable words." "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi... "
-    </div>
-    </div>
-<div class="one column">
-    <div class="box">
-    1
-    </div>
-    </div><div class="one column">
-    <div class="box">
-    1
-    </div>
-    </div><div class="one column">
-    <div class="box">
-    1
-    </div>
-    </div><div class="one column">
-    <div class="box">
-    1
-    </div>
-    </div><div class="one column">
-    <div class="box">
-    1
-    </div>
-    </div>
-  </div>
-
-
     <p> trier par : <%= sort_link(@search, 'reference', 'Réf.SPANC') %> // <%= sort_link(@search, 'archivage') %> // <%= sort_link(@search, 'secteur','secteur') %></p>
+
+    <div class="six_column section">
     <% @dossiers.each do |dossier|%>
       <div class="<%= cycle('odd','even') %>">
-      <h2><%= link_to(dossier.reference, dossier)%></h2>
+        <div class="one column border">
+        <%= link_to(dossier.reference, dossier)%>
+        </div>
+        <div class="two column border">
           <% Liste.secteur.where(:id => dossier.secteur).each do |t| %>
           <%= t.nom %>
           <%end%>
-      <p><%= dossier.archivage  %></p>
-      <p><%= l(dossier.updated_at.to_date) %></p>
+          <%= dossier.archivage  %>
+        </div>
+        <div class="two column border">
+          <%= l(dossier.updated_at.to_date) %>
+          C'est officiel : la communauté internationale va attaquer la Libye. Le Conseil de sécurité de l'ONU a en effet voté jeudi soir en faveur d'un recours à la force contre les troupes du colonel Mouammar Kadhafi, ouvrant la voie à des frappes aériennes en Libye. La résolution adoptée par le Conseil autorise «toutes les mesures nécessaires» pour protéger les civils et imposer un cessez-le-feu à l'armée libyenne.
+        </div>
+        <div class="one column">
+          des trucs
+        </div>
       </div>
     <%end%>
+    </div>
   </div>
+
 
   <div class="two column">
     <div class="container box"> <%= link_to 'creer un dossier', new_dossier_path %></div>

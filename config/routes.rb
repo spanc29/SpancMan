@@ -10,10 +10,12 @@ SpancMan1::Application.routes.draw do
   root :to => 'dossiers#index'
 
   resources :listes
-  resources :immeubles
-  resources :dossiers
 
-  match 'immeubles/:id' =>'immeuble#show', :as => 'immeuble'
+  resources :dossiers do
+    resources :immeubles
+  end
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

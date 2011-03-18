@@ -5,6 +5,7 @@ class Dossier < ActiveRecord::Base
   validates :reference, :presence => true, :uniqueness => true, :length => { :maximum => 100 }
 
   acts_as_taggable
+
   #associations
   has_many :immeubles, :dependent => :destroy
   has_many :listes

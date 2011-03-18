@@ -58,7 +58,7 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
     -moz-border-radius: 1em;
     -webkit-border-radius: 1em;
     border-radius: 1em;
-    margin-bottom: 20px;
+    padding: 1em;
 }
 .odd {background-color: white}
 .even {background-color: #ddd;}

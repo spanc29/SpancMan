@@ -1,6 +1,5 @@
-<%= form_for @compteur do |f| %>
-  <%= f.error_messages %>
-  <p>
+<div class="fields">
+ <p>
     <%= f.label :type_alimentation %><br />
     <%= f.text_field :type_alimentation %>
   </p>
@@ -28,5 +27,4 @@
     <%= f.label :commentaire %><br />
     <%= f.text_area :commentaire %>
   </p>
-  <p><%= f.submit %></p>
-<% end %>
+</div>

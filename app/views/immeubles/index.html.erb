@@ -1,5 +1,7 @@
-<% title "Immeubles" %>
+<% title @dossier.reference %>
+<%= render ('layouts/navigation') %>
 
+<p><%= link_to "New Immeuble", new_dossier_immeuble_path %></p>
 <table>
   <tr>
     <th>Numero Rue</th>
@@ -26,10 +28,10 @@
       <td><%= immeuble.nb_eq_hab %></td>
       <td><%= immeuble.dossier_id %></td>
       <td><%= link_to "Show", immeuble %></td>
-      <td><%= link_to "Edit", edit_immeuble_path(immeuble) %></td>
+      <td><%= link_to "Edit", edit_dossier_immeuble_path(immeuble) %></td>
       <td><%= link_to "Destroy", immeuble, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Immeuble", new_immeuble_path %></p>
+
