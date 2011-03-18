@@ -7,6 +7,7 @@ class ImmeublesController < ApplicationController
 
   def show
     @immeuble = @dossier.immeubles.find(params[:id])
+    @compteur = Compteur.find_by_immeuble_id(:immeuble.id)
   end
 
   def new
@@ -16,7 +17,7 @@ class ImmeublesController < ApplicationController
   def create
     @immeuble = @dossier.immeubles.new(params[:immeuble])
     if @immeuble.save
-      redirect_to @immeuble, :notice => "Successfully created immeuble."
+      redirect_to dossier_immeuble_path, :notice => "Successfully created immeuble."
     else
       render :action => 'new'
     end

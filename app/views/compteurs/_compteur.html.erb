@@ -1,0 +1,33 @@
+<% if @compteur %>
+<%= @compteur.each do |compteur|  %>
+<p>
+  <strong>Type Alimentation:</strong>
+  <%= compteur.type_alimentation %>
+</p>
+<p>
+  <strong>Ref Compteur:</strong>
+  <%= compteur.ref_compteur %>
+</p>
+<p>
+  <strong>Declare:</strong>
+  <%= compteur.declare %>
+</p>
+<p>
+  <strong>Conso Moyenne:</strong>
+  <%= compteur.conso_moyenne %>
+</p>
+<p>
+  <strong>Analyse Ok:</strong>
+  <%= compteur.analyse_OK %>
+</p>
+<p>
+  <strong>Immeuble:</strong>
+  <%= compteur.immeuble_id %>
+</p>
+<p>
+  <strong>Commentaire:</strong>
+  <%= compteur.commentaire %>
+</p>
+<%end%>
+<% else %> PAS D'ALIMENTATION EN EAU !!!'
+<% end %>

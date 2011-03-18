@@ -12,7 +12,9 @@ SpancMan1::Application.routes.draw do
   resources :listes
 
   resources :dossiers do
-    resources :immeubles
+    resources :immeubles do
+      resources :compteurs
+    end
   end
 
 
