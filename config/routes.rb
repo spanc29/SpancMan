@@ -12,12 +12,10 @@ SpancMan1::Application.routes.draw do
   resources :listes
 
   resources :dossiers do
-    resources :immeubles do
-      resources :compteurs
-    end
+    resources :immeubles
   end
 
-
+  resources :compteurs
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

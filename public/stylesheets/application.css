@@ -62,3 +62,7 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 }
 .odd {background-color: white}
 .even {background-color: #ddd;}
+
+.ajout:before{content: url("../images/icons/plus.png");}
+.delete:before{content: url("../images/icons/minus.png");}
+.update:before{content: url("../images/icons/pencil.png");}
