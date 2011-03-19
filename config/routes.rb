@@ -15,6 +15,7 @@ SpancMan1::Application.routes.draw do
     resources :immeubles
   end
 
+
   resources :compteurs
 
   # The priority is based upon order of creation:

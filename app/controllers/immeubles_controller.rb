@@ -17,7 +17,7 @@ class ImmeublesController < ApplicationController
   def create
     @immeuble = @dossier.immeubles.new(params[:immeuble])
     if @immeuble.save
-      redirect_to dossier_immeuble_path, :notice => "Successfully created immeuble."
+      redirect_to dossier_immeubles_path, :notice => "trop bien le nouvel immeuble"
     else
       render :action => 'new'
     end
@@ -30,7 +30,7 @@ class ImmeublesController < ApplicationController
   def update
     @immeuble = Immeuble.find(params[:id])
     if @immeuble.update_attributes(params[:immeuble])
-      redirect_to @immeuble, :notice  => "Successfully updated immeuble."
+      redirect_to @immeuble, :notice  => "immeuble correctement ravalé ou modifié"
     else
       render :action => 'edit'
     end

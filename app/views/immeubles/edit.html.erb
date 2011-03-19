@@ -1,8 +1,8 @@
-<% title "Edit Immeuble" %>
+<% title "Modifier un Immeuble/Terrain" %>
 
 <%= render 'form' %>
 
 <p>
-  <%= link_to "Show", @immeuble %> |
-  <%= link_to "View All", immeubles_path %>
+  <%= link_to "Show",[@dossier,@immeuble] %> |
+  <%= link_to "View All", dossier_immeubles_path %>
 </p>

@@ -9,7 +9,6 @@
     <th>Annee Constr</th>
     <th>Nb Piece Princ</th>
     <th>Nb Eq Hab</th>
-    <th>Dossier</th>
   </tr>
   <% for immeuble in @immeubles %>
     <tr>
@@ -22,14 +21,7 @@
       <td><%= immeuble.annee_constr %></td>
       <td><%= immeuble.nb_piece_princ %></td>
       <td><%= immeuble.nb_eq_hab %></td>
-      <td><%= immeuble.dossier_id %></td>
-
-    </tr>
+      <td><%= link_to 'modifier', edit_dossier_immeuble_path(@dossier,immeuble) %></td>
+      </tr>
   <% end %>
-
-<h3>compteurs</h3>
-<div id="comments">
-  <%= render "compteurs/compteur" %>
-</div>
-<%= link_to "ajout compteurs", new_immeuble_compteur_path(@immeuble,:format => :js), :remote => true, :id => 'new_comment_link' %>
 </table>

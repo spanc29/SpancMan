@@ -1,44 +1,20 @@
-<%= form_for @immeuble do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :numero_rue %><br />
-    <%= f.text_field :numero_rue %>
-  </p>
-  <p>
-    <%= f.label :adress %><br />
-    <%= f.text_area :adress %>
-  </p>
-  <p>
-    <%= f.label :code_postal %><br />
-    <%= f.text_field :code_postal %>
-  </p>
-  <p>
-    <%= f.label :commune %><br />
-    <%= f.text_field :commune %>
-  </p>
-  <p>
-    <%= f.label :residence %><br />
-    <%= f.text_field :residence %>
-  </p>
-  <p>
-    <%= f.label :taux_occupation %><br />
-    <%= f.text_field :taux_occupation %>
-  </p>
-  <p>
-    <%= f.label :annee_constr %><br />
-    <%= f.text_field :annee_constr %>
-  </p>
-  <p>
-    <%= f.label :nb_piece_princ %><br />
-    <%= f.text_field :nb_piece_princ %>
-  </p>
-  <p>
-    <%= f.label :nb_eq_hab %><br />
-    <%= f.text_field :nb_eq_hab %>
-  </p>
-  <p>
-    <%= f.label :dossier_id %><br />
-    <%= f.text_field :dossier_id %>
-  </p>
+<%= simple_form_for ([@dossier,@dossier.immeubles.new]) do |f| %>
+  <p><%= f.input :numero_rue %></p>
+  <p><%= f.input :adresse %></p>
+  <p><%= f.input :code_postal %></p>
+  <p><%= f.input :commune %></p>
+  <p><%= f.input :residence %></p>
+  <p><%= f.input :taux_occupation %></p>
+  <p><%= f.input :commentaire %></p>
+  <p><%= f.input :annee_constr%></p>
+  <p><%= f.input :nb_piece_princ, :as => :select, :collection => 1..20 %></p>
+  <p><%= f.input :nb_eq_hab, :as =>:select, :collection => 1..200 %></p>
+
+
+  <%= f.simple_fields_for :compteurs do |compt| %>
+    <%= render "compteurs/form", :f => compt %>
+  <% end %>
+  <p><%= link_to_add_fields "Ajouter aEP", f, :compteurs %></p>
+
   <p><%= f.submit %></p>
 <% end %>

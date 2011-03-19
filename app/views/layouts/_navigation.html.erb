@@ -1,5 +1,5 @@
 <div id="nav">
-  <% tabs_tag do |tab| %>
+  <%= tabs_tag do |tab| %>
     <%= tab.dossier 'Dossier', @dossier %>
     <%= tab.immeuble 'Immeuble(s)', dossier_immeubles_path(@dossier) %>
     <%= tab.installation 'Installation(s)', listes_path %>

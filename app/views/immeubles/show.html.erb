@@ -6,7 +6,7 @@
 </p>
 <p>
   <strong>Adress:</strong>
-  <%= @immeuble.adress %>
+  <%= @immeuble.adresse %>
 </p>
 <p>
   <strong>Code Postal:</strong>
@@ -42,7 +42,7 @@
 </p>
 
 <p>
-  <%= link_to "Edit", edit_immeuble_path(@immeuble) %> |
-  <%= link_to "Destroy", @immeuble, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Edit", edit_dossier_immeuble_path(@immeuble) %> |
+  <%= link_to "Destroy", [@dossier,@immeuble], :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", immeubles_path %>
 </p>
