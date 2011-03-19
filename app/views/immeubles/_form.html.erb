@@ -1,4 +1,10 @@
-<%= simple_form_for ([@dossier,@dossier.immeubles.new]) do |f| %>
+<% unless @immeuble %>
+  <%@immeuble = @dossier.immeubles.new%>
+<% end %>
+
+<div class="fields">
+
+<%= simple_form_for ([@dossier,@immeuble]) do |f| %>
   <p><%= f.input :numero_rue %></p>
   <p><%= f.input :adresse %></p>
   <p><%= f.input :code_postal %></p>
@@ -9,12 +15,29 @@
   <p><%= f.input :annee_constr%></p>
   <p><%= f.input :nb_piece_princ, :as => :select, :collection => 1..20 %></p>
   <p><%= f.input :nb_eq_hab, :as =>:select, :collection => 1..200 %></p>
+  <hr/>
 
+<div class="piece outline">
+  <%= f.simple_fields_for :liste_pieces do |builder| %>
+    <%= render "liste_pieces/form", :f => builder %>
+  <% end %>
+  <p><%= link_to_add_fields "Ajouter une pièces", f, :liste_pieces %></p>
+</div>
 
+<div class="parcelle outline">
+  <%= f.simple_fields_for :parcelles do |builder| %>
+    <%= render "parcelles/form", :f => builder %>
+  <% end %>
+  <p><%= link_to_add_fields "Ajouter une parcelle", f, :parcelles %></p>
+</div>
+<div class="compteur outline">
   <%= f.simple_fields_for :compteurs do |compt| %>
     <%= render "compteurs/form", :f => compt %>
   <% end %>
-  <p><%= link_to_add_fields "Ajouter aEP", f, :compteurs %></p>
+  <p><%= link_to_add_fields "Ajouter AEP", f, :compteurs %></p>
+</div>
 
+
+</div>
   <p><%= f.submit %></p>
 <% end %>

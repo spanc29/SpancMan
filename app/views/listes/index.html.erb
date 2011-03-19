@@ -1,4 +1,6 @@
-<% title "Listes" %>
+<% title "Gestion des Listes" %>
+
+<p><%= link_to "Ajouter une entrée", new_liste_path %></p>
 
 <table>
   <tr>
@@ -9,9 +11,8 @@
     <tr>
       <td><%= liste.pour %></td>
       <td><%= liste.nom %></td>
-      <td><%= link_to "Edit", edit_liste_path(liste) %></td>
+      <td><%= link_to "Modifier", edit_liste_path(liste) %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Liste", new_liste_path %></p>
