@@ -1,17 +1,9 @@
-  <p>
-    <%= f.label :piece %><br />
-    <%= f.text_field :piece %>
-  </p>
-  <p>
-    <%= f.label :details %><br />
-    <%= f.text_field :details %>
-  </p>
-  <p>
-    <%= f.label :surface %><br />
-    <%= f.text_field :surface %>
-  </p>
-  <p>
-    <%= f.label :genEU %><br />
-    <%= f.check_box :genEU %>
-  </p>
+<div class="fields inline">
+<%= link_to_remove_fields "effacer", f %>
+<%= f.input :piece, :collection => Liste.piece.all(:order => 'nom'), :label_method => 'nom', :as => :select %>
+<%= f.input :details %>
+<%= f.input :surface, :hint => 'm²' %>
+EU<%= f.input :genEU %>
+PP<%= f.input :piece_princ %>
 
+</div>

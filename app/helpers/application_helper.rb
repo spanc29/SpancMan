@@ -1,6 +1,6 @@
 module ApplicationHelper
   def link_to_remove_fields(name, f)
-    f.hidden_field(:_destroy) + link_to_function(image_tag("icons/delete.png",:alt => "effacer"), "remove_fields(this)")
+    f.hidden_field(:_destroy) + link_to_function("effacer", "remove_fields(this)", :class => "delete")
   end
 
 
@@ -12,3 +12,4 @@ module ApplicationHelper
     link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")", :class => "ajout")
   end
 end
+

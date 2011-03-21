@@ -1,5 +1,5 @@
 <%= simple_form_for @liste do |f|%>
   <%= f.input :pour %>
-  <%= f.input :nom %>
-  <%= f.button :submit %>
+  <div><%= f.input :nom %></div>
+  <div class="right">  <%= f.submit "Créer cet item"%></div>
 <%end%>

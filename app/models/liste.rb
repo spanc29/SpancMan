@@ -5,6 +5,7 @@ class Liste < ActiveRecord::Base
   #attribution des noms au liste !!
 
   scope :secteur, where(:pour => 'secteur')
+  scope :piece, where(:pour => 'pièce')
   scope :etat, where(:pour => 'état')
   scope :residence, where(:pour => 'résidence')
 

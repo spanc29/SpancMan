@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110313125155) do
+ActiveRecord::Schema.define(:version => 20110321221434) do
 
   create_table "compteurs", :force => true do |t|
     t.integer  "type_alimentation"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20110313125155) do
     t.integer  "immeuble_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "piece_princ"
   end
 
   create_table "listes", :force => true do |t|
