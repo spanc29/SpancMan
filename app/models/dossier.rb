@@ -9,5 +9,6 @@ class Dossier < ActiveRecord::Base
   #associations
   has_many :immeubles, :dependent => :destroy
   has_many :listes
+  has_many :usagers, :through => :immeubles
   accepts_nested_attributes_for :immeubles, :reject_if =>  lambda { |a| a[:commune].blank? }, :allow_destroy => true
 end

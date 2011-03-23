@@ -15,12 +15,10 @@
  */
 
 
-/* .fluid_grid_layout is the main wrapper for grid system, comment out for 100% width of body */
-.fluid_grid_layout {width:80%; margin:0 10%; position:relative;}
-
 /* .section and .column are required in your HTML */
 div.section {display:table; width:100%; border-collapse:collapse;}
 div.column {display:table-cell;}
+div.column.top {vertical-align: top;}
 
 /* .column widths, -10% of "perceived width" for 6 column layouts */
 div.six_column.section div.one {width:15%;}
@@ -46,7 +44,11 @@ div.twelve_column.section div.one {width:8%;}
 div.twelve_column.section div.two {width:16%;}
 div.twelve_column.section div.three {width:24%;}
 div.twelve_column.section div.four {width:32%;}
+div.twelve_column.section div.five {width:40%;}
 div.twelve_column.section div.six {width:48%;}
+div.twelve_column.section div.seven {width:56%;}
 div.twelve_column.section div.eight {width:64%;}
+div.twelve_column.section div.nine {width:72%;}
+div.twelve_column.section div.ten {width:80%;}
+div.twelve_column.section div.eleven {width:88%;}
 div.twelve_column.section div.twelve {width:96%;}
-

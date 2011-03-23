@@ -1,20 +1,28 @@
 <% unless @immeuble %>
   <%@immeuble = @dossier.immeubles.new%>
 <% end %>
-<div class="six_column section">
-        <div class="three column">
+<div class="twelve_column section">
                   <fieldset class="outline">
                     <legend>Renseignements immeubles</legend>
           <div class="fields">
                           <%= simple_form_for ([@dossier,@immeuble]) do |f| %>
-                            <p><%= f.input :numero_rue %>
-                            <%= f.input :adresse %></p>
-                            <p><%= f.input :code_postal %></p>
-                            <p><%= f.input :commune %></p>
-                            <p><%= f.input :residence %></p>
-                            <p><%= f.input :taux_occupation %></p>
-                            <p><%= f.input :commentaire %></p>
-                            <p><%= f.input :annee_constr%></p>
+                            <div class="section">
+                            <div class="one column"><%= f.input :numero_rue %></div>
+                            <div class="five column"><%= f.input :adresse %>
+                            </div></div>
+
+                            <div class="section">
+                            <div class="one column"><%= f.input :code_postal %></div>
+                            <div class="five column"><%= f.input :commune %>
+                            </div></div>
+
+                            <div class="section">
+                            <div class="two column"><%= f.input :type_habitat %></div>
+                            <div class="two column"><%= f.input :taux_occupation %></div>
+                            <div class="two column"><%= f.input :annee_constr%></div>
+                            </div>
+
+                            <%= f.input :commentaire %>
                   </fieldset>
 
                   <fieldset class="outline">
@@ -27,6 +35,8 @@
                         <p><%= link_to_add_fields "Ajouter une pièce", f, :liste_pieces %></p>
                   </fieldset>
 
+              <div class="six column top">
+
                   <fieldset class="outline">
                   <legend>Parcelles</legend>
                       <%= f.simple_fields_for :parcelles do |builder| %>
@@ -34,15 +44,15 @@
                       <% end %>
                       <p><%= link_to_add_fields "Ajouter une parcelle", f, :parcelles %></p>
                   </fieldset>
-                <fieldset class="outline">
+                <fieldset class="outline top">
                 <legend>Alimentation en eau potable</legend>
                   <%= f.simple_fields_for :compteurs do |compt| %>
                     <%= render "compteurs/form", :f => compt %>
                   <% end %>
                   <p><%= link_to_add_fields "Ajouter AEP", f, :compteurs %></p>
                 </fieldset>
-        </div>
-          </div> <!--fin fields--!>
+              </div>
+          </div> <!--fin fields-->
   <p><%= f.submit %></p>
 <% end %>
 </div>
