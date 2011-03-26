@@ -3,12 +3,14 @@
 <table>
   <tbody>
     <tr><td>dossier de :</td><td><div class="large">M .patate</div></td></tr>
-    <tr><td>adresse :</td><td>15 rue des patates</td></tr>
+    <tr><td>adresse :</td><td>
+
+    </td></tr>
     <tr><td>secteur :</td>
     <td>
     <% Liste.secteur.where(:id => @dossier.secteur).each do |t| %>
           <%= t.nom %>
-      <%end%>
+      <% end %>
     </td></tr>
       <tr><td>commentaires</td><td><%= simple_format @dossier.commentaire %></td></tr>
   </tbody>

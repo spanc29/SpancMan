@@ -18,6 +18,7 @@ class ImmeublesController < ApplicationController
     @immeuble.parcelles.build
     @immeuble.compteurs.build
     @immeuble.liste_pieces.build
+    @immeuble.adresses.build
   end
 
   def create
@@ -45,7 +46,7 @@ class ImmeublesController < ApplicationController
   def destroy
     @immeuble = @dossier.immeubles.find(params[:id])
     @immeuble.destroy
-    redirect_to immeubles_url, :notice => "Destruction immeuble résussie"
+    redirect_to immeubles_url, :notice => "Destruction immeuble réussie"
   end
 
 private

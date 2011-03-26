@@ -18,7 +18,7 @@ form * {list-style: none; border: none;}
 form p {margin-top:0; margin-bottom:0;}
 
 label       { font-size:0.7em; display: block;}
-fieldset    { padding:0 1em 1em 1em; margin: 0 0 1em 0; border-top: 1px solid #ddd; }
+fieldset    { padding:0 1em 1em 1em; margin: 1em 0 1em 0; border-top: 1px solid #ddd; }
 legend      { font-weight: bold; font-size:0.8em; margin-top:-0.2em; margin-bottom:0.5em;color: #aaa }
 
 fieldset, #IE8#HACK { padding-top:1em; }
@@ -43,12 +43,12 @@ textarea { width: 100%; height: 100px; padding:5px;}
 select {width:96%; padding:4px;}
 
 input[type=text], input[type=password],input.text, input.string, input.numeric, textarea, select {
-  background-color:#fff;  border:1px solid #bbb;}
+  background-color:#e5ecf9;  border:1px solid #bbb;}
 
 input.required,textarea.required, select.required {background-color: #f2e6e8;}
 
 input[type=text]:focus, input[type=password]:focus,input.text:focus,input.numeric:focus,input.string:focus,textarea:focus, select:focus {
-  border-color:#666;  background-color: #eee;}
+  border-color:#666;  background-color: #fff;}
 input[type=text], input[type=password],input.text, input.string,input.numeric,textarea, select {margin:2px 0;}
 
 input[type=submit] {font-size:1.2em;background:#235485;color:#fff;}

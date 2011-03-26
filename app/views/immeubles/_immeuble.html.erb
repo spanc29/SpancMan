@@ -1,26 +1,29 @@
 <table>
   <tr>
-    <th>Numero Rue</th>
-    <th>Adress</th>
-    <th>Code Postal</th>
-    <th>Commune</th>
     <th>type habitat</th>
     <th>Taux Occupation</th>
     <th>Annee Constr</th>
     <th>Nb Piece Princ</th>
     <th>Nb Eq Hab</th>
+    <th>Nb Eq Hab</th>
+    <th>Nb Eq Hab</th>
   </tr>
   <% for immeuble in @immeubles %>
     <tr>
-      <td><%= immeuble.numero_rue %></td>
-      <td><%= immeuble.adresse %></td>
-      <td><%= immeuble.code_postal %></td>
-      <td><%= immeuble.commune %></td>
+    <td><% immeuble.adresses.each do |imm|%>
+            <%= imm.numero_rue %>
+            <%= imm.contenu %><br/>
+            <%= imm.code_postal %>
+            <strong><%= imm.commune.upcase %></strong>
+     <%end%>
+     </td>
       <td><%= immeuble.type_habitat %></td>
       <td><%= immeuble.taux_occupation %></td>
       <td><%= immeuble.annee_constr %></td>
+      <td><%= immeuble.annee_renov %></td>
       <td><%= immeuble.nb_piece_princ %></td>
-      <td><%= immeuble.nb_eq_hab %></td>
+      <td><%= immeuble.nb_eq_hab_min %></td>
+      <td><%= immeuble.nb_eq_hab_max %></td>
       <td><%= link_to 'modifier', edit_dossier_immeuble_path(@dossier,immeuble) %></td>
       </tr>
   <% end %>

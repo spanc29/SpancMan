@@ -1,13 +1,13 @@
 <div id="nav">
   <%= tabs_tag do |tab| %>
-    <%= tab.dossier 'Dossier', @dossier %>
+    <%= tab.dossier 'dossier', @dossier, :class => 'dossier' %>
     <%= tab.immeuble 'Immeuble(s)', dossier_immeubles_path(@dossier) %>
     <%= tab.installation 'Installation(s)', listes_path %>
     <%= tab.entretien 'Entretien(s)', listes_path %>
     <%= tab.controle 'Contrôle(s)', listes_path %>
     <%= tab.projet 'Projet', listes_path %>
     <%= tab.compta 'compta', listes_path %>
-    <%= tab.document 'Documents', listes_path %>
+    <%= tab.document 'Documents', new_user_path %>
 
   <% end %>
 </div>

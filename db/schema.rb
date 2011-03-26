@@ -10,18 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110323213321) do
+ActiveRecord::Schema.define(:version => 20110325222239) do
 
   create_table "adresses", :force => true do |t|
     t.integer  "numero_rue"
-    t.text     "location"
+    t.text     "contenu"
     t.integer  "code_postal"
     t.string   "commune"
     t.integer  "type_adresse"
+    t.boolean  "princ"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "adressable_id"
     t.string   "adressable_type"
+    t.integer  "immeuble_id"
   end
 
   create_table "compteurs", :force => true do |t|
@@ -32,16 +34,6 @@ ActiveRecord::Schema.define(:version => 20110323213321) do
     t.boolean  "analyse_OK"
     t.integer  "immeuble_id"
     t.text     "commentaire"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "contacts", :force => true do |t|
-    t.string   "nom"
-    t.string   "fonction"
-    t.string   "photo"
-    t.text     "commentaire"
-    t.integer  "groupe_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -63,23 +55,22 @@ ActiveRecord::Schema.define(:version => 20110323213321) do
     t.boolean  "actif"
     t.string   "agrement"
     t.date     "date_expiration"
+    t.date     "date_adhesion"
     t.text     "commentaire"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "immeubles", :force => true do |t|
-    t.string   "numero_rue"
-    t.text     "adresse"
-    t.string   "code_postal"
-    t.string   "commune"
     t.string   "type_habitat"
     t.string   "taux_occupation"
     t.string   "annee_constr"
+    t.string   "annee_renov"
     t.integer  "nb_piece_princ"
-    t.integer  "nb_eq_hab"
-    t.integer  "dossier_id"
+    t.integer  "nb_eq_hab_min"
+    t.integer  "nb_eq_hab_max"
     t.text     "commentaire"
+    t.integer  "dossier_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -88,11 +79,11 @@ ActiveRecord::Schema.define(:version => 20110323213321) do
     t.string   "piece"
     t.string   "details"
     t.integer  "surface"
-    t.boolean  "genEU"
+    t.boolean  "genere_EU"
+    t.boolean  "est_piece_princ"
     t.integer  "immeuble_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "piece_princ"
   end
 
   create_table "listes", :force => true do |t|
@@ -103,8 +94,9 @@ ActiveRecord::Schema.define(:version => 20110323213321) do
   end
 
   create_table "mails", :force => true do |t|
-    t.integer  "type_mail"
     t.string   "email"
+    t.integer  "type_mail"
+    t.boolean  "princ"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "mailable_id"
@@ -123,6 +115,7 @@ ActiveRecord::Schema.define(:version => 20110323213321) do
   create_table "phones", :force => true do |t|
     t.string   "numero"
     t.integer  "type_phone"
+    t.boolean  "princ"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "phonable_id"
@@ -146,17 +139,6 @@ ActiveRecord::Schema.define(:version => 20110323213321) do
     t.string "name"
   end
 
-  create_table "usagers", :force => true do |t|
-    t.string   "nom"
-    t.integer  "rang"
-    t.integer  "role"
-    t.date     "date_arrivee"
-    t.text     "commentaire"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "immeuble_id"
-  end
-
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "email"
@@ -164,6 +146,11 @@ ActiveRecord::Schema.define(:version => 20110323213321) do
     t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo"
+    t.integer  "fonction"
+    t.date     "date_arrivee"
+    t.text     "commentaire"
+    t.integer  "groupe_id"
   end
 
 end

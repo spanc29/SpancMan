@@ -1,6 +1,4 @@
-body {
-  background-image: url(../images/fond2.jpg);
-  font-family: Verdana, Helvetica, Arial;
+body {background: url("../images/backdrop.png") repeat-x scroll 0 0 #E9EEF2;
 }
 /*liens*/
 a, a:link, a:visited{ color: #2A5685; text-decoration: none; }
@@ -63,6 +61,12 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .odd {background-color: white}
 .even {background-color: #ddd;}
 
+
+/*images*/
+
 .ajout:before{content: url("../images/icons/plus-circle.png"); vertical-align: middle;}
 .delete:before{content: url("../images/icons/eraser.png");vertical-align: middle;}
 .update:before{content: url("../images/icons/pencil.png");vertical-align: middle;}
+/*
+.dossier { background: url("../images/icons/folder-horizontal.png") no-repeat scroll left center transparent;}
+*/

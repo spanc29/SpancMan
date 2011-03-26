@@ -7,14 +7,10 @@
           <div class="fields">
                           <%= simple_form_for ([@dossier,@immeuble]) do |f| %>
                             <div class="section">
-                            <div class="one column"><%= f.input :numero_rue %></div>
-                            <div class="five column"><%= f.input :adresse %>
-                            </div></div>
-
-                            <div class="section">
-                            <div class="one column"><%= f.input :code_postal %></div>
-                            <div class="five column"><%= f.input :commune %>
-                            </div></div>
+                              <%= f.simple_fields_for :adresses do |builder| %>
+                              <%= render "adresses/form_immeuble", :f => builder %>
+                              <% end %>
+                            </div>
 
                             <div class="section">
                             <div class="two column"><%= f.input :type_habitat %></div>
@@ -28,7 +24,7 @@
                   <fieldset class="outline">
                     <legend>Pièces de l'immeuble</legend>
                         <div class="left"><%= f.input :nb_piece_princ, :as => :select, :collection => 1..20 %></div>
-                        <div><%= f.input :nb_eq_hab, :as =>:select, :collection => 1..200 %></div>
+                        <div><%= f.input :nb_eq_hab_min, :as =>:select, :collection => 1..200 %></div>
                           <%= f.simple_fields_for :liste_pieces do |builder| %>
                           <%= render "liste_pieces/form", :f => builder %>
                           <% end %>

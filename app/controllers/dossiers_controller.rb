@@ -4,10 +4,10 @@ class DossiersController < ApplicationController
   def index
     @search = Dossier.search(params[:search])
     @dossiers = @search.all
+
   end
 
   def show
-
     @dossier = Dossier.find(params[:id])
     @list = Liste.find_by_id(@dossier.secteur)
   end
@@ -17,7 +17,9 @@ class DossiersController < ApplicationController
   end
 
   def create
+
     @dossier = Dossier.new(params[:dossier])
+    letcaptital(@dossier.reference)
     if @dossier.save
       redirect_to @dossier, :notice => "Dossier créé avec brio"
     else
@@ -42,5 +44,10 @@ class DossiersController < ApplicationController
     @dossier = Dossier.find(params[:id])
     @dossier.destroy
     redirect_to dossiers_url, :notice => "Successfully destroyed dossier."
+  end
+
+
+  def letcaptital(objet)
+    return objet.upcase
   end
 end
