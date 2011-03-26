@@ -19,6 +19,7 @@ class ImmeublesController < ApplicationController
     @immeuble.compteurs.build
     @immeuble.liste_pieces.build
     @immeuble.adresses.build
+    @immeuble.users.build
   end
 
   def create
@@ -37,7 +38,7 @@ class ImmeublesController < ApplicationController
   def update
     @immeuble = @dossier.immeubles.find(params[:id])
     if @immeuble.update_attributes(params[:immeuble])
-      redirect_to @immeuble, :notice  => "immeuble correctement ravalé ou modifié"
+      redirect_to dossier_immeubles_path, :notice  => "immeuble correctement ravalé ou modifié"
     else
       render :action => 'edit'
     end

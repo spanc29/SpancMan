@@ -24,7 +24,7 @@ a:hover, a:active{ color: #458dd9; text-decoration: underline;}
 .container {margin: 0.5em;padding:0.5em;}
 .box {padding:1em;margin-bottom:0.5em;background:#e5eCf9;-moz-border-radius: 1em;-webkit-border-radius: 1em;border-radius: 1em;}
 .outline {padding:1em;margin-bottom:0.5em;border: 1px solid #ddd;-moz-border-radius: 1em;-webkit-border-radius: 1em;border-radius: 1em;}
-.important {background-color: #f00;padding:1em;margin-bottom:0.5em;-moz-border-radius: 1em;-webkit-border-radius: 1em;border-radius: 1em;}
+.important {background-color: #f2e6e8;padding:1em;margin-bottom:0.5em;-moz-border-radius: 1em;-webkit-border-radius: 1em;border-radius: 1em;}
 
 hr {background:#ddd;color:#ddd;clear:both;float:none;width:100%;height:1px;margin:0 0 1.45em;border:none;}
 hr.space {background:#fff;color:#fff;visibility:hidden;}

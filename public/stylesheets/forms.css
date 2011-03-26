@@ -4,9 +4,6 @@
    * Sets up some default styling for forms
    * Gives you classes to enhance your forms
 
-   Usage:
-   * For text fields, use class .title or .text
-   * For inline forms, use .inline (even when using columns)
 
 -------------------------------------------------------------- */
 
@@ -38,18 +35,18 @@ legend, #IE8#HACK { margin-top:0; margin-bottom:0; }
 
 abbr {color: #f00;border: none;}
 
-input.text,input.string,input.numeric {width:100%; padding:5px; }
-textarea { width: 100%; height: 100px; padding:5px;}
-select {width:96%; padding:4px;}
+input.text,input.string,input.numeric, input.boolean {width:95%; padding:5px; }
+textarea { width: 95%; height: 100px; padding:5px; font:inherit;}
+select {width:92%; padding:4px;}
 
-input[type=text], input[type=password],input.text, input.string, input.numeric, textarea, select {
+input[type=text], input[type=password],input[type=checkbox],input.text, input.string, input.numeric, textarea, select {
   background-color:#e5ecf9;  border:1px solid #bbb;}
 
 input.required,textarea.required, select.required {background-color: #f2e6e8;}
 
-input[type=text]:focus, input[type=password]:focus,input.text:focus,input.numeric:focus,input.string:focus,textarea:focus, select:focus {
+input[type=text]:focus, input[type=password]:focus,input[type=checkbox]:focus,input.text:focus,input.numeric:focus,input.string:focus,textarea:focus, select:focus {
   border-color:#666;  background-color: #fff;}
-input[type=text], input[type=password],input.text, input.string,input.numeric,textarea, select {margin:2px 0;}
+input[type=text], input[type=password],,input[type=checkbox],input.text, input.string,input.numeric,textarea, select {margin:2px 0;}
 
 input[type=submit] {font-size:1.2em;background:#235485;color:#fff;}
 input[type=submit]:hover {background:#666;}
@@ -60,8 +57,7 @@ input[type=submit]:hover {background:#666;}
   placed side-by-side. Use the p tag to denote a line.
  */
 
-
-.inline input,.inline select {width: 25%;}
+div.center {text-align: center; vertical-align: bottom;padding-bottom: 5px;}
 
 .hint {font-size: 0.8em; color: #ccc;}
 

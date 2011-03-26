@@ -1,9 +1,14 @@
-<div class="fields">
-<%= f.input :type_alimentation %>
-<%= f.input :ref_compteur %>
-<%= f.input :declare %>
-<%= f.input :conso_moyenne %>
-<%= f.input :analyse_OK %>
-<%= f.input :commentaire %>
-<%= link_to_remove_fields "effacer", f %>
+<div class="fields outline">
+    <div class="two column"><%= f.input :type_alimentation %></div>
+    <div class="two column center"><%= f.input :declare %></div>
+    <div class="two column center"><%= f.input :analyse_OK %></div>
+
+    <div class="section">
+      <div class="two column"><%= f.input :ref_compteur, :label => 'référence compteur' %></div>
+      <div class="two column"><%= f.input :conso_moyenne %></div>
+      <div class="two column center"><%= link_to_remove_fields "effacer", f %>
+      </div>
+    </div>
+<%= f.input :commentaire, :as => :string %>
 </div>
+

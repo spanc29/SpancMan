@@ -7,7 +7,7 @@
 
 /* Default font settings.
    The font-size percentage is of 16px. (0.75 * 16px = 12px) */
-body { font: normal 0.8764em/1.0em Arial,Verdana,sans-serif;color: #222;background: #fff;}
+body { font: normal 0.8764em/1.0em Arial,Verdana,sans-serif;color: #222;}
 html>body { font-size: 14px; }
 
 /* Headings*/

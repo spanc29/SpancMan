@@ -1,9 +1,11 @@
 <% title @dossier.reference %>
 <%= render ('layouts/navigation') %>
 
-<p><%= link_to "Ajouter un immeuble", new_dossier_immeuble_path %></p>
-
+<div class="twelve_column section">
+<div class="nine_column border">
 <%= render 'immeuble' %>
-<hr/>
-
-<hr/>
+</div>
+<div class="three column">
+<div class="container box"><%= link_to "Ajouter un immeuble", new_dossier_immeuble_path, :class => "ajout" %></div>
+</div>
+</div>

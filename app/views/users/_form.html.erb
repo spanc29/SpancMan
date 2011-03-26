@@ -1,20 +1,29 @@
-<%= form_for @user do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :email, "Email Address" %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation, "Confirm Password" %><br />
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p><%= f.submit (@user.new_record? ? "Sign up" : "Update") %></p>
-<% end %>
+<div class="fields outline">
+
+
+  <div class="three column"><%= f.input :username, :label => 'Nom Prénom' %></div>
+  <div class="one column"><%= f.input :fonction, :label => 'Rang/fonction' %></div>
+  <div class="one column"><%= f.input :date_arrivee, :as => :string %></div>
+  <div class="one column"></div>
+
+
+  <div>
+  <%= f.simple_fields_for :adresses do |builder| %>
+      <%= render "adresses/form", :f => builder %>
+    <% end %>
+    <p><%= link_to_add_fields "Ajouter une adresse", f, :adresses %></p>
+  </div>
+  <div>
+  <%= f.simple_fields_for :phones do |builder| %>
+      <%= render "phones/form", :f => builder %>
+    <% end %>
+    <p><%= link_to_add_fields "Ajouter un téléphone", f, :phones %></p>
+  </div>
+    <div>
+  <%= f.simple_fields_for :mails do |builder| %>
+      <%= render "mails/form", :f => builder %>
+    <% end %>
+    <p><%= link_to_add_fields "Ajouter une mail", f, :mails %></p>
+  </div>
+
+</div>
