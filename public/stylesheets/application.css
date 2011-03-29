@@ -3,6 +3,8 @@ body {background: url("../images/backdrop.png") repeat-x scroll 0 0 #E9EEF2;
 /*liens*/
 a, a:link, a:visited{ color: #2A5685; text-decoration: none; }
 a:hover, a:active{ color: #458dd9; text-decoration: underline;}
+img {vertical-align: middle;}
+
 
 /* mise en page*/
 #top-menu {background: #2C4056; color: #fff; height:1.8em; font-size: 0.8em; padding: 2px 2px 0px 6px;}
@@ -63,10 +65,13 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 
 
 /*images*/
-
+.liqimg { width: 100% }
 .ajout:before{content: url("../images/icons/plus-circle.png"); vertical-align: middle;}
-.delete:before{content: url("../images/icons/eraser.png");vertical-align: middle;}
-.update:before{content: url("../images/icons/pencil.png");vertical-align: middle;}
-/*
+.delete:before,.destroy_link:before{content: url("../images/icons/cross-circle.png");vertical-align: middle;}
+.update:before,.edit_link:before{content: url("../images/icons/pencil-small.png");vertical-align: middle;}
+.retour:before{content: url("../images/icons/arrow-transition-180.png");vertical-align: middle;}
+.cancel:before{content: url("../images/icons/cross-small.png");vertical-align: middle;}
+
+/*c
 .dossier { background: url("../images/icons/folder-horizontal.png") no-repeat scroll left center transparent;}
 */

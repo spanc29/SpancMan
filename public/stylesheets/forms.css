@@ -35,8 +35,8 @@ legend, #IE8#HACK { margin-top:0; margin-bottom:0; }
 
 abbr {color: #f00;border: none;}
 
-input.text,input.string,input.numeric, input.boolean {width:95%; padding:5px; }
-textarea { width: 95%; height: 100px; padding:5px; font:inherit;}
+input.text,input.string,input.numeric, input.boolean {width:100%; padding:5px; }
+textarea { width: 100%; height: 100px; padding:5px; font:inherit;}
 select {width:92%; padding:4px;}
 
 input[type=text], input[type=password],input[type=checkbox],input.text, input.string, input.numeric, textarea, select {

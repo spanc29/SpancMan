@@ -1,4 +1,5 @@
 <% title "LISTE DES DOSSIERS" %>
+<h1>LISTES DES DOSSIERS</h1>
 
  <div class="twelve_column section">
     <!--
@@ -64,10 +65,8 @@
 
   <div class="three column">
     <div class="container box"> <%= link_to 'creer un dossier', new_dossier_path, :class => 'link ajout' %></div>
-    trier par :
+    Gérer :
     <ul class="container box">
-      <li></li>
-      <li><%= sort_link(@search, 'archivage') %></li>
-      <li></li>
+      <li><%= link_to 'Listes des termes', listes_path, :class =>"edit_link"%></li>
   </div>
 </div>

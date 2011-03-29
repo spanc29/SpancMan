@@ -14,15 +14,20 @@ class ImmeublesController < ApplicationController
   end
 
   def new
+
     @immeuble = @dossier.immeubles.new
-    @immeuble.parcelles.build
-    @immeuble.compteurs.build
-    @immeuble.liste_pieces.build
-    @immeuble.adresses.build
-    @immeuble.users.build
+      @immeuble.adresses.build
+      @immeuble.parcelles.build
+      @immeuble.compteurs.build
+      @immeuble.liste_pieces.build
+      user = @immeuble.users.build
+        user.adresses.build
+        user.phones.build
+        user.mails.build
   end
 
   def create
+  debugger
     @immeuble = @dossier.immeubles.new(params[:immeuble])
     if @immeuble.save
       redirect_to dossier_immeubles_path, :notice => "trop bien le nouvel immeuble"

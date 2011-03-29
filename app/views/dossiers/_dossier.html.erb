@@ -2,26 +2,34 @@
 
 <table>
   <tbody>
-    <tr><td>dossier de :</td><td><div class="large">M .patate</div></td></tr>
+    <tr><td>dossier :</td><td><div class="large">
+    <% @dossier.immeubles.each do |immeu|%>
+      <% immeu.users.proprio_destinat.each do |prop|%>
+          <%= prop.username %>
+       <%end%>
+    </div></td></tr>
     <tr><td>adresse :</td><td>
-
+      <% immeu.adresses.principale.each do |adr|%>
+      <%= adr.numero_rue %> <%= adr.contenu %><br/>
+      <%= adr.code_postal%> <%= adr.commune %>
+       <%end%>
+     <%end%>
     </td></tr>
     <tr><td>secteur :</td>
     <td>
-    <% Liste.secteur.where(:id => @dossier.secteur).each do |t| %>
-          <%= t.nom %>
-      <% end %>
+    <%= @list.nom %>
     </td></tr>
       <tr><td>commentaires</td><td><%= simple_format @dossier.commentaire %></td></tr>
   </tbody>
 </table>
-      <p>
+      <p><%= @dossier.immeubles.count %>
       </p>
       commentaires :
 
       <div class="info">
-        <span class="small quiet"> créé le <%= l(@dossier.created_at.to_date) %> - modifié le <%= l(@dossier.updated_at.to_date, :format => :long) %></span>
+
       </div>
+<span class="small quiet right"> créé le <%= l(@dossier.created_at.to_date) %> - modifié le <%= l(@dossier.updated_at.to_date) %></span>
 </div>
 historique
 <hr/>

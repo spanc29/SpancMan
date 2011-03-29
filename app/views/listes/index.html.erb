@@ -1,18 +1,14 @@
 <% title "Gestion des Listes" %>
 
+<h1>Gestion des listes des menus déroulants</h1>
+<%= link_to "retour accueil", root_path, :class =>'retour' %><br/>
 <p><%= link_to "Ajouter une entrée", new_liste_path, :class =>'ajout' %></p>
 
-<table>
-  <tr>
-    <th>Pour</th>
-    <th>Nom</th>
-  </tr>
-  <% for liste in @listes %>
-    <tr>
-      <td><%= liste.pour %></td>
-      <td><%= liste.nom %></td>
-      <td><%= link_to "Modifier", edit_liste_path(liste) %></td>
-    </tr>
-  <% end %>
-</table>
 
+<% @liste_by_partie.each do |lis,pours| %>
+  <h2><%= lis %></h2>
+    <%= table_for(pours) do |t|
+    t.data :pour, :nom, :actions => [:edit,:destroy]
+    end %>
+ <%end%>
+</div>

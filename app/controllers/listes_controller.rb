@@ -1,6 +1,8 @@
 class ListesController < ApplicationController
+
   def index
     @listes = Liste.all
+    @liste_by_partie = @listes.group_by{|t| t.partie}
   end
 
   def new

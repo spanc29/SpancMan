@@ -1,5 +1,6 @@
 <%= simple_form_for @liste do |f|%>
-  <%= f.input :pour %>
+  <%= f.input :partie, :collection => Liste.partie ,:label_method => 'partie', :as => :radio %>
+  </div><%= f.input :pour %>
   <div><%= f.input :nom %></div>
-  <div class="right">  <%= f.submit "Créer cet item"%></div>
+  <%= f.submit "Créer cet item"%>
 <%end%>

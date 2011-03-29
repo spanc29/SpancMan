@@ -1,27 +1,31 @@
 <% unless @immeuble %>
   <%@immeuble = @dossier.immeubles.new%>
 <% end %>
+
+<div class="large"><%= link_to "Retour", dossier_immeubles_path, :class => 'retour' %></div>
+
 <div class="twelve_column section">
+
         <div class="six column">
                   <fieldset class="outline">
-                    <legend>Renseignements immeubles</legend>
+                    <legend><%= image_tag("icons/building.png")%> - Renseignements immeubles</legend>
           <div class="fields">
-                          <%= simple_form_for ([@dossier,@immeuble]) do |f| %>
+                          <%= simple_form_for [@dossier,@immeuble] do |f| %>
                               <%= f.simple_fields_for :adresses do |builder| %>
                               <%= render "adresses/form_immeuble", :f => builder %>
                               <% end %>
 
                             <div class="section">
-                            <div class="two column"><%= f.input :type_habitat %></div>
-                            <div class="two column"><%= f.input :taux_occupation %></div>
-                            <div class="two column"><%= f.input :annee_constr%></div>
+                              <div class="two column"><%= f.input :type_habitat %></div>
+                              <div class="two column"><%= f.input :taux_occupation %></div>
+                              <div class="two column"><%= f.input :annee_constr%></div>
                             </div>
 
                             <%= f.input :commentaire %>
                   </fieldset>
 
                   <fieldset class="outline">
-                    <legend>Pièces de l'immeuble</legend>
+                    <legend><%= image_tag("icons/puzzle.png")%> - Pièces de l'immeuble</legend>
                         <div class="section outline">
                             <div class="one column"><%= f.input :nb_piece_princ, :as => :select, :collection => 1..20 %></div>
                             <div class="five column"></div>
@@ -35,14 +39,14 @@
 
 
                   <fieldset class="outline">
-                  <legend>Parcelles</legend>
+                  <legend><%= image_tag("icons/layer-shape-polygon.png")%> - Parcelles</legend>
                       <%= f.simple_fields_for :parcelles do |builder| %>
                         <%= render "parcelles/form", :f => builder %>
                       <% end %>
                       <p><%= link_to_add_fields "Ajouter une parcelle", f, :parcelles %></p>
                   </fieldset>
                 <fieldset class="outline top">
-                <legend>Alimentation en eau potable</legend>
+                <legend><%= image_tag("icons/counter.png")%> - Alimentation en eau potable</legend>
                   <%= f.simple_fields_for :compteurs do |compt| %>
                     <%= render "compteurs/form", :f => compt %>
                   <% end %>
@@ -51,17 +55,22 @@
 
             </div>
 
-              <div class="six column top">
+            <div class="six column top">
                 <fieldset class="outline">
-                <legend>Usagers de l'immeuble</legend>
+                <legend><%= image_tag("icons/users.png")%> - Usagers de l'immeuble</legend>
                     <%= f.simple_fields_for :users do |builder| %>
                     <%= render "users/form", :f => builder %>
                   <% end %>
                 <p><%= link_to_add_fields "Ajouter propriétaire/occupant", f, :users %></p>
                 </fieldset>
-              </div>
+            </div>
           </div> <!--fin fields-->
-  <p><%= f.submit %></p>
-<% end %>
+
+  <p><%= submit_or_cancel(f)%></p>
+
+<% end %> <!-- fin simple_form-->
+
 </div>
+
+
 

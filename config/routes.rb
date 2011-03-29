@@ -7,16 +7,16 @@ SpancMan1::Application.routes.draw do
   resource :sessions
   resources :users
 
+  #match 'dossiers/:reference' => 'dossiers#show'
+
+
   root :to => 'dossiers#index'
 
   resources :listes
 
   resources :dossiers do
-    resources :immeubles
+    resources :immeubles, :users
   end
-
-
-  resources :compteurs
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

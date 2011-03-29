@@ -5,8 +5,7 @@
     <%= stylesheet_link_tag "reset.css","typography.css","forms.css","fluid.gs.css", :media => 'screen, projection' %>
     <%= stylesheet_link_tag 'application.css', :media => 'screen, projection' %>
     <%= stylesheet_link_tag 'print.css', :media => 'print' %>
-    <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/capitano/jquery-ui.css"%>
-    <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js", "application" %>
+    <%= javascript_include_tag "jquery.min.js", "jquery-ui.min.js", "application", "rails" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
@@ -19,7 +18,7 @@
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
     <% end %>
     <div class="body">
-      <%= content_tag :h1, yield(:title) if show_title? %>
+      <% content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
     </div>
   </div>
