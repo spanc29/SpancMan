@@ -6,9 +6,8 @@
     <div class="section">
       <div class="two column"><%= f.input :ref_compteur, :label => 'référence compteur' %></div>
       <div class="two column"><%= f.input :conso_moyenne %></div>
-      <div class="two column center"><%= link_to_remove_fields "effacer", f %>
-      </div>
+      <div class="two column center"><%= link_to_remove_fields "effacer", f %></div>
     </div>
-<%= f.input :commentaire, :as => :string %>
+  <%= f.input :commentaire, :as => :string %>
 </div>
 

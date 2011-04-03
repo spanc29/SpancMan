@@ -73,5 +73,6 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .cancel:before{content: url("../images/icons/cross-small.png");vertical-align: middle;}
 
 /*c
-.dossier { background: url("../images/icons/folder-horizontal.png") no-repeat scroll left center transparent;}
+
+li a { background: url("../images/icons/folder-horizontal.png") no-repeat scroll left center transparent; padding-left: 20px;}
 */

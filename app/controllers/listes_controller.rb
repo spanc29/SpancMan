@@ -12,7 +12,7 @@ class ListesController < ApplicationController
   def create
     @liste = Liste.new(params[:liste])
     if @liste.save
-      redirect_to listes_url, :notice => "Successfully created liste."
+      redirect_to listes_url, :notice => "Entrée correctement créée"
     else
       render :action => 'new'
     end
@@ -25,7 +25,7 @@ class ListesController < ApplicationController
   def update
     @liste = Liste.find(params[:id])
     if @liste.update_attributes(params[:liste])
-      redirect_to listes_url, :notice  => "Successfully updated liste."
+      redirect_to listes_url, :notice  => "Entrée mise à jour"
     else
       render :action => 'edit'
     end

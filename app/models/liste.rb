@@ -11,7 +11,7 @@ class Liste < ActiveRecord::Base
   scope :etat, where(:pour => 'état')
   scope :type_habitat, where(:pour => 'type habitat')
   scope :type_adresse, where(:pour => 'type adresse')
-  scope :type_mail, where(:pour => 'type adresse')
+  scope :type_mail, where(:pour => 'type mail')
 
 
   #tri par défaut

@@ -15,5 +15,13 @@ module ApplicationHelper
   def submit_or_cancel(form, buto="enregistrer")
     (form.submit buto) + " ou " + link_to('abandon', 'javascript:history.go(-1);', :class => 'cancel')
   end
+
+  def img_boolean(test ='false',tex = 'faux')
+      if test
+      image_tag("icons/tick-white.png", :alt => tex, :title => tex, :class =>"class")
+      else
+      image_tag("icons/blank.png", :alt => tex, :title => tex, :class =>"class")
+      end
+  end
 end
 

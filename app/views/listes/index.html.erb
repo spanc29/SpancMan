@@ -5,8 +5,8 @@
 <p><%= link_to "Ajouter une entrée", new_liste_path, :class =>'ajout' %></p>
 
 
-<% @liste_by_partie.each do |lis,pours| %>
-  <h2><%= lis %></h2>
+<% @liste_by_partie.each do |list,pours| %>
+  <h2><%= list %></h2>
     <%= table_for(pours) do |t|
     t.data :pour, :nom, :actions => [:edit,:destroy]
     end %>

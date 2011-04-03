@@ -19,7 +19,7 @@
 
     <div class="two column">
     <%= sort_link(@search, 'secteur','secteur') %>
-    <%= f.input :secteur_contains, :label => false, :collection => Liste.secteur , :label_method => 'nom' %>
+    <%= f.input :secteur_contains, :label => false, :collection => Adress.commune, :label_method => 'commune' %>
 </div>
     <div class="two column">
     <%= sort_link(@search, 'secteur','secteur') %>
@@ -41,7 +41,12 @@
     <% @dossiers.each do |dossier|%>
       <div class="<%= cycle('odd','even') %>">
         <div class="one column border">
-        <%= link_to(dossier.reference, dossier)%>
+        <%= link_to(dossier.reference.upcase, dossier)%><br/>
+        <% dossier.immeubles.principal.each do |imm| %>
+            <% for comm in imm.adresses.principale%>
+              <%= comm.commune %>
+              <% end %>
+          <% end %>
         </div>
         <div class="two column border">
           <% Liste.secteur.where(:id => dossier.secteur).each do |t| %>
@@ -51,10 +56,11 @@
         </div>
         <div class="two column border">
           <%= l(dossier.updated_at.to_date) %>
-          C'est officiel : la communauté internationale va attaquer la Libye. Le Conseil de sécurité de l'ONU a en effet voté jeudi soir en faveur d'un recours à la force contre les troupes du colonel Mouammar Kadhafi, ouvrant la voie à des frappes aériennes en Libye. La résolution adoptée par le Conseil autorise «toutes les mesures nécessaires» pour protéger les civils et imposer un cessez-le-feu à l'armée libyenne.
         </div>
         <div class="two column">
-          des trucs
+          <% dossier.users.each do |proprio|%>
+              <%= proprio.username %><br/>
+           <%end%>
         </div>
         <div class="two column">
           des trucs

@@ -1,20 +1,28 @@
 <div class="container">
 
+
+
 <table>
   <tbody>
-    <tr><td>dossier :</td><td><div class="large">
-    <% @dossier.immeubles.each do |immeu|%>
-      <% immeu.users.proprio_destinat.each do |prop|%>
-          <%= prop.username %>
-       <%end%>
-    </div></td></tr>
-    <tr><td>adresse :</td><td>
-      <% immeu.adresses.principale.each do |adr|%>
-      <%= adr.numero_rue %> <%= adr.contenu %><br/>
-      <%= adr.code_postal%> <%= adr.commune %>
+    <tr><td>adresse imm. principal :</td><td>
+      <% @dossier.immeubles.each do |immeu|%>
+        <% immeu.adresses.principale.each do |adr|%>
+          <%= adr.numero_rue %> <%= adr.contenu %><br/>
+          <%= adr.code_postal%> <%= adr.commune %>
        <%end%>
      <%end%>
     </td></tr>
+
+    <tr><td>Propriétaire principal :</td><td>
+    <div class="large">
+      <%= @proprio[0].username %>
+      <% @proprio[0].adresses.principale.each do |adr| %>
+        <%= adr.commune %>
+       <%end%>
+
+    </div></td></tr>
+
+
     <tr><td>secteur :</td>
     <td>
     <%= @list.nom %>

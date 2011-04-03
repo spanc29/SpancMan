@@ -3,14 +3,11 @@ class ImmeublesController < ApplicationController
   set_tab :immeuble
 
   def index
-    @immeubles = @dossier.immeubles.all
+    @immeubles = @dossier.immeubles.order(:adresses => [:princ.desc,:created_at.asc]).joins(:adresses)
   end
 
   def show
     @immeuble = @dossier.immeubles.find(params[:id])
-    @compteur = Compteur.find_by_immeuble_id(:immeuble.id)
-
-
   end
 
   def new
@@ -27,7 +24,6 @@ class ImmeublesController < ApplicationController
   end
 
   def create
-  debugger
     @immeuble = @dossier.immeubles.new(params[:immeuble])
     if @immeuble.save
       redirect_to dossier_immeubles_path, :notice => "trop bien le nouvel immeuble"

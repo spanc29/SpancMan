@@ -1,21 +1,34 @@
 <table>
   <tr>
+    <th>Adresse</th>
+    <th>Usager(s)</th>
     <th>type habitat</th>
-    <th>Taux Occupation</th>
     <th>Annee Constr</th>
-    <th>Nb Piece Princ</th>
-    <th>Nb Eq Hab</th>
-    <th>Nb Eq Hab</th>
-    <th>Nb Eq Hab</th>
+    <th>Année renov</th>
+    <th>Nb piece princ</th>
+    <th>Nb Eq Hab mini</th>
+    <th>Nb Eq Hab maxi</th>
   </tr>
-  <% for immeuble in @immeubles %>
+
+  <% @immeubles.each do |immeuble| %>
+
     <tr>
     <td><% immeuble.adresses.each do |imm|%>
+            <div class="left">
+            <%= img_boolean(imm.princ, 'principale') %>
+            </div>
+
             <%= imm.numero_rue %>
             <%= imm.contenu %><br/>
             <%= imm.code_postal %>
             <strong><%= imm.commune.upcase %></strong>
+
      <%end%>
+     </td>
+     <td><% immeuble.users.each do |usager| %>
+            <%= usager.username %><br/>
+            <%= usager.fonction%>
+            <% end %>
      </td>
       <td><%= immeuble.type_habitat %></td>
       <td><%= immeuble.taux_occupation %></td>
