@@ -1,78 +1,70 @@
 <% title "LISTE DES DOSSIERS" %>
 <h1>LISTES DES DOSSIERS</h1>
 
- <div class="twelve_column section">
+<div class="twelve_column section">
     <!--
     recherche
     -->
-    <%= simple_form_for @search do |f| %>
-    <div class="one column">
-    <%= sort_link(@search, 'reference', 'Réf.SPANC') %>
-    <%= f.input :reference_contains, :as => :search, :label => false %>
-    </div>
-
-    <div class="two column">
-    <%= sort_link(@search, 'secteur','secteur') %>
-    <%= f.input :secteur_contains, :label => false, :collection => Liste.secteur , :label_method => 'nom' %>
-
-    </div>
-
-    <div class="two column">
-    <%= sort_link(@search, 'secteur','secteur') %>
-    <%= f.input :secteur_contains, :label => false, :collection => Adress.commune, :label_method => 'commune' %>
-</div>
-    <div class="two column">
-    <%= sort_link(@search, 'secteur','secteur') %>
-    <%= f.input :secteur_contains, :label => false, :collection => Liste.secteur , :label_method => 'nom' %>
-</div>
-    <div class="two column">
-    ghj</div>
-    <%= f.button :submit %>
-    <% end %>
-    <%= link_to 'RAZ', root_path %>
-    <!--
-    fin recherche
-    -->
-
-
-
-
+  <div class="nine column">
+  <table>
+  <caption>nombre dossiers (trouvé/total) : <%= @dossiers.count %> / <%= Dossier.all.count %></caption>
+    <thead>
+      <tr>
+        <th><%= sort_link(@search, 'reference', 'Réf.SPANC') %></th>
+        <th><%= sort_link(@search, 'commune','commune') %></th>
+        <th><%= sort_link(@search, 'secteur','secteur') %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <%= simple_form_for @search do |f| %>
+        <td><span class="large"> <%= f.input :reference_contains, :as => :search, :label => false %></span></td>
+        <td><%= f.input :secteur_contains, :label => false, :collection => Liste.commune , :label_method => 'nom' %></td>
+        <td><%= f.input :secteur_contains, :label => false, :collection => Liste.secteur, :label_method => 'nom' %></td>
+        <td></td>
+        <td><%= f.button :submit %><%= link_to 'RAZ', root_path %></td>
+        <td></td>
+        <% end %>
+      </tr>
 
     <% @dossiers.each do |dossier|%>
-      <div class="<%= cycle('odd','even') %>">
-        <div class="one column border">
-        <%= link_to(dossier.reference.upcase, dossier)%><br/>
-        <% dossier.immeubles.principal.each do |imm| %>
-            <% for comm in imm.adresses.principale%>
-              <%= comm.commune %>
-              <% end %>
-          <% end %>
-        </div>
-        <div class="two column border">
-          <% Liste.secteur.where(:id => dossier.secteur).each do |t| %>
+      <%= content_tag_for(:tr,dossier) do %>
+        <td><%= link_to(dossier.reference.upcase, dossier)%></td>
+        <td><% Liste.commune.where(:id => dossier.commune).each do |t| %>
           <%= t.nom %>
-          <%end%>
-          <%= dossier.archivage  %>
-        </div>
-        <div class="two column border">
-          <%= l(dossier.updated_at.to_date) %>
-        </div>
-        <div class="two column">
-          <% dossier.users.each do |proprio|%>
+        <%end%></td>
+        <td><% Liste.secteur.where(:id => dossier.secteur).each do |t| %>
+          <%= t.nom %>
+          <%end%></td>
+        <td><% dossier.users.each do |proprio|%>
               <%= proprio.username %><br/>
-           <%end%>
-        </div>
-        <div class="two column">
-          des trucs
-        </div>
-      </div>
-    <%end%>
+           <%end%></td>
+        <td></td>
+        <td></td>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+
+
+
+  </div>
+
 
 
   <div class="three column">
-    <div class="container box"> <%= link_to 'creer un dossier', new_dossier_path, :class => 'link ajout' %></div>
-    Gérer :
-    <ul class="container box">
-      <li><%= link_to 'Listes des termes', listes_path, :class =>"edit_link"%></li>
+    <div class="container box"> <%= link_to 'creer un dossier', new_dossier_path, :class => 'link ajout' %><br/>
+    </div>
+    <div class="container box">
+        <p>Gérer :</p>
+      <%= link_to 'Listes des termes', listes_path, :class =>"edit_link"%>
+    </div>
+    <div class="container info">
+      <p>cliquer sur le numero de dossier pour le voir</p>
+    </div>
   </div>
+
 </div>

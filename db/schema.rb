@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110329194628) do
+ActiveRecord::Schema.define(:version => 20110403203659) do
 
   create_table "adresses", :force => true do |t|
     t.integer  "numero_rue"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20110329194628) do
     t.text     "commentaire"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "commune"
   end
 
   create_table "groupes", :force => true do |t|

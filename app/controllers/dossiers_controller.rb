@@ -45,7 +45,7 @@ class DossiersController < ApplicationController
   def destroy
     @dossier = Dossier.find(params[:id])
     @dossier.destroy
-    redirect_to dossiers_url, :notice => "Successfully destroyed dossier."
+    redirect_to dossiers_url, :notice => "Dossier détruit définitivement."
   end
 
 

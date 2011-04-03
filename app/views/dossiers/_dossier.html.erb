@@ -1,14 +1,13 @@
-<div class="container">
-
-
+<div class="container outline">
 
 <table>
   <tbody>
+    <tr><td>Nombre d'immeubles dans le dossier :</td><td><%= @dossier.immeubles.count %></td></tr>
     <tr><td>adresse imm. principal :</td><td>
       <% @dossier.immeubles.each do |immeu|%>
         <% immeu.adresses.principale.each do |adr|%>
           <%= adr.numero_rue %> <%= adr.contenu %><br/>
-          <%= adr.code_postal%> <%= adr.commune %>
+          <%= adr.code_postal%> <%= adr.commune %><br/>
        <%end%>
      <%end%>
     </td></tr>
@@ -16,9 +15,6 @@
     <tr><td>Propriétaire principal :</td><td>
     <div class="large">
       <%= @proprio[0].username %>
-      <% @proprio[0].adresses.principale.each do |adr| %>
-        <%= adr.commune %>
-       <%end%>
 
     </div></td></tr>
 
@@ -27,15 +23,14 @@
     <td>
     <%= @list.nom %>
     </td></tr>
-      <tr><td>commentaires</td><td><%= simple_format @dossier.commentaire %></td></tr>
+      <tr><td>commentaires</td><td></td></tr>
   </tbody>
 </table>
-      <p><%= @dossier.immeubles.count %>
+      <p>
       </p>
       commentaires :
-
-      <div class="info">
-
+      <div class="box">
+        <%= simple_format @dossier.commentaire %>
       </div>
 <span class="small quiet right"> créé le <%= l(@dossier.created_at.to_date) %> - modifié le <%= l(@dossier.updated_at.to_date) %></span>
 </div>

@@ -38,6 +38,7 @@ class ImmeublesController < ApplicationController
 
   def update
     @immeuble = @dossier.immeubles.find(params[:id])
+
     if @immeuble.update_attributes(params[:immeuble])
       redirect_to dossier_immeubles_path, :notice  => "immeuble correctement ravalé ou modifié"
     else

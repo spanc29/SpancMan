@@ -9,6 +9,7 @@ class Liste < ActiveRecord::Base
   scope :secteur, where(:pour => 'secteur')
   scope :piece, where(:pour => 'pièce')
   scope :etat, where(:pour => 'état')
+  scope :commune, where(:pour => 'commune')
   scope :type_habitat, where(:pour => 'type habitat')
   scope :type_adresse, where(:pour => 'type adresse')
   scope :type_mail, where(:pour => 'type mail')

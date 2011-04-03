@@ -12,5 +12,4 @@ class Dossier < ActiveRecord::Base
   has_many :immeubles, :dependent => :destroy
   accepts_nested_attributes_for :immeubles
 
-  default_scope order('reference')
 end
