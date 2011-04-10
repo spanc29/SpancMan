@@ -1,28 +1,28 @@
-<% title "Immeuble" %>
+<% title @immeuble.id %>
 
+<% @immeuble.adresses.each do |adresse|%>
 <p>
   <strong>Numero Rue:</strong>
-  <%= @immeuble.numero_rue %>
-</p>
-<p>
+  <%= adresse.numero_rue %>
   <strong>Adress:</strong>
-  <%= @immeuble.adresse %>
+  <%= adresse.contenu %>
 </p>
 <p>
   <strong>Code Postal:</strong>
-  <%= @immeuble.code_postal %>
+  <%= adresse.code_postal %>
 </p>
 <p>
   <strong>Commune:</strong>
-  <%= @immeuble.commune %>
+  <%= adresse.commune %>
 </p>
+<% end %>
 <p>
   <strong>Residence:</strong>
-  <%= @immeuble.residence %>
+
 </p>
 <p>
   <strong>Taux Occupation:</strong>
-  <%= @immeuble.taux_occupation %>
+    <%= @immeuble.taux_occupation%>
 </p>
 <p>
   <strong>Annee Constr:</strong>
@@ -33,10 +33,6 @@
   <%= @immeuble.nb_piece_princ %>
 </p>
 <p>
-  <strong>Nb Eq Hab:</strong>
-  <%= @immeuble.nb_eq_hab %>
-</p>
-<p>
   <strong>Dossier:</strong>
   <%= @immeuble.dossier_id %>
 </p>
@@ -44,5 +40,4 @@
 <p>
   <%= link_to "Edit", edit_dossier_immeuble_path(@immeuble) %> |
   <%= link_to "Destroy", [@dossier,@immeuble], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", immeubles_path %>
 </p>

@@ -6,9 +6,7 @@
       <%= f.input :etat %>
       <%= f.input :reference, :hint => 'obligatoire' %>
       <%= f.input :archivage %>
-
       <%= f.input :secteur, :collection => Liste.secteur.all(:order => 'nom'), :label_method => 'nom', :as => :radio %><br/><br/>
-
       <fieldset>
       <legend>coordonnées</legend>
       <%= f.input :coordx, :label => 'x ', :input_html => { :size => '8'}%>
@@ -19,7 +17,7 @@
 <div class="two column">
   <fieldset>
     <legend>commentaire</legend>
-    <%= f.input :tag_list %>
+    <%= f.input :tag_list, :label =>'mots clés' %>
     <%= f.input :commentaire, :input_html => { :rows => 3, :cols => 60 }%>
   </fieldset>
   <%= f.button :submit%>

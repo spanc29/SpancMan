@@ -1,6 +1,10 @@
 class DossiersController < ApplicationController
   set_tab :dossier
 
+  def tag_cloud
+      @tags = Post.tag_counts_on(:tags)
+  end
+
   def index
     @search = Dossier.search(params[:search])
     @dossiers = @search.all

@@ -1,5 +1,7 @@
 SpancMan1::Application.routes.draw do
 
+  resources :installations
+
   match 'user/edit' => 'users#edit', :as => :edit_current_user
   match 'signup' => 'users#new', :as => :signup
   match 'logout' => 'sessions#destroy', :as => :logout
@@ -15,7 +17,7 @@ SpancMan1::Application.routes.draw do
   resources :listes
 
   resources :dossiers do
-    resources :immeubles, :users
+    resources :immeubles, :users, :installations
   end
 
   # The priority is based upon order of creation:

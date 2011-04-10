@@ -1,23 +1,26 @@
+<div class="outline">
+
 <table>
+  <thead>
   <tr>
+    <th>N°</th>
     <th>Adresse</th>
-    <th>Usager(s)</th>
+    <th>liste Usager(s)</th>
     <th>type habitat</th>
+    <th>taux occupation</th>
     <th>Annee Constr</th>
     <th>Année renov</th>
     <th>Nb piece princ</th>
     <th>Nb Eq Hab mini</th>
     <th>Nb Eq Hab maxi</th>
   </tr>
-
+  </thead>
   <% @immeubles.each do |immeuble| %>
 
     <tr>
+    <td><%= immeuble.number %><br/>
+        <%= img_boolean(immeuble.number, 'adresse dossier') %></td>
     <td><% immeuble.adresses.each do |imm|%>
-            <div class="left">
-            <%= img_boolean(imm.princ, 'principale') %>
-            </div>
-
             <%= imm.numero_rue %>
             <%= imm.contenu %><br/>
             <%= imm.code_postal %>
@@ -26,8 +29,7 @@
      <%end%>
      </td>
      <td><% immeuble.users.each do |usager| %>
-            <%= usager.username %><br/>
-            <%= usager.fonction%>
+            <%= link_to usager.username, [usager], :class =>"show_link" %> : <%= usager.fonction%>
             <% end %>
      </td>
       <td><%= immeuble.type_habitat %></td>
@@ -37,7 +39,11 @@
       <td><%= immeuble.nb_piece_princ %></td>
       <td><%= immeuble.nb_eq_hab_min %></td>
       <td><%= immeuble.nb_eq_hab_max %></td>
-      <td><%= link_to 'modifier', edit_dossier_immeuble_path(@dossier,immeuble) %></td>
+      <td>
+      <%= link_to "Voir", [@dossier,immeuble] %> |
+      <%= link_to 'Modifier', edit_dossier_immeuble_path(@dossier,immeuble) %>
+      </td>
       </tr>
   <% end %>
 </table>
+</div>

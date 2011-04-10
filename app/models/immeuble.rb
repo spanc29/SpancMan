@@ -14,5 +14,5 @@ class Immeuble < ActiveRecord::Base
   accepts_nested_attributes_for :users, :reject_if =>  lambda { |a| a[:username].blank? }, :allow_destroy => true
 
 
-  scope :principal, where(:adresses => {:princ =>true}).joins(:adresses)
+  scope :principal, where(:number => '1')
 end

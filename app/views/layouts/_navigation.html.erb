@@ -15,7 +15,7 @@
     <%= tab.accueil image_tag("icons/folders-stack.png", :size => "12x12", :alt => "liste dossiers"), dossiers_path %>
     <%= tab.dossier 'dossier', @dossier %>
     <%= tab.immeuble 'Immeuble(s)', dossier_immeubles_path(@dossier) %>
-    <%= tab.installation 'Installation(s)', listes_path %>
+    <%= tab.installation 'Installation(s)', dossier_installations_path(@dossier) %>
     <%= tab.entretien 'Entretien(s)', listes_path %>
     <%= tab.controle 'Contrôle(s)', listes_path %>
     <%= tab.projet 'Projet', listes_path %>

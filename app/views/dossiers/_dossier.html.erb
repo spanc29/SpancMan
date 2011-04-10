@@ -4,8 +4,9 @@
   <tbody>
     <tr><td>Nombre d'immeubles dans le dossier :</td><td><%= @dossier.immeubles.count %></td></tr>
     <tr><td>adresse imm. principal :</td><td>
-      <% @dossier.immeubles.each do |immeu|%>
-        <% immeu.adresses.principale.each do |adr|%>
+
+      <% @dossier.immeubles.principal.each do |immeu|%>
+        <% immeu.adresses.each do |adr|%>
           <%= adr.numero_rue %> <%= adr.contenu %><br/>
           <%= adr.code_postal%> <%= adr.commune %><br/>
        <%end%>

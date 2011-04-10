@@ -4,12 +4,18 @@
   <div class="six column">
 
       <fieldset class="outline">
+
       <legend><%= image_tag("icons/building.png")%> - Renseignements immeubles</legend>
           <div class="fields">
               <%= simple_form_for [@dossier,@immeuble] do |f| %>
+                  <% if @immeuble.number.blank? %>
+                    <%= f.input :number, :input_html => { :value => (@dossier.immeubles.count)+1}, :disabled =>true%>
+                  <% else %>
+                    <span class="large"> Immeuble n° : <%= @immeuble.number %></span>
+                  <% end %>
                   <%= f.simple_fields_for :adresses do |builder| %>
-                  <%= render "adresses/form_immeuble", :f => builder %>
-              <% end %>
+                    <%= render "adresses/form_immeuble", :f => builder %>
+                  <% end %>
               <div class="section">
                 <div class="two column"><%= f.input :type_habitat %></div>
                 <div class="two column"><%= f.input :taux_occupation %></div>
@@ -22,7 +28,7 @@
       <fieldset class="outline">
       <legend><%= image_tag("icons/puzzle.png")%> - Pièces de l'immeuble</legend>
           <div class="section outline">
-            <div class="one column"><%= f.input :nb_piece_princ, :as => :select, :collection => 1..20 %></div>
+            <div class="one column"><%= f.input :nb_piece_princ, :collection => 1..20 %></div>
             <div class="five column"></div>
           </div>
             <%= f.simple_fields_for :liste_pieces do |builder| %>

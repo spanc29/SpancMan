@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110403203659) do
+ActiveRecord::Schema.define(:version => 20110410191320) do
 
   create_table "adresses", :force => true do |t|
     t.integer  "numero_rue"
@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(:version => 20110403203659) do
     t.text     "commentaire"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "commune"
   end
 
   create_table "groupes", :force => true do |t|
@@ -72,6 +71,14 @@ ActiveRecord::Schema.define(:version => 20110403203659) do
     t.integer  "nb_eq_hab_max"
     t.text     "commentaire"
     t.integer  "dossier_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "number"
+  end
+
+  create_table "installations", :force => true do |t|
+    t.integer  "dossier_id"
+    t.integer  "type_instal"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -155,6 +162,7 @@ ActiveRecord::Schema.define(:version => 20110403203659) do
     t.integer  "groupe_id"
     t.integer  "immeuble_id"
     t.boolean  "destinataire"
+    t.boolean  "redevable"
   end
 
 end
