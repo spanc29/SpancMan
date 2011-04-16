@@ -46,7 +46,7 @@ input.required,textarea.required, select.required {background-color: #f2e6e8;}
 
 input[type=text]:focus, input[type=password]:focus,input[type=checkbox]:focus,input.text:focus,input.numeric:focus,input.string:focus,textarea:focus, select:focus {
   border-color:#666;  background-color: #fff;}
-input[type=text], input[type=password],,input[type=checkbox],input.text, input.string,input.numeric,textarea, select {margin:2px 0;}
+input[type=text], input[type=password],input[type=checkbox],input.text, input.string,input.numeric, textarea, select {margin:2px 0;}
 
 input[type=submit] {font-size:1.2em;background:#235485;color:#fff;}
 input[type=submit]:hover {background:#666;}

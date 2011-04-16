@@ -2,7 +2,7 @@
   <div class="one column"><%= f.input :piece, :collection => Liste.piece.all(:order => 'nom'), :label_method => 'nom', :as => :select %></div>
   <div class="one column"><%= f.input :details %></div>
   <div class="one column"><%= f.input :surface%></div>
-  <div class="one column center"><%= f.input :genere_EU %></div>
-  <div class="one column center"><%= f.input :est_piece_princ %></div>
+  <div class="one column center"><%= f.input :genere_EU%></div>
+  <div class="one column center"><%= f.input :est_piece_princ%></div>
   <div class="one column center"><%= link_to_remove_fields "effacer", f %></div>
 </div>

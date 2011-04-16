@@ -1,5 +1,7 @@
 SpancMan1::Application.routes.draw do
 
+  resources :pretraitements
+
   resources :installations
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user

@@ -5,7 +5,8 @@
     <%= stylesheet_link_tag "reset.css","typography.css","forms.css","fluid.gs.css", :media => 'screen, projection' %>
     <%= stylesheet_link_tag 'application.css', :media => 'screen, projection' %>
     <%= stylesheet_link_tag 'print.css', :media => 'print' %>
-    <%= javascript_include_tag "jquery.min.js", "jquery-ui.min.js", "application", "rails" %>
+    <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/cupertino/jquery-ui.css"%>
+    <%= javascript_include_tag "http://code.jquery.com/jquery-latest.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js", "application" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>

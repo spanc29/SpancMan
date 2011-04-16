@@ -2,10 +2,11 @@
 <%= render ('layouts/navigation') %>
 
 <div class="twelve_column section">
-  <div class="nine_column border">
+  <div class="ten column border">
   <%= render 'immeuble' %>
   </div>
-  <div class="three column">
-  <div class="container box"><%= link_to "Ajouter un immeuble", new_dossier_immeuble_path(@dossier), :class => "ajout" %></div>
+  <div class="two column">
+  <div class="container box">
+  <%= link_to "Ajouter un immeuble", new_dossier_immeuble_path(@dossier), :class => "ajout" %></div>
   </div>
 </div>

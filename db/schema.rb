@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110410191320) do
+ActiveRecord::Schema.define(:version => 20110410203356) do
 
   create_table "adresses", :force => true do |t|
     t.integer  "numero_rue"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20110410191320) do
     t.text     "commentaire"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "commune"
   end
 
   create_table "groupes", :force => true do |t|
@@ -81,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20110410191320) do
     t.integer  "type_instal"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "date"
   end
 
   create_table "liste_pieces", :force => true do |t|
@@ -129,6 +131,20 @@ ActiveRecord::Schema.define(:version => 20110410191320) do
     t.datetime "updated_at"
     t.integer  "phonable_id"
     t.string   "phonable_type"
+  end
+
+  create_table "pretraitements", :force => true do |t|
+    t.integer  "type_pretr"
+    t.integer  "materiau"
+    t.integer  "volume"
+    t.text     "origine"
+    t.string   "sortie"
+    t.integer  "installation_id"
+    t.boolean  "ecoulement"
+    t.integer  "vue"
+    t.boolean  "etancheite"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "taggings", :force => true do |t|

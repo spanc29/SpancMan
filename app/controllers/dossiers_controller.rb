@@ -15,7 +15,7 @@ class DossiersController < ApplicationController
   def show
     @dossier = Dossier.find(params[:id])
     @proprio = @dossier.users.where(:destinataire => true & {:immeuble => {:dossier_id => params[:id]}}).joins(:immeuble)
-    @list = Liste.find_by_id(@dossier.secteur)
+    @list_sect = Liste.find_by_id(@dossier.secteur)
   end
 
   def new

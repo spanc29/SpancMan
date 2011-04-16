@@ -15,4 +15,5 @@ class Immeuble < ActiveRecord::Base
 
 
   scope :principal, where(:number => '1')
+  default_scope order('number')
 end
