@@ -12,7 +12,12 @@ module ApplicationHelper
     link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")", :class => "ajout")
   end
 
-
+  def link_to_dd_fields(name, f, association)
+    new_object = f.object.class.reflect_on_association(association).klass.new
+    fields = f.simple_fields_for(association, new_object, :child_index => "new_#{association}") do |builder|
+      render(association.to_s + "/form", :f => builder)
+    end
+  end
 
 
   def submit_or_cancel(form, buton="enregistrer")

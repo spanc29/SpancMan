@@ -17,6 +17,12 @@ $(function() {
       helper: "clone",
     });
 
+    $( "#dragajout" ).draggable({
+      appendTo: "body",
+      helper: "clone",
+      revert: true
+    });
+
     $('.bunga').bind('drop', function( event, ui ) {
       $(this).insertAtCaret(ui.draggable.text());
       });
@@ -26,7 +32,12 @@ $(function() {
       accept: "#liste li"
       });
 
+    $('.hide').hide();
 
+    $( "#DropZone" ).droppable({
+      accept: "#dragajout",
+      activeClass: "ui-state-hover",
+    });
 
     $('.ajout').click(function(event){
       $('.bunga').bind('drop', function( event, ui ) {
