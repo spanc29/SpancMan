@@ -17,13 +17,13 @@ $(function() {
       helper: "clone",
     });
 
-    $( "#dragajout" ).draggable({
+    $( "#dragajout li" ).draggable({
       appendTo: "body",
       helper: "clone",
-      revert: true
     });
 
     $('.bunga').bind('drop', function( event, ui ) {
+      greedy= true;
       $(this).insertAtCaret(ui.draggable.text());
       });
 
@@ -32,21 +32,21 @@ $(function() {
       accept: "#liste li"
       });
 
-    $('.hide').hide();
+//cache le formulaire
+    $('#cachecache').hide();
 
+//zone de depose des formulaires
     $( "#DropZone" ).droppable({
-      accept: "#dragajout",
+      accept: "#dragajout li", // venant de dragajout
       activeClass: "ui-state-hover",
-    });
-
-    $('.ajout').click(function(event){
-      $('.bunga').bind('drop', function( event, ui ) {
-      $(this).insertAtCaret(ui.draggable.text());
-      });
-
-    });
-
+      drop: function( event, ui ) {
+        $(this).find( ".placeholder" ).remove(); //retire l'indication
+        $('#cachecache').clone().appendTo( this );
+        $('#cachecache').show();
+      }
   });
+
+    });
 
 
 $.fn.insertAtCaret = function (myValue) {
