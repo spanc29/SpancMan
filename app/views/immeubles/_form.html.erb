@@ -34,7 +34,7 @@
             <%= f.simple_fields_for :liste_pieces do |builder| %>
               <%= render "liste_pieces/form", :f => builder %>
             <% end %>
-          <p><%= link_to_add_fields "Ajouter une pièce", f, :liste_pieces %></p>
+          <p><%= link_to_add_fields "Ajouter une pièce",'this', f, :liste_pieces %></p>
       </fieldset>
 
       <fieldset class="outline">
@@ -42,7 +42,7 @@
             <%= f.simple_fields_for :parcelles do |builder| %>
               <%= render "parcelles/form", :f => builder %>
             <% end %>
-            <p><%= link_to_add_fields "Ajouter une parcelle", f, :parcelles %></p>
+            <p><%= link_to_add_fields "Ajouter une parcelle",'this', f, :parcelles %></p>
       </fieldset>
 
 
@@ -51,7 +51,7 @@
             <%= f.simple_fields_for :compteurs do |compt| %>
               <%= render "compteurs/form", :f => compt %>
             <% end %>
-        <p><%= link_to_add_fields "Ajouter AEP", f, :compteurs %></p>
+        <p><%= link_to_add_fields "Ajouter AEP",'this',f, :compteurs %></p>
       </fieldset>
   </div>
 
@@ -61,7 +61,7 @@
                     <%= f.simple_fields_for :users do |builder| %>
                       <%= render "users/form", :f => builder %>
                     <% end %>
-                <p><%= link_to_add_fields "Ajouter propriétaire/occupant", f, :users %></p>
+                <p><%= link_to_add_fields "Ajouter propriétaire/occupant",'this', f, :users %></p>
                 </fieldset>
   </div>
  </div>

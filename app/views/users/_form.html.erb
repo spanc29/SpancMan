@@ -11,19 +11,19 @@
 <%= f.simple_fields_for :adresses do |builder| %>
 <%= render "adresses/form", :f => builder %>
 <% end %>
-<p><%= link_to_add_fields "Ajouter une adresse", f, :adresses %></p>
+<p><%= link_to_add_fields "Ajouter une adresse",'this', f, :adresses %></p>
 </div>
 <div>
 <%= f.simple_fields_for :phones do |builder| %>
 <%= render "phones/form", :f => builder %>
 <% end %>
-<p><%= link_to_add_fields "Ajouter un téléphone", f, :phones %></p>
+<p><%= link_to_add_fields "Ajouter un téléphone",'this', f, :phones %></p>
 </div>
 <div>
 <%= f.simple_fields_for :mails do |builder| %>
 <%= render "mails/form", :f => builder %>
 <% end %>
-<p><%= link_to_add_fields "Ajouter une mail", f, :mails %></p>
+<p><%= link_to_add_fields "Ajouter une mail",'this', f, :mails %></p>
 </div>
 
 </div>

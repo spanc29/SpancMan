@@ -1,5 +1,7 @@
 SpancMan1::Application.routes.draw do
 
+  resources :traitements
+
   resources :pretraitements
 
   resources :installations

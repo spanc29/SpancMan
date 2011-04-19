@@ -9,43 +9,28 @@ function add_fields(link, association, content) {
     $(link).parent().before(content.replace(regexp, new_id));
 }
 
-$(function() {
-    $( "#liste" ).accordion({autoHeight: false,});
 
+$(function() {
+    $( "#liste" ).accordion({autoHeight: false});
+
+// zone de drag
     $( "#liste li" ).draggable({
       appendTo: "body",
       helper: "clone",
     });
 
-    $( "#dragajout li" ).draggable({
-      appendTo: "body",
-      helper: "clone",
-    });
-
-    $('.bunga').bind('drop', function( event, ui ) {
-      greedy= true;
-      $(this).insertAtCaret(ui.draggable.text());
-      });
+//zone de depose
 
     $('.bunga').droppable({
       hoverClass: "ui-state-hover",
       accept: "#liste li"
+    });
+
+//zone de code
+
+    $('.bunga').bind('drop', function( event, ui ) {
+      $(this).insertAtCaret(ui.draggable.text());
       });
-
-//cache le formulaire
-    $('#cachecache').hide();
-
-//zone de depose des formulaires
-    $( "#DropZone" ).droppable({
-      accept: "#dragajout li", // venant de dragajout
-      activeClass: "ui-state-hover",
-      drop: function( event, ui ) {
-        $(this).find( ".placeholder" ).remove(); //retire l'indication
-        $('#cachecache').clone().appendTo( this );
-        $('#cachecache').show();
-      }
-  });
-
     });
 
 

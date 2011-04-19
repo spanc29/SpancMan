@@ -15,7 +15,7 @@ html>body { font-size: 14px; }
 h1 img, h2 img, h3 img,h4 img, h5 img, h6 img {margin: 0;}
 
 
-p { margin: 1.5em  0; font-size: 1em; line-height: 1.5em; }
+p { margin: 1em  0; font-size: 1em; line-height: 1.5em; }
 h1 { margin: 0.5em 0; font-size: 3em; line-height: 0.5em;}
 h2 { margin: 0.75em 0; font-size: 2em; line-height: 0.75em; }
 h3 { margin: 1.3125em 0; font-size: 1.1429em; line-height: 1.3125em; }

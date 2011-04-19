@@ -5,6 +5,8 @@ a, a:link, a:visited{ color: #2A5685; text-decoration: none; }
 a:hover, a:active{ color: #458dd9; text-decoration: underline;}
 img {vertical-align: middle;}
 
+.cache {display: none;}
+
 
 /* mise en page*/
 #top-menu {background: #2C4056; color: #fff; height:1.8em; font-size: 0.8em; padding: 2px 2px 0px 6px;}

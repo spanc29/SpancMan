@@ -4,21 +4,13 @@ module ApplicationHelper
     f.hidden_field(:_destroy) + link_to_function(image_tag("icons/cross-circle.png",:alt => "effacer",:title => "effacer"), "remove_fields(this)")
   end
 
-  def link_to_add_fields(name, f, association)
+  def link_to_add_fields(name, where, f, association)
     new_object = f.object.class.reflect_on_association(association).klass.new
     fields = f.simple_fields_for(association, new_object, :child_index => "new_#{association}") do |builder|
       render(association.to_s + "/form", :f => builder)
     end
-    link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")", :class => "ajout")
+    link_to_function(name, "add_fields(#{where}, \"#{association}\", \"#{escape_javascript(fields)}\")", :class => "ajout")
   end
-
-  def link_to_dd_fields(f, association)
-    new_object = f.object.class.reflect_on_association(association).klass.new
-    fields = f.simple_fields_for(association, new_object, :child_index => "new_#{association}") do |builder|
-      render(association.to_s + "/form", :f => builder)
-    end
-  end
-
 
   def submit_or_cancel(form, buton="enregistrer")
     (form.submit buton) + " ou " + link_to('abandon', 'javascript:history.go(-1);', :class => 'cancel')
@@ -31,6 +23,11 @@ module ApplicationHelper
       else
       image_tag("icons/blank.png", :alt => tex, :title => tex, :class =>"class")
       end
+  end
+
+  def nom_de_liste(id)
+    @bla = Liste.find_by_id(id)
+    return @bla.nom
   end
 
 end
