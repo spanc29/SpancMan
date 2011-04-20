@@ -13,7 +13,7 @@ class Liste < ActiveRecord::Base
   scope :type_habitat, where(:pour => 'type habitat')
   scope :type_adresse, where(:pour => 'type adresse')
   scope :type_mail, where(:pour => 'type mail')
-  scope :type_instal, where(:pour => 'type installation')
+  scope :type_install, where(:pour => 'type installation')
 
 
   #tri par défaut

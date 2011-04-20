@@ -10,14 +10,13 @@ function add_fields(link, association, content) {
 
 }
 
-
-
 $(function() {
 
-    $( "#liste" ).accordion({autoHeight: false});
+    $( "#liste" ).accordion({autoHeight: false}).hide();
 
     $(".clique").click(function(event){
 
+    $('#liste').show();
 // zone de drag
     $( "#liste li" ).draggable({
       appendTo: "body",
