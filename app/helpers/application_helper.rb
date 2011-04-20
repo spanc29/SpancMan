@@ -9,7 +9,7 @@ module ApplicationHelper
     fields = f.simple_fields_for(association, new_object, :child_index => "new_#{association}") do |builder|
       render(association.to_s + "/form", :f => builder)
     end
-    link_to_function(name, "add_fields(#{where}, \"#{association}\", \"#{escape_javascript(fields)}\")", :class => "ajout")
+    link_to_function(name, "add_fields(#{where}, \"#{association}\", \"#{escape_javascript(fields)}\")", :class => "ajout clique")
   end
 
   def submit_or_cancel(form, buton="enregistrer")
@@ -23,11 +23,6 @@ module ApplicationHelper
       else
       image_tag("icons/blank.png", :alt => tex, :title => tex, :class =>"class")
       end
-  end
-
-  def nom_de_liste(id)
-    @bla = Liste.find_by_id(id)
-    return @bla.nom
   end
 
 end

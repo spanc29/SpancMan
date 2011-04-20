@@ -7,11 +7,16 @@ function add_fields(link, association, content) {
     var new_id = new Date().getTime();
     var regexp = new RegExp("new_" + association, "g");
     $(link).parent().before(content.replace(regexp, new_id));
+
 }
 
 
+
 $(function() {
+
     $( "#liste" ).accordion({autoHeight: false});
+
+    $(".clique").click(function(event){
 
 // zone de drag
     $( "#liste li" ).draggable({
@@ -28,10 +33,11 @@ $(function() {
 
 //zone de code
 
-    $('.bunga').bind('drop', function( event, ui ) {
+    $('.bunga').bind('drop', function( ev, ui ) {
       $(this).insertAtCaret(ui.draggable.text());
       });
     });
+  });
 
 
 $.fn.insertAtCaret = function (myValue) {
