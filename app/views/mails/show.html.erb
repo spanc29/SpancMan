@@ -1,0 +1,20 @@
+<% title "Mail" %>
+
+<p>
+  <strong>Email:</strong>
+  <%= @mail.email %>
+</p>
+<p>
+  <strong>Contact:</strong>
+  <%= @mail.contact_id %>
+</p>
+<p>
+  <strong>Liste:</strong>
+  <%= @mail.liste_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_mail_path(@mail) %> |
+  <%= link_to "Destroy", @mail, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", mails_path %>
+</p>

@@ -1,0 +1,20 @@
+<% title "Phone" %>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @phone.numero %>
+</p>
+<p>
+  <strong>Contact:</strong>
+  <%= @phone.contact_id %>
+</p>
+<p>
+  <strong>Liste:</strong>
+  <%= @phone.liste_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_phone_path(@phone) %> |
+  <%= link_to "Destroy", @phone, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", phones_path %>
+</p>

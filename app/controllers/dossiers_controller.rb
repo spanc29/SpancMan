@@ -27,7 +27,7 @@ class DossiersController < ApplicationController
     @dossier = Dossier.new(params[:dossier])
     letcaptital(@dossier.reference)
     if @dossier.save
-      redirect_to @dossier, :notice => "Dossier créé avec brio"
+      redirect_to new_dossier_immeuble_path(@dossier), :notice => "Dossier créé avec brio"
     else
       render :action => 'new'
     end

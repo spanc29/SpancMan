@@ -1,0 +1,23 @@
+<% title "Traitements" %>
+
+<table>
+  <tr>
+    <th>Type Traitement</th>
+    <th>Volume</th>
+    <th>Installation</th>
+    <th>Commentaire</th>
+  </tr>
+  <% for traitement in @traitements %>
+    <tr>
+      <td><%= traitement.type_traitement %></td>
+      <td><%= traitement.volume %></td>
+      <td><%= traitement.installation_id %></td>
+      <td><%= traitement.commentaire %></td>
+      <td><%= link_to "Show", traitement %></td>
+      <td><%= link_to "Edit", edit_traitement_path(traitement) %></td>
+      <td><%= link_to "Destroy", traitement, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Traitement", new_traitement_path %></p>

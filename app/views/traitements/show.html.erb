@@ -1,0 +1,24 @@
+<% title "Traitement" %>
+
+<p>
+  <strong>Type Traitement:</strong>
+  <%= @traitement.type_traitement %>
+</p>
+<p>
+  <strong>Volume:</strong>
+  <%= @traitement.volume %>
+</p>
+<p>
+  <strong>Installation:</strong>
+  <%= @traitement.installation_id %>
+</p>
+<p>
+  <strong>Commentaire:</strong>
+  <%= @traitement.commentaire %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_traitement_path(@traitement) %> |
+  <%= link_to "Destroy", @traitement, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", traitements_path %>
+</p>

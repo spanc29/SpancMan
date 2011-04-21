@@ -1,0 +1,16 @@
+<% title "Installation" %>
+
+<p>
+  <strong>Dossier:</strong>
+  <%= @installation.dossier_id %>
+</p>
+<p>
+  <strong>Type Instal:</strong>
+  <%= @installation.type_instal %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_installation_path(@installation) %> |
+  <%= link_to "Destroy", @installation, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", installations_path %>
+</p>

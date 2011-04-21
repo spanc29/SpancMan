@@ -39,8 +39,8 @@
         <td><% Liste.secteur.where(:id => dossier.secteur).each do |t| %>
           <%= t.nom %>
           <%end%></td>
-        <td><% dossier.users.each do |proprio|%>
-              <%= proprio.username %><br/>
+        <td><% dossier.users.each do |proprio|  %>
+              <%= proprio.username if proprio.username%><br/>
            <%end%></td>
         <td></td>
         <td></td>

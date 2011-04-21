@@ -1,0 +1,28 @@
+<% title @user.username %>
+<%= render ('layouts/subnavigation') %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom Prénom</th>
+      <th>mail</th>
+      <th>photo</th>
+      <th>fonction</th>
+      <th>date arrivée</th>
+      <th>commentaire</th>
+      <th>destinataire</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @user.username %></td>
+      <td><%= @user.email %></td>
+      <td><%= @user.photo %></td>
+      <td><%= @user.fonction %></td>
+      <td><%= @user.date_arrivee %></td>
+      <td><%= @user.commentaire %></td>
+      <td><%= @user.destinataire %></td>
+    </tr>
+  </tbody>
+</table>

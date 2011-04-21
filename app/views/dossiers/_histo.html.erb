@@ -1,0 +1,25 @@
+<div class="one column">
+historique
+</div>
+
+<div class="two column">
+2 colonnes
+</div>
+
+<div class="two column">
+2 colonnes
+</div>
+
+<div class="four column">
+4 colones
+</div>
+
+<div class="three column">
+  <div class="container box">
+    <ul>
+      <li><%= link_to "Modifier le dossier", edit_dossier_path(@dossier), :class =>'link update'%></li>
+      <li><%= link_to "Detruire le dossier", @dossier, :confirm => 'certain?', :method => :delete, :class => 'link delete' %></li>
+    </ul>
+  </div>
+</div>
+

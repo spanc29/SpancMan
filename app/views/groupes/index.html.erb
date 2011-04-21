@@ -1,0 +1,25 @@
+<% title "Groupes" %>
+
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Actif</th>
+    <th>Agrement</th>
+    <th>Date Expiration</th>
+    <th>Commentaire</th>
+  </tr>
+  <% for groupe in @groupes %>
+    <tr>
+      <td><%= groupe.nom %></td>
+      <td><%= groupe.actif %></td>
+      <td><%= groupe.agrement %></td>
+      <td><%= groupe.date_expiration %></td>
+      <td><%= groupe.commentaire %></td>
+      <td><%= link_to "Show", groupe %></td>
+      <td><%= link_to "Edit", edit_groupe_path(groupe) %></td>
+      <td><%= link_to "Destroy", groupe, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Groupe", new_groupe_path %></p>

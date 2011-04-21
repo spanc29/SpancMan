@@ -1,0 +1,27 @@
+<% title "Adresses" %>
+
+<table>
+  <tr>
+    <th>Num Rue</th>
+    <th>Location</th>
+    <th>Code Postal</th>
+    <th>Commune</th>
+    <th>Liste</th>
+    <th>Contact</th>
+  </tr>
+  <% for adress in @adresses %>
+    <tr>
+      <td><%= adress.num_rue %></td>
+      <td><%= adress.location %></td>
+      <td><%= adress.code_postal %></td>
+      <td><%= adress.commune %></td>
+      <td><%= adress.liste_id %></td>
+      <td><%= adress.contact_id %></td>
+      <td><%= link_to "Show", adress %></td>
+      <td><%= link_to "Edit", edit_adress_path(adress) %></td>
+      <td><%= link_to "Destroy", adress, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Adress", new_adress_path %></p>

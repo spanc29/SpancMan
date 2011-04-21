@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <th>Type Instal</th>
+    <th>date de référence</th>
+    <th>pretraitements</th>
+    <th>créée le</th>
+
+  </tr>
+  <% @installations.each do |installation| %>
+    <tr>
+      <td><% l = @liste.find_by_id(installation.type_instal) %><%= l.nom %>
+      </td>
+      <td><%= installation.date %></td>
+      <td><% installation.pretraitements.each do |pret|%>
+            <%= pret.origine %>
+            <%= pret.vue %>
+            <% end %>
+          </td>
+      <td><%= installation.created_at %></td>
+      <td>
+      <%= link_to image_tag("icons/eye.png", :alt => "voir", :title => "voir"), [@dossier,installation] %> |
+      <%= link_to image_tag("icons/pencil.png", :alt => "modifier", :title => "modifier"), edit_dossier_installation_path(@dossier,installation) %> |
+      <%= link_to image_tag("icons/cross.png", :alt => "détruire", :title => "détruire"), [@dossier,installation] , :confirm => 'Are you sure?', :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>

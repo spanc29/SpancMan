@@ -15,14 +15,13 @@
 
     <tr><td>Propriétaire principal :</td><td>
     <div class="large">
-      <%= @proprio[0].username %>
-
+      <%= @proprio[0].username if @proprio.any? %><br/>
     </div></td></tr>
 
 
     <tr><td>secteur :</td>
     <td>
-    <%= @list_sect.nom %>
+    <%= @list_sect.nom if @list_sect %>
     </td></tr>
       <tr><td>commentaires</td><td></td></tr>
   </tbody>

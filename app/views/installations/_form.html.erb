@@ -1,0 +1,66 @@
+<p><div class="large"><%= link_to "Retour", dossier_installations_path, :class => 'retour' %></div></p>
+
+<div class="twelve_column section">
+
+<div class="ten column border">
+<div class="outline">
+
+
+<%= simple_form_for ([@dossier,@installation]) do |f| %>
+
+<fieldset>
+<legend> Installation </legend>
+<%= f.input :type_instal, :collection => Liste.type_instal.all(:order => 'nom'), :label_method => 'nom', :as => :select, :label => "Type d'installation"  %>
+<%= f.input :date, :as => :string %>
+
+<div class="cache">
+  <div id="DropZone"></div>
+</div>
+
+</fieldset>
+    <%= f.simple_fields_for :pretraitements do |builder| %>
+        <%= render "pretraitements/form", :f => builder %>
+      <% end %>
+    <%= f.simple_fields_for :traitements do |builder| %>
+        <%= render "traitements/form", :f => builder %>
+    <% end %>
+    <p><%= f.submit %></p>
+</div>
+
+
+
+</div>
+<div class="two column">
+
+
+  <div class="container box">
+  <p>Ajouter un :</p>
+        <%= link_to_add_fields ('pretraitement','"#DropZone"', f, :pretraitements) %><br/>
+        <%= link_to_add_fields ('traitement','"#DropZone"', f, :traitements) %>
+  </div><!--fin container box-->
+
+<div class="container box">
+  <div id="liste"> <!-- liste des pièces des immeubles genere_EU = true -->
+    <% @dossier.immeubles.each do |immeuble|%>
+      <h4><a href="#">Imm. n° <%= immeuble.number %></a></h4> <!--liste les immeubles -->
+      <div>
+        <% immeuble.liste_pieces.genere.each do |piece|%>
+          <li>Imm. n°<%= immeuble.number %> : <%= Liste.find_by_id(piece.piece).nom %> </li> <!-- liste les pièces-->
+        <%end%>
+    </div>
+    <%end%>
+      <h4><a href="#"> Autres </a></h4>
+      <ul>
+      <li>Toutes eaux </li>
+      <li>Toutes eaux ménagères </li>
+      <li>Toutes eaux vannes </li>
+      <li>Eaux pluviales</li>
+      </ul>
+
+
+  </div> <!-- fin id liste-->
+</div> <!--fin container box-->
+
+</div> <!-- fin two col -->
+<% end %> <!-- fin formulaire ici pour lien dans sidebar -->
+</div> <!--fin twelve-->
