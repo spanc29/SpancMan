@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(:version => 20110418184806) do
     t.datetime "updated_at"
     t.integer  "adressable_id"
     t.string   "adressable_type"
-    t.integer  "immeuble_id"
   end
 
   create_table "compteurs", :force => true do |t|

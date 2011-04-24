@@ -13,13 +13,10 @@ class ImmeublesController < ApplicationController
   def new
     @immeuble = @dossier.immeubles.new
       @immeuble.adresses.build
-      @immeuble.parcelles.build
-      @immeuble.compteurs.build
       @immeuble.liste_pieces.build
-      user = @immeuble.users.build
-        user.adresses.build
-        user.phones.build
-        user.mails.build
+      @immeuble.compteurs.build
+      @immeuble.parcelles.build
+      @immeuble.users.build
   end
 
   def create

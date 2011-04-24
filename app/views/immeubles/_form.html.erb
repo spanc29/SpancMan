@@ -48,8 +48,8 @@
 
       <fieldset class="outline">
       <legend><%= image_tag("icons/counter.png")%> - Alimentation en eau potable</legend>
-            <%= f.simple_fields_for :compteurs do |compt| %>
-              <%= render "compteurs/form", :f => compt %>
+            <%= f.simple_fields_for :compteurs do |builder| %>
+              <%= render "compteurs/form", :f => builder %>
             <% end %>
         <p><%= link_to_add_fields "Ajouter AEP",'this',f, :compteurs %></p>
       </fieldset>

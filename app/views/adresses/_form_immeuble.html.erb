@@ -4,6 +4,6 @@
   </div>
   <div class="section">
     <div class="one column"><%= f.input :code_postal %></div>
-    <div class="four column"><%= f.input :commune, :collection => Liste.commune.all(:order => 'nom'), :label_method => 'nom', :as => :select %></div>
+    <div class="four column"><%= f.input :commune, :collection => Liste.commune.all(:order => 'nom'), :label_method => 'nom', :value_method =>'nom', :as => :select %></div>
     <div class="one column"></div>
     </div>
