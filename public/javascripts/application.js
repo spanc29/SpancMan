@@ -1,6 +1,6 @@
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");
-    $(link).closest(".fields").hide('slow');
+    $(link).closest(".fields").hide('fold');
 }
 
 function add_fields(link, association, content) {
@@ -11,26 +11,25 @@ function add_fields(link, association, content) {
 
 $(function() {
 
-    $( "#liste" ).accordion({autoHeight: false}).hide();
+    $("#listorigine").accordion({autoHeight: false}).hide();
+
+    $('#voir_origine').click(function(event){
+        $( "#listorigine" ).toggle('blind');
+
+    // zone de drag
+      $("#listorigine li").draggable({
+        appendTo: "body",
+        helper: "clone",
+    });
+    });
 
     $(".clique").click(function(event){
-
-    $('#liste').show();
-// zone de drag
-    $( "#liste li" ).draggable({
-      appendTo: "body",
-      helper: "clone",
-    });
-
 //zone de depose
-
     $('.bunga').droppable({
       hoverClass: "ui-state-hover",
-      accept: "#liste li"
+      accept: "#listorigine li"
     });
-
 //zone de code
-
     $('.bunga').bind('drop', function( ev, ui ) {
       $(this).insertAtCaret(ui.draggable.text());
       });

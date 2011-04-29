@@ -10,7 +10,7 @@
 
 <fieldset>
 <legend> Installation </legend>
-<%= f.input :type_instal, :collection => Liste.type_instal.all(:order => 'nom'), :label_method => 'nom', :as => :select, :label => "Type d'installation"  %>
+<%= f.input :type_instal, :collection => Liste.type_install.all(:order => 'nom'), :label_method => 'nom', :as => :select, :label => "Type d'installation"  %>
 <%= f.input :date, :as => :string %>
 
 <div class="cache">
@@ -35,12 +35,14 @@
 
   <div class="container box">
   <p>Ajouter un :</p>
-        <%= link_to_add_fields ('pretraitement','"#DropZone"', f, :pretraitements) %><br/>
-        <%= link_to_add_fields ('traitement','"#DropZone"', f, :traitements) %>
+        <%= link_add_in_drop ('pretraitement', f, :pretraitements) %><br/>
+        <%= link_add_in_drop ('traitement', f, :traitements) %>
   </div><!--fin container box-->
 
 <div class="container box">
-  <div id="liste"> <!-- liste des pièces des immeubles genere_EU = true -->
+  <a href="#" id="voir_origine" class="ui-state-default ui-corner-all">Voir origines des eaux</a>
+
+  <div id="listorigine"> <!-- liste des pièces des immeubles genere_EU = true -->
     <% @dossier.immeubles.each do |immeuble|%>
       <h4><a href="#">Imm. n° <%= immeuble.number %></a></h4> <!--liste les immeubles -->
       <div>

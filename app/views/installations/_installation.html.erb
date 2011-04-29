@@ -8,7 +8,7 @@
   </tr>
   <% @installations.each do |installation| %>
     <tr>
-      <td><% l = @liste.find_by_id(installation.type_instal) %><%= l.nom %>
+      <td><% li = @liste.find_by_id(installation.type_instal) %><%# li.nom if li.nom %>
       </td>
       <td><%= installation.date %></td>
       <td><% installation.pretraitements.each do |pret|%>

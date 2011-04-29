@@ -15,8 +15,8 @@ form * {list-style: none; border: none;}
 form p {margin-top:0; margin-bottom:0;}
 
 label       { font-size:0.7em; display: block;}
-fieldset    { padding:0 1em 1em 1em; margin: 1em 0 1em 0; border-top: 1px solid #ddd; }
-legend      { font-weight: bold; font-size:0.8em; margin-top:-0.2em; margin-bottom:0.5em;color: #aaa }
+fieldset    { padding:0 1em 1em 1em; margin: 1em 0 1em 0; border-top: 1px solid #4D4D4D; }
+legend      { font-weight: bold; font-size:0.8em; margin-top:-0.2em; margin-bottom:0.5em;color: #4D4D4D }
 
 fieldset, #IE8#HACK { padding-top:1em; }
 legend, #IE8#HACK { margin-top:0; margin-bottom:0; }

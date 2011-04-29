@@ -3,7 +3,7 @@ class ImmeublesController < ApplicationController
   set_tab :immeuble
 
   def index
-    @immeubles = @dossier.immeubles.order(:adresses => [:princ.desc,:created_at.asc]).joins(:adresses)
+    @immeubles = @dossier.immeubles.order(:number.desc)
   end
 
   def show
@@ -13,10 +13,7 @@ class ImmeublesController < ApplicationController
   def new
     @immeuble = @dossier.immeubles.new
       @immeuble.adresses.build
-      @immeuble.liste_pieces.build
-      @immeuble.compteurs.build
-      @immeuble.parcelles.build
-      @immeuble.users.build
+        @immeuble.users.build
   end
 
   def create
