@@ -4,4 +4,23 @@
   <%= f.input :fonction, :label => 'Rang/fonction' %>
   <%= f.input :date_arrivee, :as => :string %>
 
+
+    <%= f.simple_fields_for :adresses do |builder| %>
+    <%= render "adresses/form", :f => builder %>
+    <% end %>
+    <p><%= link_to_add_fields("Ajouter une adresse", f, :adresses) %></p>
+
+
+    <%= f.simple_fields_for :phones do |builder| %>
+    <%= render "phones/form", :f => builder %>
+    <% end %>
+    <p><%= link_to_add_fields("Ajouter un téléphone", f, :phones) %></p>
+
+
+    <%= f.simple_fields_for :mails do |builder| %>
+    <%= render "mails/form", :f => builder %>
+    <% end %>
+    <p><%= link_to_add_fields("Ajouter un mail", f, :mails) %></p>
+
+
 </div>

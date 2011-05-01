@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5'
+gem 'rails', '3.0.7'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -33,6 +33,7 @@ gem "tabletastic"
 gem 'nifty-generators', :group => :development
 gem 'paper_trail'
 gem 'jquery-rails'
+gem 'acts-as-taggable-on'
 
 #essai
 gem 'cancan'
