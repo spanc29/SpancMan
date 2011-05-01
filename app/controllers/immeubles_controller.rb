@@ -12,7 +12,6 @@ class ImmeublesController < ApplicationController
 
   def new
     @immeuble = @dossier.immeubles.new
-      @immeuble.adresses.build
         @immeuble.users.build
   end
 

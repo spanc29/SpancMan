@@ -3,8 +3,6 @@ class Immeuble < ActiveRecord::Base
     #association
   belongs_to :dossier
 
-  has_many :adresses, :as => :adressable, :dependent => :destroy
-  accepts_nested_attributes_for :adresses, :allow_destroy => true
   has_many :liste_pieces, :dependent => :destroy
   accepts_nested_attributes_for :liste_pieces, :reject_if =>  lambda { |a| a[:piece].blank? }, :allow_destroy => true
   has_many :parcelles, :dependent => :destroy

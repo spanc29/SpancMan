@@ -18,14 +18,15 @@
   <% @immeubles.each do |immeubl| %>
 
     <tr>
-    <td><%= immeubl.number %><br/>
-        <%= img_boolean(immeubl.number, 'adresse dossier') %></td>
-    <td><% immeubl.adresses.each do |imm|%>
-            <%= imm.numero_rue %>
-            <%= imm.contenu %><br/>
-            <%= imm.code_postal %>
-            <strong><%= imm.commune.upcase %></strong>
-        <%end%>
+    <td>
+    <% if immeubl.number == 1 %>
+      <div class="importext"><%= immeubl.number %></div>
+      <% else %>
+      <div class="small"><%= immeubl.number %></div>
+      <%end%></td>
+    <td><%= immeubl.numero_rue %> <%= immeubl.adresse %><br/>
+            <%= immeubl.code_postal %>
+            <strong><% list_sect = Liste.commune.find_by_id(immeubl.commune) %></strong>
      </td>
      <td> <% immeubl.users.each do |usager| %>
             <%= link_to usager.username, [usager], :class =>"show_link" %> : <%= usager.fonction%>

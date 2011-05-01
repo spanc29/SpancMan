@@ -6,10 +6,8 @@
     <tr><td>adresse imm. principal :</td><td>
 
       <% @dossier.immeubles.principal.each do |immeu|%>
-        <% immeu.adresses.each do |adr|%>
-          <%= adr.numero_rue %> <%= adr.contenu %><br/>
-          <%= adr.code_postal%> <%= adr.commune %><br/>
-       <%end%>
+        <%= immeu.numero_rue %> <%= immeu.adresse %><br/>
+        <%= immeu.code_postal%> <%= immeu.commune %><br/>
      <%end%>
     </td></tr>
 

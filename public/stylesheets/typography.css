@@ -94,6 +94,7 @@ caption     { background: #eee; }
 
 .quiet      { color: #666; }
 .loud       { color: #000; }
+.importext  { color: #900; font-size: 1.5em;}
 .highlight  { background:#ff0; }
 .added      { background:#fff; color: #060; }
 .removed    { background:#fff; color: #900; text-decoration: line-through;}
