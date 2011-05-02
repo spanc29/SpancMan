@@ -2,27 +2,49 @@
 <%= render ('layouts/subnavigation') %>
 
 
-<table>
-  <thead>
-    <tr>
-      <th>Nom Prénom</th>
-      <th>mail</th>
-      <th>photo</th>
-      <th>fonction</th>
-      <th>date arrivée</th>
-      <th>commentaire</th>
-      <th>destinataire</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @user.username %></td>
-      <td><%= @user.email %></td>
-      <td><%= @user.photo %></td>
-      <td><%= @user.fonction %></td>
-      <td><%= @user.date_arrivee %></td>
-      <td><%= @user.commentaire %></td>
-      <td><%= @user.destinataire %></td>
-    </tr>
-  </tbody>
-</table>
+<div class="twelve_column section">
+
+  <div class="two column">
+      <div class="container">
+      <%= @user.photo %>
+      <%=  image_tag("images.jpg", :alt => "carte", :class =>"top")%>
+      </div>
+  </div>
+  <div class="three column border">
+    <div class="container">
+    <% @user.adresses.each do |adresse|%>
+      <h6><%= affiche_liste(adresse.type_adresse,'Adresse ') %></h6>
+      <%= adresse.numero_rue %> <%= adresse.contenu %><br/>
+      <%= adresse.code_postal%> <span class="large"> <%= affiche(adresse.commune,'') %> </span><br/>
+    <%end%>
+    </div>
+  </div>
+  <div class="three column border">
+    <div class="container">
+      <h6><%= image_tag("icons/telephone.png")%> - téléphone(s)</h6>
+      <% @user.phones.each do |phone|%>
+        <%= affiche_liste(phone.type_phone,'') %> : <strong> <%= phone.numero %> </strong><br/>
+      <%end %>
+     <h6><%= image_tag("icons/mail.png")%> - mail(s)</h6>
+      <% @user.mails.each do |mail|%>
+        <%= affiche_liste(mail.type_mail,'') %> : <strong><%= mail.email %></strong><br/>
+      <%end %>
+    </div>
+  </div>
+  <div class="four column">
+  <div class="container">
+  <h6><%= image_tag("icons/toolbox.png")%> - Infos complémentaires</h6>
+  <%= affiche_liste(@user.fonction, 'fonction : ') %><br/>
+  <%= affiche(@user.date_arrivee, 'date arrivée : ') %><br/>
+  propriétaire de l'immeuble : <%= @user.immeuble_id %><br/>
+  <%= image_tag("icons/document-horizontal-text.png") %> - destinataire : <%= img_boolean(@user.destinataire,'destinataire des courriers') %> <br/>
+  <%= image_tag("icons/currency-euro.png")%> - redevable :  <%= img_boolean(@user.redevable,'destinataire des courriers') %>
+   <br/>
+
+  </div>
+  </div>
+
+</div> <!-- fin 12 colonnes -->
+  <div class="right small quiet">
+    créé le : <%= l(@user.created_at) %> - modifié le <%= l(@user.updated_at) %>
+  </div>

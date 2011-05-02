@@ -21,7 +21,7 @@ h2 { margin: 0.75em 0; font-size: 2em; line-height: 0.75em; }
 h3 { margin: 1.3125em 0; font-size: 1.1429em; line-height: 1.3125em; }
 h4 { margin: 1.5em 0; font-size: 1em; line-height: 1.5em; }
 h5 { margin: 1.5em 0; font-size: 1em; line-height: 1.5em; }
-h6 { margin: 1.75em 0; font-size: 0.8571em; line-height: 1.75em; }
+h6 { margin: 1em 0; font-size: 1em; line-height: 1em; font-style: italic; background:#e5ecf9; color: #000; border-bottom: 1px solid #666;}
 
 /* Text elements
 -------------------------------------------------------------- */

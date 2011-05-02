@@ -7,7 +7,7 @@
 
       <% @dossier.immeubles.principal.each do |immeu|%>
         <%= immeu.numero_rue %> <%= immeu.adresse %><br/>
-        <%= immeu.code_postal%> <%= immeu.commune %><br/>
+        <%= immeu.code_postal%> <%= affiche_liste(immeu.commune,'') %><br/>
      <%end%>
     </td></tr>
 
@@ -18,10 +18,8 @@
 
 
     <tr><td>secteur :</td>
-    <td>
-    <%= @list_sect.nom if @list_sect %>
+    <td><%= affiche_liste(@dossier.secteur,'') %>
     </td></tr>
-      <tr><td>commentaires</td><td></td></tr>
   </tbody>
 </table>
       <p>

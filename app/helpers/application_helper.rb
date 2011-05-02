@@ -27,11 +27,23 @@ module ApplicationHelper
 
   def img_boolean(test ='false',tex = 'faux')
       if test
-      image_tag("icons/tick-white.png", :alt => tex, :title => tex, :class =>"class")
+      image_tag("icons/tick.png", :alt => tex, :title => tex, :class =>"class")
       else
-      image_tag("icons/blank.png", :alt => tex, :title => tex, :class =>"class")
+      image_tag("icons/cross.png", :alt => tex, :title => tex, :class =>"class")
       end
   end
 
+  def affiche_liste(quoi,text=nil)
+    @ulist = Liste.find_by_id(quoi)
+    if quoi
+      text + @ulist.nom.to_s
+    end
+  end
+
+  def affiche(quoi,text=nil)
+    if quoi
+      text + quoi.to_s
+    end
+  end
 end
 
