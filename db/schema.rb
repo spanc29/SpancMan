@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110429203757) do
+ActiveRecord::Schema.define(:version => 20110504185115) do
 
   create_table "adresses", :force => true do |t|
     t.integer  "numero_rue"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20110429203757) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "partie"
+    t.boolean  "modifiable"
   end
 
   create_table "mails", :force => true do |t|

@@ -91,6 +91,7 @@ caption     { background: #eee; }
 .small      { font-size: .8em;}
 .large      { font-size: 1.5em;}
 .hide       { display: none; }
+.fond       { background:#e5ecf9; color: #000; border-bottom: 1px solid #666; padding:0.1em}
 
 .quiet      { color: #666; }
 .loud       { color: #000; }

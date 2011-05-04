@@ -1,4 +1,4 @@
-<div class="fields section">
+<div class="fields">
       <div class="one column"><%= f.input :type_mail, :collection => Liste.type_adresse.all(:order => 'nom'), :label_method => 'nom', :as => :select %></div>
       <div class="four column"><%= f.input :email %></div>
       <div class="one column center"><%= link_to_remove_fields "effacer", f %></div>

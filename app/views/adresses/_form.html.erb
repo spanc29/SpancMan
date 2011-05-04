@@ -1,14 +1,10 @@
 <div class="fields">
-
-<div class="section">
       <div class="one column"><%= f.input :type_adresse, :collection => Liste.type_adresse.all(:order => 'nom'), :label_method => 'nom', :as => :select %></div>
       <div class="one column"><%= f.input :numero_rue %></div>
       <div class="four column"><%= f.input :contenu, :label => "adresse"%></div>
-
-</div>
-<div class="section">
-      <div class="one column center"><%= link_to_remove_fields "effacer", f %></div>
-      <div class="one column"><%= f.input :code_postal %></div>
-      <div class="four column"><%= f.input :commune %></div>
-</div>
+  <div class="section">
+        <div class="one column center"><%= link_to_remove_fields "effacer", f %></div>
+        <div class="one column"><%= f.input :code_postal %></div>
+        <div class="four column"><%= f.input :commune %></div>
+  </div>
 </div>

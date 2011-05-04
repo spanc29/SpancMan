@@ -2,6 +2,7 @@
   <%# f.input :partie, :collection => Liste.partie ,:label_method => 'partie', :as => :radio %>
   <%= f.input :partie %>
   <%= f.input :pour %>
-  <div><%= f.input :nom %></div>
+  <%= f.input :nom %><br/>
+  <%= f.input :modifiable %><br/>
   <%= f.submit "Créer cette entrée"%>
 <%end%>

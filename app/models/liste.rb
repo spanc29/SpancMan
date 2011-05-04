@@ -11,6 +11,7 @@ class Liste < ActiveRecord::Base
   scope :etat, where(:pour => 'état')
   scope :commune, where(:pour => 'commune')
   scope :type_habitat, where(:pour => 'type habitat')
+  scope :taux_occupation, where(:pour => 'taux occupation')
   scope :type_adresse, where(:pour => 'type adresse')
   scope :type_mail, where(:pour => 'type mail')
   scope :type_install, where(:pour => 'type installation')

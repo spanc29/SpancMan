@@ -1,10 +1,10 @@
 <p><div class="large"><%= link_to "Retour", dossier_immeubles_path, :class => 'retour' %></div></p>
 
-<div class="twelve_column section">
-
-<div class="six column">
 
 <%= simple_form_for ([@dossier,@immeuble]) do |f|%>
+<div class="twelve_column section">
+<div class="six column">
+
    <fieldset>
    <legend><%= image_tag("icons/building.png")%> - Renseignements immeubles</legend>
         <% if @immeuble.number.blank? %>
@@ -22,8 +22,8 @@
           <div class="five column"><%= f.input :commune, :collection => Liste.commune.all(:order => 'nom'), :label_method => 'nom', :as => :select %></div>
         </div>
         <div class="section">
-          <div class="two column"><%= f.input :type_habitat %></div>
-          <div class="two column"><%= f.input :taux_occupation %></div>
+          <div class="two column"><%= f.input :type_habitat, :collection => Liste.type_habitat.all(:order => 'nom'), :label_method => 'nom', :as => :select %></div>
+          <div class="two column"><%= f.input :taux_occupation, :collection => Liste.taux_occupation.all(:order => 'nom'), :label_method => 'nom', :as => :select %></div>
           <div class="one column"><%= f.input :annee_constr%></div>
           <div class="one column"><%= f.input :annee_renov, :label => "Année der. renov." %></div>
         </div>
@@ -37,6 +37,7 @@
             <div class="two column"><%= f.input :nb_eq_hab_min %></div>
             <div class="two column"><%= f.input :nb_eq_hab_max %></div>
           </div>
+          <hr/>
             <%= f.simple_fields_for :liste_pieces do |builder| %>
               <%= render "liste_pieces/form", :f => builder %>
             <% end %>
@@ -59,8 +60,8 @@
       <p><%= link_to_add_fields('ajouter compteur', f, :compteurs) %></p>
   </fieldset>
 </div> <!-- fin six colonnes -->
-<div class="six column">
 
+<div class="six column">
     <fieldset>
       <legend><%= image_tag("icons/users.png")%> - Usagers de l'immeuble</legend>
           <%= f.simple_fields_for :users do |builder| %>

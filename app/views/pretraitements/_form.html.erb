@@ -1,6 +1,8 @@
 <div class="fields">
 <fieldset class ="outline">
- <%= f.input :origine, :input_html => {:class=>'bunga ui-droppable'}%>
+  <legend>Pretraitement</legend>
+ <%= f.input :origine, :input_html => {:class=>'bunga ui-droppable'}, :as => :string, :label => 'Origine des eaux'%>
+ <%= f.input :type_pretr, :collection => Liste.type_pretr.all(:order => 'nom'), :label_method => 'nom', :as => :select, :label => "Type d'installation"  %>
  <%= f.input :type_pretr %>
  <%= f.input :materiau %>
  <%= f.input :volume %>

@@ -4,11 +4,25 @@
 <%= link_to "retour accueil", root_path, :class =>'retour' %><br/>
 <p><%= link_to "Ajouter une entrée", new_liste_path, :class =>'ajout' %></p>
 
-
 <% @liste_by_partie.each do |list,pours| %>
-  <h2><%= list %></h2>
-    <%= table_for(pours) do |t|
-    t.data :pour, :nom, :actions => [:edit,:destroy]
-    end %>
- <%end%>
-</div>
+    <h2 class="fond">Partie : <%= list %></h2>
+        <% pours.each do |p|%>
+          <div class="<%= cycle("odd", "even")%>">
+          <div class="six_column section">
+          <% if p.modifiable %>
+            <div class="two column quiet"><%= p.pour%></div>
+            <div class="two column quiet"><%= link_to p.nom, edit_liste_path(p), :class =>"edit_link" %></div>
+            <div class="two column">
+            <%= link_to 'Supprimer', p, :class =>"destroy_link" %>
+            </div>
+            <% else %>
+            <div class="two column"><%= p.pour %></div>
+            <div class="two column"><%= p.nom %></div>
+            <div class="two column"></div>
+          <%end%><!-- fin if -->
+          </div>
+        </div><!-- fin 6 colonnes -->
+        <%end%><!-- fin each p -->
+
+   <%end%><!-- fin each list -->
+
