@@ -29,10 +29,13 @@ GEM
       activesupport (= 3.0.7)
     activesupport (3.0.7)
     acts-as-taggable-on (2.0.6)
+    acts_as_audited (2.0.0.rc7)
+      rails (>= 3.0.3)
     arel (2.0.9)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
     cancan (1.5.1)
+    differ (0.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     i18n (0.5.0)
@@ -56,8 +59,6 @@ GEM
     mime-types (1.16)
     mocha (0.9.12)
     nifty-generators (0.4.5)
-    paper_trail (2.0.1)
-      rails (~> 3)
     polyglot (0.3.1)
     rack (1.2.2)
     rack-mount (0.6.14)
@@ -93,14 +94,15 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  acts_as_audited (= 2.0.0.rc7)
   bcrypt-ruby
   cancan
+  differ
   jquery-rails
   meta_search
   meta_where
   mocha
   nifty-generators
-  paper_trail
   rails (= 3.0.7)
   simple_form
   sqlite3

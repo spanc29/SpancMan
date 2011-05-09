@@ -1,5 +1,9 @@
 SpancMan1::Application.routes.draw do
 
+  resources :regards
+
+  resources :epandages
+
   resources :traitements
 
   resources :pretraitements
@@ -16,12 +20,12 @@ SpancMan1::Application.routes.draw do
   #match 'dossiers/:reference' => 'dossiers#show'
 
 
-  root :to => 'dossiers#index'
+  root :to => 'sessions#new'
 
   resources :listes
 
   resources :dossiers do
-    resources :immeubles, :users, :installations
+    resources :immeubles, :users, :installations, :audits
   end
 
   # The priority is based upon order of creation:

@@ -51,6 +51,22 @@ input[type=text], input[type=password],input[type=checkbox],input.text, input.st
 input[type=submit] {font-size:1.2em;background:#235485;color:#fff;}
 input[type=submit]:hover {background:#666;}
 
+label.boolean, .collection_radio {display:inline;vertical-align:text-top;}
+
+input#login {
+  display:block;
+  margin: 0 auto;
+  font-family:"Trebuchet MS",Arial,sans-serif;
+  font-size:36px;
+  font-weight:bold;
+}
+input#password {
+  display:block;
+  margin: 0 auto;
+  font-family:"Trebuchet MS",Arial,sans-serif;
+  font-size:36px;
+  font-weight:bold;
+}
 
 /*
   This is to be used on forms where a variety of elements are

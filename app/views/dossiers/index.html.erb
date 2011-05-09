@@ -33,12 +33,11 @@
     <% @dossiers.each do |dossier|%>
       <%= content_tag_for(:tr,dossier) do %>
         <td><%= link_to(dossier.reference.upcase, dossier)%></td>
-        <td><% Liste.commune.where(:id => dossier.commune).each do |t| %>
-          <%= t.nom %>
-        <%end%></td>
-        <td><% Liste.secteur.where(:id => dossier.secteur).each do |t| %>
-          <%= t.nom %>
-          <%end%></td>
+
+        <td><% dossier.immeubles.principal.each do |dodo|%>
+            <%= affiche_liste(dodo.commune,'') %>
+        <%end %></td>
+        <td><%= affiche_liste(dossier.secteur,'') %></td>
         <td><% dossier.users.each do |proprio|  %>
               <%= proprio.username if proprio.username%><br/>
            <%end%></td>
@@ -62,9 +61,10 @@
         <p>Gérer :</p>
       <%= link_to image_tag("icons/ui-combo-box.png", :alt => "détruire", :title => "détruire") + ' Listes des termes', listes_path%>
     </div>
-    <div class="container info">
+    <div class="container">
       <p>cliquer sur le numero de dossier pour le voir</p>
     </div>
+
 
   </div>
 

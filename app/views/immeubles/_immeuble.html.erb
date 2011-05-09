@@ -25,15 +25,14 @@
       <div class="small"><%= immeubl.number %></div>
       <%end%></td>
     <td><%= immeubl.numero_rue %> <%= immeubl.adresse %><br/>
-            <%= immeubl.code_postal %>
-            <strong><% list_sect = Liste.commune.find_by_id(immeubl.commune) %></strong>
+            <%= immeubl.code_postal %> <strong><%= affiche_liste(immeubl.commune,'')%></strong>
      </td>
      <td> <% immeubl.users.each do |usager| %>
             <%= link_to usager.username, [usager], :class =>"show_link" %> : <%= usager.fonction%>
           <% end %>
      </td>
-      <td><%= immeubl.type_habitat %></td>
-      <td><%= immeubl.taux_occupation %></td>
+      <td><%= affiche_liste(immeubl.type_habitat,'') %></td>
+      <td><%= affiche_liste(immeubl.taux_occupation,'') %></td>
       <td><%= immeubl.annee_constr %></td>
       <td><%= immeubl.annee_renov %></td>
       <td><%= immeubl.nb_piece_princ %></td>

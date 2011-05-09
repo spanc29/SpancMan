@@ -1,5 +1,7 @@
 class Adress < ActiveRecord::Base
 
+  acts_as_audited :associated_with => :adressable
+
   belongs_to :adressable, :polymorphic => true
   before_create {|adrss| adrss.commune = adrss.commune.upcase()}
 

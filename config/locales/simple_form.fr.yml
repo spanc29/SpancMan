@@ -1,7 +1,7 @@
 fr:
   simple_form:
-    "yes": 'Oui'
-    "no": 'Non'
+    "yes": 'Bon'
+    "no": 'Mauvais'
     required:
       text: 'requis'
       mark: '*'
@@ -21,4 +21,3 @@ fr:
     # hints:
     #   username: 'User name to sign in.'
     #   password: 'No special characters, please.'
-

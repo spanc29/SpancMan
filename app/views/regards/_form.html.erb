@@ -1,0 +1,16 @@
+<fieldset>
+  <legend>regards</legend>
+  <div class="one column"><%= f.input :type_renseignements %></div>
+  <div class="one column"><%= f.input :type_regard %></div>
+  <div class="one column"><%= f.input :materiaux %></div>
+
+  <%= f.input :forme %>
+  <%= f.input :nb_rehausse, :collection => 1..8 %>
+  <%= f.input :nb_entree, :collection => 1..8 %>
+  <%= f.input :nb_sortie, :collection => 1..8 %><br/>
+  <%= f.label :securite %>
+  <%= f.collection_radio :securite, [[true, 'Good'] ,[false, 'Bad']], :first, :last %>
+  <%= f.input :securite, :as => :radio %>
+  <%= f.input :saturation %><%= f.input :integrite %>
+  <%= f.input :observations, :as => :string %>
+</fieldset>

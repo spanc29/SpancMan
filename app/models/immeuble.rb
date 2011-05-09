@@ -1,6 +1,7 @@
 class Immeuble < ActiveRecord::Base
   #validation
     #association
+  acts_as_audited :associated_with => :dossier
   belongs_to :dossier
 
   has_many :liste_pieces, :dependent => :destroy

@@ -35,8 +35,10 @@ module ApplicationHelper
 
   def affiche_liste(quoi,text=nil)
     @ulist = Liste.find_by_id(quoi)
-    if quoi
+    if @ulist
       text + @ulist.nom.to_s
+    else
+      text + "non renseigné"
     end
   end
 

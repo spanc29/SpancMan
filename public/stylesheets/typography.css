@@ -34,6 +34,7 @@ h6 { margin: 1em 0; font-size: 1em; line-height: 1em; font-style: italic; backgr
 p .left     { margin: 1.5em 1.5em 1.5em 0; padding: 0; }
 .right      { float: right !important; }
 p .right    { margin: 1.5em 0 1.5em 1.5em; padding: 0; }
+p .small    { margin: 0.5em 0; line-height: 1.5em; }
 
 blockquote  { margin: 1.5em; color: #666; font-style: italic; }
 strong,dfn  { font-weight: bold; }
@@ -98,7 +99,9 @@ caption     { background: #eee; }
 .importext  { color: #900; font-size: 1.5em;}
 .highlight  { background:#ff0; }
 .added      { background:#fff; color: #060; }
+ins.differ  { background:#fff; color: #060; text-decoration: none;}
 .removed    { background:#fff; color: #900; text-decoration: line-through;}
+del.differ  { background:#fff; color: #900; text-decoration: line-through;}
 
 .first      { margin-left:0; padding-left:0; }
 .last       { margin-right:0; padding-right:0; }

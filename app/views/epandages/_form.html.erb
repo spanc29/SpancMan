@@ -1,0 +1,27 @@
+  <div class="fields">
+    <fieldset>
+      <legend>Epandage</legend>
+      <div class="container left">
+        <%= image_tag("epandage.jpg", :alt => "epandage") %>
+      </div>
+    <div class="section">
+
+      <%= f.input :type_renseignements %>
+      <%= f.input :nb_epandage, :collection =>1..8 %>
+      <%= f.input :long_epand, :label =>'longueur épandage' %>
+      <%= f.input :largeur_epand, :label=>'largeur tranchées' %>
+      <%= f.input :profondeur %>
+      <%= f.input :entraxes %>
+      <%= f.input :epaisseur_graviers %>
+      <%= f.input :calibre_graviers %>
+      <%= f.input :saturation %>
+      <%= f.input :ok %>
+      <%= f.input :observations %>
+
+    </div>
+    <%= f.simple_fields_for :regards do |builder| %>
+      <%= render "regards/form", :f => builder %>
+    <% end %>
+    <p><%= link_to_add_fields("Ajouter un accès", f, :regards) %></p>
+    </fieldset>
+  </div>

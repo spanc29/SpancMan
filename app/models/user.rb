@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+
+  acts_as_audited
+
   attr_accessor :password
   before_save :prepare_password
 
@@ -19,7 +22,7 @@ class User < ActiveRecord::Base
   ## validates_format_of :username, :with => /^[-\w\._@]+$/i, :allow_blank => true, :message => "doit contenir que des lettres ou chiffres (.-_@ autorisé)"
   #validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i
   #validates_presence_of :password, :on => :create
-  #validates_confirmation_of :password
+  validates_confirmation_of :password
   #validates_length_of :password, :minimum => 4, :allow_blank => true
 
   scope :proprio_destinat, where(:immeuble_id != nil && :destinataire => true)

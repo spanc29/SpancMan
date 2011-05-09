@@ -1,7 +1,9 @@
+<% title @dossier.reference %>
+<%= render ('layouts/navigation') %>
 
 <h3>Historique</h3>
 <!-- TODO ranger dans l'ordre inverse des versions-->
-<% @audits.each do |r|%>
+<% @dossier.audits.each do |r|%>
 <div class="section">
 <div class="two column">
 <span class="quiet"> <%= r.version %></span>-

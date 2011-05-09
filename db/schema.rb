@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110504185115) do
+ActiveRecord::Schema.define(:version => 20110507225114) do
 
   create_table "adresses", :force => true do |t|
     t.integer  "numero_rue"
@@ -25,6 +25,27 @@ ActiveRecord::Schema.define(:version => 20110504185115) do
     t.string   "adressable_type"
     t.integer  "immeuble_id"
   end
+
+  create_table "audits", :force => true do |t|
+    t.integer  "auditable_id"
+    t.string   "auditable_type"
+    t.integer  "association_id"
+    t.string   "association_type"
+    t.integer  "user_id"
+    t.string   "user_type"
+    t.string   "username"
+    t.string   "action"
+    t.text     "audited_changes"
+    t.integer  "version",          :default => 0
+    t.string   "comment"
+    t.string   "remote_address"
+    t.datetime "created_at"
+  end
+
+  add_index "audits", ["association_id", "association_type"], :name => "association_index"
+  add_index "audits", ["auditable_id", "auditable_type"], :name => "auditable_index"
+  add_index "audits", ["created_at"], :name => "index_audits_on_created_at"
+  add_index "audits", ["user_id", "user_type"], :name => "user_index"
 
   create_table "compteurs", :force => true do |t|
     t.integer  "type_alimentation"
@@ -49,6 +70,23 @@ ActiveRecord::Schema.define(:version => 20110504185115) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "commune"
+  end
+
+  create_table "epandages", :force => true do |t|
+    t.integer  "nb_epandage"
+    t.float    "long_epand"
+    t.float    "largeur_epand"
+    t.float    "profondeur"
+    t.float    "epaisseur_graviers"
+    t.string   "calibre_graviers"
+    t.float    "entraxes"
+    t.integer  "installation_id"
+    t.integer  "type_renseignements"
+    t.boolean  "saturation"
+    t.boolean  "ok"
+    t.text     "observations"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "groupes", :force => true do |t|
@@ -152,6 +190,24 @@ ActiveRecord::Schema.define(:version => 20110504185115) do
     t.datetime "updated_at"
   end
 
+  create_table "regards", :force => true do |t|
+    t.integer  "materiaux"
+    t.integer  "nb_rehausse"
+    t.integer  "type_regard"
+    t.integer  "forme"
+    t.boolean  "securite"
+    t.integer  "type_renseignements"
+    t.boolean  "saturation"
+    t.boolean  "integrite"
+    t.integer  "nb_entree"
+    t.integer  "nb_sortie"
+    t.integer  "regardable_id"
+    t.string   "regardable_type"
+    t.text     "observations"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -194,5 +250,16 @@ ActiveRecord::Schema.define(:version => 20110504185115) do
     t.boolean  "destinataire"
     t.boolean  "redevable"
   end
+
+  create_table "versions", :force => true do |t|
+    t.string   "item_type",  :null => false
+    t.integer  "item_id",    :null => false
+    t.string   "event",      :null => false
+    t.string   "whodunnit"
+    t.text     "object"
+    t.datetime "created_at"
+  end
+
+  add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"
 
 end

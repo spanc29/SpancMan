@@ -24,6 +24,9 @@
     <%= f.simple_fields_for :traitements do |builder| %>
         <%= render "traitements/form", :f => builder %>
     <% end %>
+        <%= f.simple_fields_for :epandages do |builder| %>
+        <%= render "epandages/form", :f => builder %>
+    <% end %>
     <p><%= f.submit %></p>
 </div>
 
@@ -31,16 +34,17 @@
 
 </div>
 <div class="two column">
-
-
   <div class="container box">
   <p>Ajouter un :</p>
         <%= link_add_in_drop ('pretraitement', f, :pretraitements) %><br/>
-        <%= link_add_in_drop ('traitement', f, :traitements) %>
   </div><!--fin container box-->
+  <div class="container box">
+    Traitements :<br/>
+    <%= link_add_in_drop ('epandage', f, :epandages) %>
+  </div>
 
 <div class="container box">
-  <a href="#" id="voir_origine" class="ui-state-default ui-corner-all">Voir origines des eaux</a>
+  <a href="#" id="voir_origine" class="">Voir origines des eaux</a>
 
   <div id="listorigine"> <!-- liste des pièces des immeubles genere_EU = true -->
     <% @dossier.immeubles.each do |immeuble|%>

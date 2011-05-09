@@ -15,6 +15,7 @@ class Liste < ActiveRecord::Base
   scope :type_adresse, where(:pour => 'type adresse')
   scope :type_mail, where(:pour => 'type mail')
   scope :type_install, where(:pour => 'type installation')
+  scope :type_pretr, where(:pour => 'type prétraitement')
 
 
   #tri par défaut

@@ -1,0 +1,46 @@
+<% title @dossier.reference %>
+<%= render ('layouts/navigation') %>
+
+<% @audits_by_date.each do |audit,revision|%>
+<div class="outline">
+
+<h3 class="fond"> <%= l(audit) %></h3>
+  <% revision.each do |r|%>
+  <div class="six_column section">
+  <div class="one column">
+  <span class="quiet"> <%= r.version %></span>-
+  <%= image_tag(r.action.to_s+".png", :class =>"class") %> <%= l(r.created_at) %>
+
+  </div>
+
+  <div class="one column">
+    <div class="container">
+      <%= User.find_by_id(r.user_id).username %> <!-- nom du modificateur -->
+    </div>
+
+  </div>
+  <div class="four column">
+
+      <% case r.action %>
+        <% when "create" then %>
+          <div class="fond"> Création : <%= link_to r.auditable_type, :class =>"show_link" %></div>
+        <% when "destroy" then %>
+          <div class="fond">Effacer : <%= r.auditable_type%></div>
+        <% else %>
+        <%r.audited_changes.each do |chang|%>
+            <div class="fond">dans <%= r.auditable_type %> : <%= chang.first %></div>
+            <% @diff = Differ.diff_by_word(chang[1][1], chang[1][0]) %>
+            <%= simple_format @diff.format_as(:html), :class => 'small' %>
+          <%end%>
+     <%end%>
+     <div class="small quiet "> <!-- TODO mettre en place les commentaires -->
+     <% if r.comment%>
+        <%= r.comment %>
+        <% else %> pas de commentaires
+    <%end%>
+    </div>
+
+</div>
+</div>
+  <%end%><!-- end pour r --></div>
+<%end %>

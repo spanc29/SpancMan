@@ -8,14 +8,16 @@
       <% @dossier.immeubles.principal.each do |immeu|%>
         <%= immeu.numero_rue %> <%= immeu.adresse %><br/>
         <%= immeu.code_postal%> <%= affiche_liste(immeu.commune,'') %><br/>
-     <%end%>
+
     </td></tr>
 
-    <tr><td>Propriétaire principal :</td><td>
+    <tr><td>Propriétaire(s) :</td><td>
     <div class="large">
-      <%= @proprio[0].username if @proprio.any? %><br/>
+      <% immeu.users.proprio_destinat.each do |proprio|%>
+        <%= proprio.username %>
+      <%end%><br/>
     </div></td></tr>
-
+      <%end%>
 
     <tr><td>secteur :</td>
     <td><%= affiche_liste(@dossier.secteur,'') %>
@@ -30,5 +32,4 @@
       </div>
 <span class="small quiet right"> créé le <%= l(@dossier.created_at.to_date) %> - modifié le <%= l(@dossier.updated_at.to_date) %></span>
 </div>
-historique
 <hr/>

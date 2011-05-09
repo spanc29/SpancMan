@@ -31,9 +31,10 @@ gem "tabs_on_rails"
 gem 'simple_form'
 gem "tabletastic"
 gem 'nifty-generators', :group => :development
-gem 'paper_trail'
 gem 'jquery-rails'
 gem 'acts-as-taggable-on'
+gem 'differ'
+gem "acts_as_audited", "2.0.0.rc7"
 
 #essai
 gem 'cancan'

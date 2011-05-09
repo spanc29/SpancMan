@@ -1,13 +1,18 @@
-<div id="login_form">
+<div class="six_column section">
+  <div class="two column"></div>
+  <div class="two column center">
+<%= image_tag 'spancman-ban.png' %>
 <%= form_tag sessions_path do %>
-    <p><%= label_tag :login, "Identifiant" %><br />
-    <%= text_field_tag :login, params[:login] %></p>
-    <p>
-    <%= label_tag :password, "mot de passe" %><br />
-    <%= password_field_tag :password %></p>
-  <p><%= submit_tag "connexion" %></p>
+  <p>
+    <%= label_tag :login, "identifiant" %>
+    <%= text_field_tag :login, params[:login] %>
+  </p>
+  <p>
+    <%= label_tag :password, "mot de passe"%>
+    <%= password_field_tag :password %>
+  </p>
+  <p><%= submit_tag "entrer" %></p>
 <% end %>
 </div>
-
-
-
+<div class="two column"></div>
+</div>

@@ -1,0 +1,56 @@
+<% title "Epandage" %>
+
+<p>
+  <strong>Nb Epandage:</strong>
+  <%= @epandage.nb_epandage %>
+</p>
+<p>
+  <strong>Long Epand:</strong>
+  <%= @epandage.long_epand %>
+</p>
+<p>
+  <strong>Largeur Epand:</strong>
+  <%= @epandage.largeur_epand %>
+</p>
+<p>
+  <strong>Profondeur:</strong>
+  <%= @epandage.profondeur %>
+</p>
+<p>
+  <strong>Epaisseur Graviers:</strong>
+  <%= @epandage.epaisseur_graviers %>
+</p>
+<p>
+  <strong>Calibre Graviers:</strong>
+  <%= @epandage.calibre_graviers %>
+</p>
+<p>
+  <strong>Entraxes:</strong>
+  <%= @epandage.entraxes %>
+</p>
+<p>
+  <strong>Installation:</strong>
+  <%= @epandage.installation_id %>
+</p>
+<p>
+  <strong>Type Renseignements:</strong>
+  <%= @epandage.type_renseignements %>
+</p>
+<p>
+  <strong>Saturation:</strong>
+  <%= @epandage.saturation %>
+</p>
+<p>
+  <strong>Ok:</strong>
+  <%= @epandage.ok %>
+</p>
+<p>
+  <strong>Observations:</strong>
+  <%= @epandage.observations %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_epandage_path(@epandage) %> |
+  <%= link_to "Destroy", @epandage, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", epandages_path %>
+</p>

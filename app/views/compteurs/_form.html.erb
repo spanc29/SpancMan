@@ -1,7 +1,7 @@
 <div class="fields outline">
     <div class="two column"><%= f.input :type_alimentation %></div>
     <div class="two column center"><%= f.input :declare %></div>
-    <div class="two column center"><%= f.input :analyse_OK %></div>
+    <div class="two column center"><%= f.input :analyse_OK, :as => :radio %></div>
 
     <div class="section">
       <div class="two column"><%= f.input :ref_compteur, :label => 'référence compteur' %></div>
@@ -10,4 +10,3 @@
     </div>
   <%= f.input :commentaire, :as => :string %>
 </div>
-

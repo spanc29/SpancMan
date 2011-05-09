@@ -5,8 +5,8 @@
 <div id="nav">
   <%= tabs_tag do |tab| %>
     <%= tab.accueil image_tag("icons/folders-stack.png", :size => "12x12", :alt => "liste dossiers"), dossiers_path %>
-    <%= tab.projet 'Projet', listes_path %>
-    <%= tab.compta 'compta', listes_path %>
-    <%= tab.document 'Documents', new_user_path %>
+    <%= tab.projet 'Accueil', listes_path %>
+    <%= tab.compta 'Contacts', listes_path %>
+    <%= tab.document 'Deconnecter', logout_path %>
   <% end %>
 </div>

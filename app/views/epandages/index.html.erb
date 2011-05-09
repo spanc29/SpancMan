@@ -1,0 +1,39 @@
+<% title "Epandages" %>
+
+<table>
+  <tr>
+    <th>Nb Epandage</th>
+    <th>Long Epand</th>
+    <th>Largeur Epand</th>
+    <th>Profondeur</th>
+    <th>Epaisseur Graviers</th>
+    <th>Calibre Graviers</th>
+    <th>Entraxes</th>
+    <th>Installation</th>
+    <th>Type Renseignements</th>
+    <th>Saturation</th>
+    <th>Ok</th>
+    <th>Observations</th>
+  </tr>
+  <% for epandage in @epandages %>
+    <tr>
+      <td><%= epandage.nb_epandage %></td>
+      <td><%= epandage.long_epand %></td>
+      <td><%= epandage.largeur_epand %></td>
+      <td><%= epandage.profondeur %></td>
+      <td><%= epandage.epaisseur_graviers %></td>
+      <td><%= epandage.calibre_graviers %></td>
+      <td><%= epandage.entraxes %></td>
+      <td><%= epandage.installation_id %></td>
+      <td><%= epandage.type_renseignements %></td>
+      <td><%= epandage.saturation %></td>
+      <td><%= epandage.ok %></td>
+      <td><%= epandage.observations %></td>
+      <td><%= link_to "Show", epandage %></td>
+      <td><%= link_to "Edit", edit_epandage_path(epandage) %></td>
+      <td><%= link_to "Destroy", epandage, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Epandage", new_epandage_path %></p>

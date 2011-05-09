@@ -1,5 +1,7 @@
 class Dossier < ActiveRecord::Base
-  #acts_as_taggable
+  acts_as_audited
+  has_associated_audits
+  acts_as_taggable
 
   #validations
   validates :reference, :presence => true, :uniqueness => true, :length => { :maximum => 100 }
