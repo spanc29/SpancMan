@@ -1,0 +1,41 @@
+<% title "Carnet d'adresses'" %>
+
+<h1>Carnet d'adresse</h1>
+<%= link_to "retour accueil", root_path, :class =>'retour' %><br/>
+
+<div class="twelve_column section">
+
+
+<div class="ten column">
+
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Actif</th>
+    <th>Agrement</th>
+    <th>Date Expiration</th>
+    <th>Commentaire</th>
+  </tr>
+  <% @contacts.each do |contact|%>
+    <tr>
+      <td><%= contact.nom %></td>
+      <td><%= contact.actif %></td>
+      <td><%= contact.agrement %></td>
+      <td><%= contact.date_expiration %></td>
+      <td><%= contact.commentaire %></td>
+      <td><%= link_to "Show", contact %></td>
+      <td><%= link_to "Edit", edit_contact_path(contact) %></td>
+      <td><%= link_to "Destroy", contact, :confirm => 'Sûr(e) et certain(e) ?', :method => :delete %></td>
+    </tr>
+      <% contact.users.each do |u|%>
+          <%= u.username %>
+      <%end %>
+      <% end %>
+</table>
+</div><!-- fin 9 col -->
+<div class="two column">
+  <div class="container box">
+    <p><%= link_to "Créer un groupe/société", new_contact_path, :class => "create_link" %></p>
+  </div>
+</div>
+</div><!-- fin section -->

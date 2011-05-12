@@ -5,8 +5,7 @@ class User < ActiveRecord::Base
   attr_accessor :password
   before_save :prepare_password
 
-  belongs_to :groupe
-  belongs_to :immeuble
+  belongs_to :userable, :polymorphic => true
 
   has_many :adresses, :as => :adressable, :dependent => :destroy
   accepts_nested_attributes_for :adresses, :reject_if =>  lambda { |a| a[:commune].blank? }, :allow_destroy => true

@@ -1,0 +1,70 @@
+<% title "Fiche - Carnet d'adresses" %>
+
+<% if @contact.actif == false %>
+  <div class="important importext">
+  <%= image_tag("danger.png") %><strong> PLUS EN ACTIVITE </strong>
+  </div>
+<%end%>
+
+
+<div class=""><h1><%= @contact.nom %></h1></div>
+<hr/>
+<%= link_to "retour accueil", root_path, :class =>'retour' %><br/>
+
+
+<!--
+<div class="twelve_column section">
+<div class="ten column">
+-->
+
+
+  <!-- categorie -->
+  <div class="box">
+    <div class="large">
+<%=(affiche_liste(@contact.categories,'')).upcase %>
+    </div>
+  </div>
+  <div class="outline">
+  <% if @contact.agrement %>
+  <strong>n° Agrément / charte :</strong><%= @contact.agrement %>
+  <%end%>
+  <% if @contact.date_adhesion %>
+  <strong>, adhésion/agrément le </strong><%= @contact.date_adhesion %><br/>
+  <%end%>
+  <% if @contact.date_expiration %>
+  <strong>, expire le </strong><%= @contact.date_expiration %><br/>
+  <%end%>
+  </div>
+
+  <div class="outline">
+  <strong>Commentaire:</strong><br/>
+  <%= simple_format @contact.commentaire %>
+  </div>
+
+<hr/>
+<h3>Listes des contacts</h3>
+
+<div class="outline">
+
+<% @contact.users.each do |user|%>
+  <h2><%= user.username %></h2>
+  <%= render 'users/user', :@user => user %>
+<%end %>
+</div>
+
+<!--
+<div class="two column">
+<div class="container box">
+-->
+
+<p>
+  <%= link_to "Edit", edit_contact_path(@contact) %> |
+  <%= link_to "Destroy", @contact, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", contacts_path %>
+</p>
+<!--
+</div>
+</div>
+
+</div> <!-- fin 12 col -->
+-->

@@ -9,6 +9,7 @@ img {vertical-align: middle;}
 
 
 /* mise en page*/
+
 #top-menu {background: #2C4056; color: #fff; height:1.8em; font-size: 0.8em; padding: 2px 2px 0px 6px;}
 #top-menu ul {margin: 0;  padding: 0;}
 #top-menu li {
@@ -22,11 +23,14 @@ img {vertical-align: middle;}
 #top-menu #loggedas { float: right; margin-right: 0.5em; color: #fff; }
 #account {float:right;}
 #main {clear: both;width: 90%;margin: 0 auto;background-color: #FFF;padding: 20px 20px;border: solid 1px black;margin-top: 10px;}
+#margin {clear: both;width: 960px;margin: 0 auto;}
 #footer {clear: both;width: 90%;margin: 0 auto;background-color: #FFF;padding: 20px 20px;border: solid 1px black;margin-top: 10px;font-size: 0.9em; padding: 5px 20px; color: #aaa; text-align:center;}
 
 
 .container {margin: 0.5em;padding:0.5em;}
 .box {padding:1em;margin-bottom:0.5em;background:#e5eCf9;-moz-border-radius: 1em;-webkit-border-radius: 1em;border-radius: 1em;}
+.box_ajout {width: 30%;padding:0.2em; margin:0.2em;background:#E2FFE2; border: 1px solid #90EE90}
+.destroy_box {width: 30%;padding:0.2em; margin:0.2em;background:#FFDADA; border: 1px solid #FFA3A3}
 .outline {padding:1em;margin-bottom:0.5em;border: 1px solid #ddd;-moz-border-radius: 1em;-webkit-border-radius: 1em;border-radius: 1em;}
 .important {background-color: #f2e6e8;padding:1em;margin-bottom:0.5em;-moz-border-radius: 1em;-webkit-border-radius: 1em;border-radius: 1em;}
 
@@ -65,10 +69,9 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .odd {background-color: white}
 .even {background-color: #E5ECF9;}
 
-
 /*images*/
 .liqimg { width: 100% }
-.ajout:before{content: url("../images/icons/plus-circle.png"); vertical-align: middle;}
+.ajout:before,.create_link:before{content: url("../images/icons/plus-circle.png"); vertical-align: middle;}
 .delete:before,.destroy_link:before{content: url("../images/icons/cross-circle.png");vertical-align: middle;}
 .update:before,.edit_link:before{content: url("../images/icons/pencil-small.png");vertical-align: middle;}
 .retour:before{content: url("../images/icons/arrow-transition-180.png");vertical-align: middle;}

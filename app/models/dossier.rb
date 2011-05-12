@@ -9,7 +9,7 @@ class Dossier < ActiveRecord::Base
   #associations
   has_many :listes
 
-  has_many :users, :through => :immeubles
+  has_many :users, :as => :userable
 
   has_many :immeubles, :dependent => :destroy
   #accepts_nested_attributes_for :immeubles, :allow_destroy => true

@@ -9,15 +9,15 @@
     <%= f.simple_fields_for :adresses do |builder| %>
       <%= render "adresses/form", :f => builder %>
     <% end %>
-    <p><%= link_to_add_fields("Ajouter une adresse", f, :adresses) %></p>
+    <div class="center box_ajout"><%= link_to_add_fields("Ajouter une adresse", f, :adresses) %></div>
     <%= f.simple_fields_for :phones do |builder| %>
       <%= render "phones/form", :f => builder %>
     <% end %>
-    <p><%= link_to_add_fields("Ajouter un téléphone", f, :phones) %></p>
+    <div class="center box_ajout"><%= link_to_add_fields("Ajouter un téléphone", f, :phones) %></div>
     <%= f.simple_fields_for :mails do |builder| %>
       <%= render "mails/form", :f => builder %>
     <% end %>
-    <p><%= link_to_add_fields("Ajouter un mail", f, :mails) %></p>
+    <div class="center box_ajout"><%= link_to_add_fields("Ajouter un mail", f, :mails) %></div>
 
-  Supprimer cet usager : <%= link_to_remove_fields "effacer", f %>
+  <div class="right clearfix destroy_box"><%= link_to_remove_fields "effacer", f %></div>
 </div>

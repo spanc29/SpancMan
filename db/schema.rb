@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110507225114) do
+ActiveRecord::Schema.define(:version => 20110511203157) do
 
   create_table "adresses", :force => true do |t|
     t.integer  "numero_rue"
@@ -59,6 +59,18 @@ ActiveRecord::Schema.define(:version => 20110507225114) do
     t.datetime "updated_at"
   end
 
+  create_table "contacts", :force => true do |t|
+    t.string   "nom"
+    t.boolean  "actif"
+    t.string   "agrement"
+    t.date     "date_expiration"
+    t.date     "date_adhesion"
+    t.text     "commentaire"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "categories"
+  end
+
   create_table "dossiers", :force => true do |t|
     t.string   "etat"
     t.string   "reference"
@@ -85,17 +97,6 @@ ActiveRecord::Schema.define(:version => 20110507225114) do
     t.boolean  "saturation"
     t.boolean  "ok"
     t.text     "observations"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "groupes", :force => true do |t|
-    t.string   "nom"
-    t.boolean  "actif"
-    t.string   "agrement"
-    t.date     "date_expiration"
-    t.date     "date_adhesion"
-    t.text     "commentaire"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -245,10 +246,11 @@ ActiveRecord::Schema.define(:version => 20110507225114) do
     t.integer  "fonction"
     t.date     "date_arrivee"
     t.text     "commentaire"
-    t.integer  "groupe_id"
-    t.integer  "immeuble_id"
     t.boolean  "destinataire"
     t.boolean  "redevable"
+    t.boolean  "actif"
+    t.string   "userable_type"
+    t.integer  "userable_id"
   end
 
   create_table "versions", :force => true do |t|

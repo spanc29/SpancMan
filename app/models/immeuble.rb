@@ -10,7 +10,7 @@ class Immeuble < ActiveRecord::Base
   accepts_nested_attributes_for :parcelles, :reject_if =>  lambda { |a| a[:section].blank? }, :allow_destroy => true
   has_many :compteurs, :dependent => :destroy
   accepts_nested_attributes_for :compteurs, :reject_if =>  lambda { |a| a[:type_alimentation].blank? }, :allow_destroy => true
-  has_many :users, :dependent => :destroy
+  has_many :users, :as => :userable, :dependent => :destroy
   accepts_nested_attributes_for :users, :allow_destroy => true
 
 

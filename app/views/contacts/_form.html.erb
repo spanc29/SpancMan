@@ -1,0 +1,30 @@
+<div id="margin">
+
+<div class="twelve_column section">
+<%= simple_form_for @contact do |f|%>
+<fieldset class='outline'>
+  <legend><%= image_tag("icons/hard-hat.png")%> - Renseignements Société</legend>
+  <%= f.input :categories, :label => 'Catégorie', :collection => Liste.categorie.all(:order => 'nom'), :label_method => 'nom', :as => :select %>
+  <%= f.input :nom%>
+  <%= f.input :actif, :as => :radio %>
+  <div class="six_column section">
+  <div class="two column"><%= f.input :agrement, :label => 'agrément/charte/...' %></div>
+  <div class="two column"><%= f.input :date_adhesion, :as => :string %></div>
+  <div class="two column"><%= f.input :date_expiration, :as => :string %></div>
+  </div>
+  <%= f.input :commentaire %>
+</fieldset>
+<fieldset class="outline">
+  <legend><%= image_tag("icons/users.png")%> - Contacts </legend>
+    <%= f.simple_fields_for :users do |builder| %>
+      <%= render "users/form", :f => builder %>
+    <% end %>
+
+      <div class="center box_ajout">
+      <%= link_to_add_fields('Ajouter un contact', f, :users) %>
+      </div>
+  </fieldset>
+<hr/>
+  <%= f.button :submit%>
+<%end%>
+</div></div>
