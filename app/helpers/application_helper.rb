@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def link_to_remove_fields(name, f)
-    f.hidden_field(:_destroy) + link_to_function(image_tag("icons/cross-circle.png",:alt => "effacer",:title => "effacer"), "remove_fields(this)")
+    f.hidden_field(:_destroy) + link_to_function((image_tag("icons/cross-circle.png",:alt => "effacer",:title => "effacer")), "remove_fields(this)")
   end
 
   def link_to_add_fields(name, f, association) #ajoute le formulaire au dessus du lien

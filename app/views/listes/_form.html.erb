@@ -3,6 +3,6 @@
   <%= f.input :partie %>
   <%= f.input :pour %>
   <%= f.input :nom %><br/>
-  <%= f.input :modifiable %><br/>
+  <%= f.input :modifiable, :input_html => { :checked => true } %><br/>
   <%= f.submit "Créer cette entrée"%>
 <%end%>

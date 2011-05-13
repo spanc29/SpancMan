@@ -38,13 +38,13 @@ SimpleForm.setup do |config|
   # config.wrapper_error_class = :field_with_errors
 
   # You can wrap a collection of radio/check boxes in a pre-defined tag, defaulting to none.
-  # config.collection_wrapper_tag = nil
+  # config.collection_wrapper_tag = :div
 
   # You can wrap each item in a collection of radio/check boxes with a tag, defaulting to none.
   # config.item_wrapper_tag = nil
 
   # Series of attemps to detect a default label method for collection.
-  # config.collection_label_methods = [ :to_label, :name, :title, :to_s ]
+   config.collection_label_methods = [ :to_label, :name, :title, :to_s, :nom ]
 
   # Series of attemps to detect a default value method for collection.
   # config.collection_value_methods = [ :id, :to_s ]

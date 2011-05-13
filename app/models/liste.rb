@@ -17,7 +17,7 @@ class Liste < ActiveRecord::Base
   scope :type_install, where(:pour => 'type installation')
   scope :type_pretr, where(:pour => 'type prétraitement')
 
-  scope :categorie, where(:pour => 'catégorie groupe')
+  scope :categorie, where(:pour => 'catégories groupe')
 
 
   #tri par défaut

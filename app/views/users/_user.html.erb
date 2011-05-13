@@ -32,7 +32,7 @@
   <h6><%= image_tag("icons/toolbox.png")%> - Infos complémentaires</h6>
   <%= affiche_liste(@user.fonction, 'fonction : ') %><br/>
   <%= affiche(@user.date_arrivee, 'date arrivée : ') %><br/>
-  propriétaire de l'immeuble : <%= @user.immeuble_id %><br/>
+  propriétaire de l'immeuble : <br/>
   <%= image_tag("icons/document-horizontal-text.png") %> - destinataire : <%= img_boolean(@user.destinataire,'destinataire des courriers') %> <br/>
   <%= image_tag("icons/currency-euro.png")%> - redevable :  <%= img_boolean(@user.redevable,'destinataire des courriers') %>
    <br/>
