@@ -1,6 +1,8 @@
 class ContactsController < ApplicationController
   def index
-    @contacts = Contact.all
+    @search = Contact.search(params[:search])
+    @contacts = @search.all
+    @contacts_by_categories = @contacts.group_by{|t| t.categories}
   end
 
   def show

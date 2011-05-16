@@ -21,22 +21,21 @@
   </div>
   <div class="four column">
 
-      <% case r.action %>
-        <% when "create" then %>
-          <div class="fond"> Création : <%= link_to r.auditable_type, :class =>"show_link" %></div>
-        <% when "destroy" then %>
+      <% if r.action=="create" %>
+          <div class="fond"> Création : <%= link_to r.auditable_type %></div>
+      <% elsif r.action=="destroy" %>
           <div class="fond">Effacer : <%= r.auditable_type%></div>
-        <% else %>
+      <% else %>
         <%r.audited_changes.each do |chang|%>
             <div class="fond">dans <%= r.auditable_type %> : <%= chang.first %></div>
-            <% @diff = Differ.diff_by_word(chang[1][1], chang[1][0]) %>
+            <% @diff = Differ.diff_by_word(chang[1][1].to_s, chang[1][0].to_s) %>
             <%= simple_format @diff.format_as(:html), :class => 'small' %>
-          <%end%>
+        <%end%>
      <%end%>
      <div class="small quiet "> <!-- TODO mettre en place les commentaires -->
      <% if r.comment%>
         <%= r.comment %>
-        <% else %> pas de commentaires
+      <% else %> pas de commentaires
     <%end%>
     </div>
 

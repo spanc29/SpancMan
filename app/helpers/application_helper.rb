@@ -47,4 +47,5 @@ module ApplicationHelper
       text + quoi.to_s
     end
   end
+
 end

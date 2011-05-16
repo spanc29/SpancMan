@@ -3,13 +3,13 @@
   <div class="two column">
       <div class="container">
       <%= @user.photo %>
-      <%=  image_tag("images.jpg", :alt => "carte", :class =>"top")%>
+      <%=  image_tag("anonymous.png", :alt => "carte", :class =>"top")%>
       </div>
   </div>
   <div class="three column border">
     <div class="container">
     <% @user.adresses.each do |adresse|%>
-      <h6><%= affiche_liste(adresse.type_adresse,'Adresse ') %></h6>
+      <h6>Adresse(s) <%= affiche_liste(adresse.type_adresse,'') %></h6>
       <%= adresse.numero_rue %> <%= adresse.contenu %><br/>
       <%= adresse.code_postal%> <span class="large"> <%= affiche(adresse.commune,'') %> </span><br/>
     <%end%>

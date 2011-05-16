@@ -26,14 +26,17 @@
   </div>
   <div class="outline">
   <% if @contact.agrement %>
-  <strong>n° Agrément / charte :</strong><%= @contact.agrement %>
+  n° Agrément / charte : <strong><%= @contact.agrement %></strong>
   <%end%>
   <% if @contact.date_adhesion %>
-  <strong>, adhésion/agrément le </strong><%= @contact.date_adhesion %><br/>
+  , adhésion/agrément le <strong><%= l(@contact.date_adhesion) %></strong>
   <%end%>
   <% if @contact.date_expiration %>
-  <strong>, expire le </strong><%= @contact.date_expiration %><br/>
+  , expire le <strong><%= l(@contact.date_expiration) %></strong><br/>
   <%end%>
+  </div>
+  <div class="outline">
+    <strong>Site Web : </strong><%= @contact.site_web %>
   </div>
 
   <div class="outline">
@@ -41,14 +44,15 @@
   <%= simple_format @contact.commentaire %>
   </div>
 
+
 <hr/>
 <h6>Listes des contacts</h6>
 
 <div class="outline">
-
 <% @contact.users.each do |user|%>
   <h2><%= user.username %></h2>
   <%= render 'users/user', :@user => user %>
+  <hr/>
 <%end %>
 </div>
 

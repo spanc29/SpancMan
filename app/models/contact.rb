@@ -5,4 +5,6 @@ class Contact < ActiveRecord::Base
 
   has_many :users, :as => :userable, :dependent => :destroy
   accepts_nested_attributes_for :users, :allow_destroy => true
+
+  scope :categorie, group(:categories)
 end

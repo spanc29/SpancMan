@@ -7,10 +7,9 @@ class Dossier < ActiveRecord::Base
   validates :reference, :presence => true, :uniqueness => true, :length => { :maximum => 100 }
 
   #associations
+
   has_many :listes
-
   has_many :users, :as => :userable
-
   has_many :immeubles, :dependent => :destroy
   #accepts_nested_attributes_for :immeubles, :allow_destroy => true
   has_many :installations, :dependent => :destroy

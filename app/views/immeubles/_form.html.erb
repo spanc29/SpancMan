@@ -13,15 +13,15 @@
         <% else %>
           <span class="large"> Immeuble n° : <%= @immeuble.number %></span>
         <% end %>
-        <div class="section">
+        <div class="six_column section">
               <div class="one column"><%= f.input :numero_rue %></div>
               <div class="five column"><%= f.input :adresse%></div>
         </div>
-        <div class="section">
+        <div class="six_column section">
           <div class="one column"><%= f.input :code_postal %></div>
           <div class="five column"><%= f.input :commune, :collection => Liste.commune.all(:order => 'nom'), :label_method => 'nom', :as => :select %></div>
         </div>
-        <div class="section">
+        <div class="six_column section">
           <div class="two column"><%= f.input :type_habitat, :collection => Liste.type_habitat.all(:order => 'nom'), :label_method => 'nom', :as => :select %></div>
           <div class="two column"><%= f.input :taux_occupation, :collection => Liste.taux_occupation.all(:order => 'nom'), :label_method => 'nom', :as => :select %></div>
           <div class="one column"><%= f.input :annee_constr%></div>

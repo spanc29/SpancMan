@@ -92,6 +92,7 @@ caption     { background: #eee; }
 .small      { font-size: .8em;}
 .large      { font-size: 1.5em;}
 .hide       { display: none; }
+.textright  { text-align: right; margin-right: 1em;}
 .fond       { background:#e5ecf9; color: #000; border-bottom: 1px solid #666; padding:0.1em}
 
 .quiet      { color: #666; }

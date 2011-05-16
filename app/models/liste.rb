@@ -14,10 +14,11 @@ class Liste < ActiveRecord::Base
   scope :taux_occupation, where(:pour => 'taux occupation')
   scope :type_adresse, where(:pour => 'type adresse')
   scope :type_mail, where(:pour => 'type mail')
+  scope :type_phone, where(:pour => 'type téléphone')
   scope :type_install, where(:pour => 'type installation')
   scope :type_pretr, where(:pour => 'type prétraitement')
 
-  scope :categorie, where(:pour => 'catégories groupe')
+  scope :categories, where(:pour => 'catégories groupe')
 
 
   #tri par défaut

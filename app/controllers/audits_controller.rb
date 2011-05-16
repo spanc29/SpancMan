@@ -3,8 +3,8 @@ class AuditsController < ApplicationController
   before_filter :load_dossier
 
 def index
-  @audits = Audit.where({:auditable_id => @dossier,:auditable_type => 'Dossier'} | {:association_id => @dossier, :association_type => 'Dossier'})
-  @audits_by_date = @audits.order("created_at DESC").group_by{|t| t.created_at.to_date}
+  @audits = Audit.where({:auditable_id => @dossier,:auditable_type => 'Dossier'} | {:association_id => @dossier, :association_type => 'Dossier'}).order('audits.created_at DESC')
+  @audits_by_date = @audits.group_by{|t| t.created_at.to_date}
 end
 
 

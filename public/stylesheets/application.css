@@ -35,6 +35,7 @@ img {vertical-align: middle;}
 .important {background-color: #f2e6e8;padding:1em;margin-bottom:0.5em;-moz-border-radius: 1em;-webkit-border-radius: 1em;border-radius: 1em;}
 
 hr {background:#ddd;color:#ddd;clear:both;float:none;width:100%;height:1px;margin:0 0 1.45em;border:none;}
+hr.loud {background:#7F7F7F;color:#000;clear:both;float:none;width:100%;height:2px;margin:0 0 1.45em;border:none;}
 hr.space {background:#fff;color:#fff;visibility:hidden;}
 .clearfix:after, .container:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
 .clearfix, .container {display:block;}
@@ -74,6 +75,7 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .ajout:before,.create_link:before{content: url("../images/icons/plus-circle.png"); vertical-align: middle;}
 .delete:before,.destroy_link:before{content: url("../images/icons/cross-circle.png");vertical-align: middle;}
 .update:before,.edit_link:before{content: url("../images/icons/pencil-small.png");vertical-align: middle;}
+.show:before,.show_link:before{content: url("../images/icons/eye.png");vertical-align: middle;}
 .retour:before{content: url("../images/icons/arrow-transition-180.png");vertical-align: middle;}
 .cancel:before{content: url("../images/icons/cross-small.png");vertical-align: middle;}
 
