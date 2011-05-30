@@ -1,12 +1,11 @@
 SpancMan1::Application.routes.draw do
 
+  resources :termes_terrains
 
   resources :contacts
-
   resources :epandages
   resources :traitements
   resources :pretraitements
-  resources :installations
   resources :regards
   match 'user/edit' => 'users#edit', :as => :edit_current_user
   match 'signup' => 'users#new', :as => :signup
@@ -23,7 +22,7 @@ SpancMan1::Application.routes.draw do
   resources :listes
 
   resources :dossiers do
-    resources :immeubles, :users, :installations, :audits
+    resources :immeubles, :users, :installations, :terrains, :audits, :entretiens
   end
 
   # The priority is based upon order of creation:

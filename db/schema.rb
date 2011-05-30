@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110513204843) do
+ActiveRecord::Schema.define(:version => 20110530193551) do
 
   create_table "adresses", :force => true do |t|
     t.integer  "numero_rue"
@@ -85,6 +85,21 @@ ActiveRecord::Schema.define(:version => 20110513204843) do
     t.integer  "commune"
   end
 
+  create_table "entretiens", :force => true do |t|
+    t.integer  "type_entretien"
+    t.integer  "dossier_id"
+    t.string   "ouvrage"
+    t.integer  "vidangeur"
+    t.string   "num_vehicule"
+    t.string   "num_bordereau"
+    t.datetime "date_entretien"
+    t.string   "quantite"
+    t.string   "destination_boue"
+    t.text     "observations"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "epandages", :force => true do |t|
     t.integer  "nb_epandage"
     t.float    "long_epand"
@@ -100,6 +115,26 @@ ActiveRecord::Schema.define(:version => 20110513204843) do
     t.text     "observations"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "horizons", :force => true do |t|
+    t.integer  "debut"
+    t.integer  "fin"
+    t.string   "type_horizon"
+    t.string   "couleur"
+    t.string   "hydromorphie"
+    t.string   "texture"
+    t.string   "abondance_pierrosite"
+    t.string   "taille_pierrosite"
+    t.string   "compacite"
+    t.string   "abondance_racine"
+    t.string   "transition_horizon"
+    t.text     "observations"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "sondage_id"
+    t.string   "permea"
+    t.boolean  "porchet"
   end
 
   create_table "immeubles", :force => true do |t|
@@ -210,6 +245,22 @@ ActiveRecord::Schema.define(:version => 20110513204843) do
     t.datetime "updated_at"
   end
 
+  create_table "sondages", :force => true do |t|
+    t.integer  "numero_sondage"
+    t.date     "date_sondage"
+    t.string   "tech_sond"
+    t.string   "x_sond"
+    t.string   "y_sond"
+    t.integer  "precipitation_anterieure"
+    t.string   "prof_atteinte"
+    t.text     "observations"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "terrain_id"
+    t.string   "permea"
+    t.boolean  "porchet"
+  end
+
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -225,6 +276,22 @@ ActiveRecord::Schema.define(:version => 20110513204843) do
 
   create_table "tags", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "termes_terrains", :force => true do |t|
+    t.string   "pour"
+    t.string   "terme"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "modifiable"
+  end
+
+  create_table "terrains", :force => true do |t|
+    t.string   "type_terrain"
+    t.text     "observations"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "dossier_id"
   end
 
   create_table "traitements", :force => true do |t|

@@ -1,11 +1,5 @@
 <% title "Nouveau Dossier"%>
 <h1>Nouveau Dossier</h1>
-<%= link_to "retour accueil", root_path, :class =>'retour' %><br/>
-
-<div class="six_column section">
-<div class="four column">
-<%= render 'form' %></div>
-</div>
-<div id="section">
-<p><%= link_to "Back to List", dossiers_path %></p>
-</div>
+<p><%= link_to "retour accueil", dossiers_path, :class =>'retour' %></p>
+<%= render 'form' %>
+<p><%= link_to "retour accueil", dossiers_path, :class =>'retour' %></p>

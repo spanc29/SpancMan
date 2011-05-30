@@ -24,8 +24,12 @@
         <div class="six_column section">
           <div class="two column"><%= f.input :type_habitat, :collection => Liste.type_habitat.all(:order => 'nom'), :label_method => 'nom', :as => :select %></div>
           <div class="two column"><%= f.input :taux_occupation, :collection => Liste.taux_occupation.all(:order => 'nom'), :label_method => 'nom', :as => :select %></div>
-          <div class="one column"><%= f.input :annee_constr%></div>
-          <div class="one column"><%= f.input :annee_renov, :label => "Année der. renov." %></div>
+          <div class="two column"></div>
+        </div>
+        <div class="section">
+          <div class="two column"><%= f.input :annee_constr%></div>
+          <div class="two column"><%= f.input :annee_renov, :label => "Année der. renov." %></div>
+          <div class="two column"></div>
         </div>
    <%= f.input :commentaire %>
    </fieldset>

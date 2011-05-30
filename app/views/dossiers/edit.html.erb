@@ -1,15 +1,6 @@
 Modifier le dossier
 <% title @dossier.reference %>
 <%= render ('layouts/navigation') %>
-
-
-<div class="six_column section">
-      <%= render 'form' %>
-  <div class="two column">
-      <div class="box">
-        <%= link_to "Show", @dossier %><br/>
-        <%= link_to "View All", dossiers_path %>
-      </div>
-  </div>
-</div>
-
+<p><%= link_to "retour dossier", @dossier, :class =>'retour' %></p>
+<%= render 'form' %>
+<p><%= link_to "retour dossier", @dossier, :class =>'retour' %></p>

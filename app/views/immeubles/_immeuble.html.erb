@@ -8,11 +8,9 @@
     <th>liste Usager(s)</th>
     <th>type habitat</th>
     <th>taux occupation</th>
-    <th>Annee Constr</th>
-    <th>Année renov</th>
+    <th>Annee Constr.</th>
     <th>Nb piece princ</th>
-    <th>Nb Eq Hab mini</th>
-    <th>Nb Eq Hab maxi</th>
+    <th>Commentaires</th>
   </tr>
   </thead>
   <% @immeubles.each do |immeubl| %>
@@ -28,18 +26,16 @@
             <%= immeubl.code_postal %> <strong><%= affiche_liste(immeubl.commune,'')%></strong>
      </td>
      <td> <% immeubl.users.each do |usager| %>
-            <%= link_to usager.username, [usager], :class =>"show_link" %> : <%= usager.fonction%>
+            <%= link_to usager.username, [usager] %> : <%= usager.fonction%><br/>
           <% end %>
      </td>
-      <td><%= affiche_liste(immeubl.type_habitat,'') %></td>
-      <td><%= affiche_liste(immeubl.taux_occupation,'') %></td>
+      <td><%= affiche_liste(immeubl.type_habitat,'') %> (<%= affiche_liste(immeubl.taux_occupation,'') %>)</td>
+      <td></td>
       <td><%= immeubl.annee_constr %></td>
-      <td><%= immeubl.annee_renov %></td>
       <td><%= immeubl.nb_piece_princ %></td>
-      <td><%= immeubl.nb_eq_hab_min %></td>
-      <td><%= immeubl.nb_eq_hab_max %></td>
+      <td><%= immeubl.commentaire %></td>
       <td>
-      <%= link_to image_tag("icons/eye.png", :alt => "voir", :title => "voir"), [@dossier,immeubl], :class =>"show_link" %>&nbsp;
+      <%= link_to image_tag("icons/eye.png", :alt => "voir", :title => "voir"), [@dossier,immeubl]%>&nbsp;
       <%= link_to image_tag("icons/pencil.png", :alt => "modifier", :title => "modifier"), edit_dossier_immeuble_path(@dossier,immeubl) %>&nbsp;
       <%= link_to image_tag("icons/cross.png", :alt => "détruire", :title => "détruire"), [@dossier,immeubl] , :confirm => 'Certain(e)??', :method => :delete %>
       </td>

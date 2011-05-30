@@ -1,7 +1,8 @@
 class ListesController < ApplicationController
 
   def index
-    @listes = Liste.all
+    @search = Liste.search(params[:search])
+    @listes = @search.all
     @liste_by_partie = @listes.group_by{|t| t.partie}
   end
 

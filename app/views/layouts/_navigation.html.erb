@@ -2,11 +2,11 @@
   <div class="three column"><%= content_tag :h1, yield(:title) if show_title? %></div>
 
   <div class="three column"><% @dossier.immeubles.principal.each do |immeu|%>
-       <% immeu.users.proprio_destinat.each do |proprio|%> <span class="large"><%= proprio.username %></span></div>
+       <% immeu.users.proprio_destinat.each do |proprio|%> <span class="large"><%= image_tag("icons/users.png", :alt => "Proprio") %> <%= proprio.username %></span></div>
   <div class="three column">
-        <%= affiche_liste(immeu.commune,'') %>
+      <%= image_tag("icons/home.png", :alt => "Commune") %> <%= affiche_liste(immeu.commune,'') %>
       <%end%><%end%></div>
-  <div class="three column"><span class="quiet"> <%= affiche_liste(@dossier.secteur,'') %></span></div>
+  <div class="three column"><span class="small quiet"><%= image_tag("icons/zone.png", :alt => "secteur") %>  <%= affiche_liste(@dossier.secteur,'') %></span></div>
 </div>
 
 
@@ -15,9 +15,9 @@
     <%= tab.accueil image_tag("icons/folders-stack.png", :size => "12x12", :alt => "liste dossiers"), dossiers_path %>
     <%= tab.dossier 'Dossier', @dossier %>
     <%= tab.immeuble 'Immeuble(s)', dossier_immeubles_path(@dossier) %>
-    <%= tab.terrain 'Terrain', dossier_immeubles_path(@dossier) %>
+    <%= tab.terrain 'Terrain', dossier_terrains_path(@dossier) %>
     <%= tab.installation 'Installation(s)', dossier_installations_path(@dossier) %>
-    <%= tab.entretien 'Entretien(s)', listes_path %>
+    <%= tab.entretien 'Entretien(s)', dossier_entretiens_path(@dossier) %>
     <%= tab.controle 'Contrôle(s)', listes_path %>
     <%= tab.compta 'Compta', listes_path %>
     <%= tab.document 'Documents', new_user_path %>

@@ -1,4 +1,5 @@
 class Contact < ActiveRecord::Base
+  acts_as_audited
 
   validates :nom, :presence => true, :uniqueness => true
   validates :categories, :presence => true

@@ -1,11 +1,19 @@
 <% title "Gestion des Listes" %>
 
 <h1>Gestion des listes des menus déroulants</h1>
-<%= link_to "retour accueil", root_path, :class =>'retour' %><br/>
+<%= link_to "retour accueil", root_path, :class =>'retour' %>
+
+<%= simple_form_for @search do |f| %>
+<div class="outline">
+<%= f.input :partie_or_pour_or_nom_contains, :label =>'chercher' %>
+<%= f.submit "CHERCHER"%> <%= link_to 'RAZ', listes_path  %>
+<% end %>
+</div>
+
 <p><%= link_to "Ajouter une entrée", new_liste_path, :class =>'ajout' %></p>
 
 <% @liste_by_partie.each do |list,pours| %>
-    <h2 class="fond">Partie : <%= list %></h2>
+        <h2><%= list %></h2>
         <% pours.each do |p|%>
           <div class="<%= cycle("odd", "even")%>">
           <div class="six_column section">
@@ -23,6 +31,4 @@
           </div>
         </div><!-- fin 6 colonnes -->
         <%end%><!-- fin each p -->
-
-   <%end%><!-- fin each list -->
-
+      <%end%>
