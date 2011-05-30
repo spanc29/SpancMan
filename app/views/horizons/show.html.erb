@@ -1,0 +1,56 @@
+<% title "Horizon" %>
+
+<p>
+  <strong>Debut:</strong>
+  <%= @horizon.debut %>
+</p>
+<p>
+  <strong>Fin:</strong>
+  <%= @horizon.fin %>
+</p>
+<p>
+  <strong>Type Horizon:</strong>
+  <%= @horizon.type_horizon %>
+</p>
+<p>
+  <strong>Couleur:</strong>
+  <%= @horizon.couleur %>
+</p>
+<p>
+  <strong>Hydromorphie:</strong>
+  <%= @horizon.hydromorphie %>
+</p>
+<p>
+  <strong>Texture:</strong>
+  <%= @horizon.texture %>
+</p>
+<p>
+  <strong>Abondance Pierrosite:</strong>
+  <%= @horizon.abondance_pierrosite %>
+</p>
+<p>
+  <strong>Taille Pierrosite:</strong>
+  <%= @horizon.taille_pierrosite %>
+</p>
+<p>
+  <strong>Compacite:</strong>
+  <%= @horizon.compacite %>
+</p>
+<p>
+  <strong>Abondance Racine:</strong>
+  <%= @horizon.abondance_racine %>
+</p>
+<p>
+  <strong>Transition Horizon:</strong>
+  <%= @horizon.transition_horizon %>
+</p>
+<p>
+  <strong>Observations:</strong>
+  <%= @horizon.observations %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_horizon_path(@horizon) %> |
+  <%= link_to "Destroy", @horizon, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", horizons_path %>
+</p>

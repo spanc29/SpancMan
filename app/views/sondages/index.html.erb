@@ -1,0 +1,31 @@
+<% title "Sondages" %>
+
+<table>
+  <tr>
+    <th>Numero Sondage</th>
+    <th>Date Sondage</th>
+    <th>Tech Sond</th>
+    <th>X Sond</th>
+    <th>Y Sond</th>
+    <th>Precipitation Anterieure</th>
+    <th>Prof Atteinte</th>
+    <th>Observations</th>
+  </tr>
+  <% for sondage in @sondages %>
+    <tr>
+      <td><%= sondage.numero_sondage %></td>
+      <td><%= sondage.date_sondage %></td>
+      <td><%= sondage.tech_sond %></td>
+      <td><%= sondage.x_sond %></td>
+      <td><%= sondage.y_sond %></td>
+      <td><%= sondage.precipitation_anterieure %></td>
+      <td><%= sondage.prof_atteinte %></td>
+      <td><%= sondage.observations %></td>
+      <td><%= link_to "Show", sondage %></td>
+      <td><%= link_to "Edit", edit_sondage_path(sondage) %></td>
+      <td><%= link_to "Destroy", sondage, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Sondage", new_sondage_path %></p>

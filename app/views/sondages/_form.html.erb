@@ -1,0 +1,23 @@
+  <fieldset class="outline">
+    <legend><%= image_tag("icons/hammer-left.png")%> - SONDAGES </legend>
+    <div class="six_column section">
+    <div class="two column"><%= f.input :numero_sondage%></div>
+    <div class="two column"><%= f.input :date_sondage %></div>
+    <div class="one column"><%= f.input :x_sond %></div>
+    <div class="one column"><%= f.input :y_sond %></div>
+    </div>
+    <div class="six_column section">
+    <div class="two column"><%= f.input :tech_sond %></div>
+    <div class="two column"><%= f.input :precipitation_anterieure %>sondage tracto</div>
+    <div class="two column"><%= f.input :prof_atteinte %></div>
+    </div>
+    <%= f.input :observations %>
+
+
+
+  <hr/>
+    <%= f.simple_fields_for :horizons do |builder| %>
+      <%= render "horizons/form", :f => builder %>
+    <% end %>
+  <div class="center box_ajout"><%= link_to_add_fields('Ajouter un horizon', f, :horizons) %></div>
+  </fieldset>

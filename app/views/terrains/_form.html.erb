@@ -1,0 +1,16 @@
+<p><div class="large"><%= link_to "Retour", dossier_terrains_path, :class => 'retour' %></div></p>
+
+<div id="margin">
+
+<%= simple_form_for ([@dossier,@terrain]) do |f|%>
+  <%= f.input :type_terrain %>
+  <%= f.input :observations %>
+    <hr/>
+            <%= f.simple_fields_for :sondages do |builder| %>
+              <%= render "sondages/form", :f => builder %>
+            <% end %>
+          <div class="center box_ajout"><%= link_to_add_fields('Ajouter un sondage', f, :sondages) %></div>
+
+  <%= f.submit "Enregistrer ce terrain"%>
+<%end%>
+</div>

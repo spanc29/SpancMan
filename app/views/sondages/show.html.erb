@@ -1,0 +1,40 @@
+<% title "Sondage" %>
+
+<p>
+  <strong>Numero Sondage:</strong>
+  <%= @sondage.numero_sondage %>
+</p>
+<p>
+  <strong>Date Sondage:</strong>
+  <%= @sondage.date_sondage %>
+</p>
+<p>
+  <strong>Tech Sond:</strong>
+  <%= @sondage.tech_sond %>
+</p>
+<p>
+  <strong>X Sond:</strong>
+  <%= @sondage.x_sond %>
+</p>
+<p>
+  <strong>Y Sond:</strong>
+  <%= @sondage.y_sond %>
+</p>
+<p>
+  <strong>Precipitation Anterieure:</strong>
+  <%= @sondage.precipitation_anterieure %>
+</p>
+<p>
+  <strong>Prof Atteinte:</strong>
+  <%= @sondage.prof_atteinte %>
+</p>
+<p>
+  <strong>Observations:</strong>
+  <%= @sondage.observations %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_sondage_path(@sondage) %> |
+  <%= link_to "Destroy", @sondage, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", sondages_path %>
+</p>

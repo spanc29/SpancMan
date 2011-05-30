@@ -1,0 +1,2 @@
+module EntretiensHelper
+end

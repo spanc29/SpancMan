@@ -1,0 +1,16 @@
+<div class="outline">
+
+<table>
+  <tr>
+    <th>Type Terrain</th>
+    <th>Observations</th>
+  </tr>
+  <% for terrain in @terrains %>
+    <tr>
+      <td><%= terrain.type_terrain %></td>
+      <td><%= terrain.observations %></td>
+      <td><%= terrain.sondages.count %></td>
+    </tr>
+  <% end %>
+</table>
+</div>

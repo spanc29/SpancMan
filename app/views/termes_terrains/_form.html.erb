@@ -1,0 +1,12 @@
+<%= form_for @termes_terrain do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :pour %><br />
+    <%= f.text_field :pour %>
+  </p>
+  <p>
+    <%= f.label :terme %><br />
+    <%= f.text_field :terme %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,23 @@
+<% title "Termes Terrain" %>
+
+<h1>Gestion des listes des menus déroulants - TERRAINS </h1>
+<%= link_to "retour accueil", root_path, :class =>'retour' %><br/>
+<p><%= link_to "Ajouter une entrée", new_termes_terrain_path, :class =>'ajout' %></p>
+
+<% @termes_terrains.each do |p| %>
+          <div class="<%= cycle("odd", "even")%>">
+          <div class="six_column section">
+          <% if p.modifiable %>
+            <div class="two column quiet"><%= p.pour%></div>
+            <div class="two column quiet"><%= link_to p.terme, edit_termes_terrain_path(p), :class =>"edit_link" %></div>
+            <div class="two column">
+            <%= link_to 'Supprimer', p, :class =>"destroy_link" %>
+            </div>
+            <% else %>
+            <div class="two column"><%= p.pour %></div>
+            <div class="two column"><%= p.terme %></div>
+            <div class="two column"></div>
+          <%end%><!-- fin if -->
+          </div>
+        </div><!-- fin 6 colonnes -->
+        <%end%><!-- fin each p -->

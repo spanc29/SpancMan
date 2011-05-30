@@ -1,0 +1,13 @@
+<%= simple_form_for [@dossier,@entretien] do |f|%>
+  <%= f.input :type_entretien%>
+  <%= f.input :ouvrage %>
+  <%= f.input :date_entretien %>
+  <%= f.input :vidangeur %>
+  <%= f.input :num_bordereau %>
+  <%= f.input :num_vehicule %>
+  <%= f.input :destination_boue %>
+  <%= f.input :quantite %>
+  <%= f.input :observations %>
+
+  <%= f.submit "ENREGISTRER"%>
+<%end%>

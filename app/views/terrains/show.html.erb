@@ -1,0 +1,8 @@
+<% title @dossier.reference %>
+<%= render ('layouts/navigation') %>
+<%= render "terrain" %>
+<p>
+  <%= link_to "Edit", edit_terrain_path(@terrain) %> |
+  <%= link_to "Destroy", @terrain, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", terrains_path %>
+</p>

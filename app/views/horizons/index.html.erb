@@ -1,0 +1,39 @@
+<% title "Horizons" %>
+
+<table>
+  <tr>
+    <th>Debut</th>
+    <th>Fin</th>
+    <th>Type Horizon</th>
+    <th>Couleur</th>
+    <th>Hydromorphie</th>
+    <th>Texture</th>
+    <th>Abondance Pierrosite</th>
+    <th>Taille Pierrosite</th>
+    <th>Compacite</th>
+    <th>Abondance Racine</th>
+    <th>Transition Horizon</th>
+    <th>Observations</th>
+  </tr>
+  <% for horizon in @horizons %>
+    <tr>
+      <td><%= horizon.debut %></td>
+      <td><%= horizon.fin %></td>
+      <td><%= horizon.type_horizon %></td>
+      <td><%= horizon.couleur %></td>
+      <td><%= horizon.hydromorphie %></td>
+      <td><%= horizon.texture %></td>
+      <td><%= horizon.abondance_pierrosite %></td>
+      <td><%= horizon.taille_pierrosite %></td>
+      <td><%= horizon.compacite %></td>
+      <td><%= horizon.abondance_racine %></td>
+      <td><%= horizon.transition_horizon %></td>
+      <td><%= horizon.observations %></td>
+      <td><%= link_to "Show", horizon %></td>
+      <td><%= link_to "Edit", edit_horizon_path(horizon) %></td>
+      <td><%= link_to "Destroy", horizon, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Horizon", new_horizon_path %></p>

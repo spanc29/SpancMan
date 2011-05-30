@@ -1,0 +1,48 @@
+<% title "Entretien" %>
+
+<p>
+  <strong>Type Entretien:</strong>
+  <%= @entretien.type_entretien %>
+</p>
+<p>
+  <strong>Dossier:</strong>
+  <%= @entretien.dossier_id %>
+</p>
+<p>
+  <strong>Ouvrage:</strong>
+  <%= @entretien.ouvrage %>
+</p>
+<p>
+  <strong>Vidangeur:</strong>
+  <%= @entretien.vidangeur %>
+</p>
+<p>
+  <strong>Num Vehicule:</strong>
+  <%= @entretien.num_vehicule %>
+</p>
+<p>
+  <strong>Num Bordereau:</strong>
+  <%= @entretien.num_bordereau %>
+</p>
+<p>
+  <strong>Date Entretien:</strong>
+  <%= @entretien.date_entretien %>
+</p>
+<p>
+  <strong>Quantite:</strong>
+  <%= @entretien.quantite %>
+</p>
+<p>
+  <strong>Destination Boue:</strong>
+  <%= @entretien.destination_boue %>
+</p>
+<p>
+  <strong>Observations:</strong>
+  <%= @entretien.observations %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_entretien_path(@entretien) %> |
+  <%= link_to "Destroy", @entretien, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", entretiens_path %>
+</p>
