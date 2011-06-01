@@ -1,43 +1,108 @@
 <% title @dossier.reference %>
 <%= render ('layouts/navigation') %>
 
+<p><div class="large"><%= link_to "Retour", dossier_immeubles_path, :class => 'retour' %></div></p>
+
 <div class="twelve_column section">
 
 <div class="five column">
+<fieldset class="outline">
+   <legend><%= image_tag("icons/building.png")%> - Renseignements immeubles</legend>
       <h2>Immeuble n° <%= @immeuble.number %></h2>
-      <h2>
-      <%= @immeuble.numero_rue %> <%= @immeuble.adresse %><br/>
-      <%= @immeuble.code_postal %> <%= affiche_liste(@immeuble.commune,'') %></h2>
       <div class="container">
+      <div class="large">
+      <%= @immeuble.numero_rue %> <%= @immeuble.adresse %><br/>
+      <%= @immeuble.code_postal %> <%= affiche_liste(@immeuble.commune,'') %></div>
+      <hr/>
       <%= affiche_liste(@immeuble.type_habitat,'') %> - <%= affiche_liste(@immeuble.taux_occupation,'Occupation : ') %><br/>
-      Année construction : <span class="loud"><%= @immeuble.annee_constr %></span> - Rénovation : <span class="loud"><%= @immeuble.annee_renov %></span><br/>
-      <div class="box"><%= @immeuble.commentaire %></div>
-      Capacité accueil :<br/>
-      P.P. : <%= @immeuble.nb_piece_princ %> - Eq.Hab entre : <%= @immeuble.nb_eq_hab_min %> et <%= @immeuble.nb_eq_hab_max %>
+      <strong><%= affiche(@immeuble.annee_constr, "année de construction : ") %></strong>
+      <strong><%= affiche(@immeuble.annee_renov, "année de rénovation : ") %></strong><br/>
+
+      <h6>Capacité d'accueil</h6>
+      P.P. : <span class="large"><%= @immeuble.nb_piece_princ %></span><%= affiche(@immeuble.nb_eq_hab_min, ' | nbr mini eq.hab :' ) %> <%=affiche( @immeuble.nb_eq_hab_max, ' | nbr maxi eq.hab : ') %>
+      <h6>Observations/commentaires</h6>
+      <%= @immeuble.commentaire %>
       </div>
+</fieldset>
+
+<!-- liste piece de l'immeuble-->
 <fieldset  class="outline">
 <legend><%= image_tag("icons/puzzle.png")%> - Pièces de l'immeuble</legend>
-  <div class="center">
-    <% @immeuble.liste_pieces.each do |lp| %>
-      <%= affiche_liste(lp.piece,'') %> - <%= lp.details %> - <%= lp.surface %>m² <%= img_boolean(lp.genere_EU,'génére EU')%> <%= img_boolean(lp.est_piece_princ,'piece princ.')%><br/>
-    <% end %>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>pièces</th>
+        <th>détails</th>
+        <th>surface</th>
+        <th>Génére EU</th>
+        <th>Est Pièce Princ.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @immeuble.liste_pieces.each do |lp| %>
+      <tr>
+        <td><%= affiche_liste(lp.piece,'') %></td>
+        <td><%= lp.details %></td>
+        <td><%= lp.surface %></td>
+        <td><%= img_boolean(lp.genere_EU,'génére EU')%></td>
+        <td><%= img_boolean(lp.est_piece_princ,'piece princ.')%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </fieldset>
 
+<!-- liste parcelles -->
 <fieldset class="outline">
  <legend><%= image_tag("icons/layer-shape-polygon.png")%> - Parcelles</legend>
-    <% @immeuble.parcelles.each do |par| %>
-      <div class="large"><%= par.section.upcase %> <%= par.numero %> - <%= par.surface %>m² </div>
-    <% end %>
+    <table>
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Numero</th>
+          <th>Surface</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @immeuble.parcelles.each do |par| %>
+        <tr>
+          <td><%= par.section.upcase %></td>
+          <td><%= par.numero %></td>
+          <td><%= par.surface %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
 </fieldset>
 
+<!-- liste des alimentations AEP -->
 <fieldset class="outline">
   <legend><%= image_tag("icons/counter.png")%> - Alimentation en eau potable</legend>
-    <% @immeuble.compteurs.each do |co|%>
-      <%= img_boolean (co.declare,"alimentation déclarée") %>
-      <%= co.type_alimentation %> <%= affiche(co.ref_compteur,"Référence : ") %> <%= affiche(co.conso_moyenne,"Conso. moyenne : ") %>
+  <table>
+    <thead>
+      <tr>
+        <th>Type alim.</th>
+        <th>Référence</th>
+        <th>Conso annuelle moy.</th>
+        <th>Décl.</th>
+        <th>Analysé?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @immeuble.compteurs.each do |co|%>
+      <tr>
+        <td><%= affiche_liste(co.type_alimentation,'') %></td>
+        <td><%= co.ref_compteur%></td>
+        <td><%= co.conso_moyenne%></td>
+        <td><%= img_boolean (co.declare,"alimentation déclarée") %></td>
+        <td><%= img_boolean(co.analyse_OK,"eau analysée") %></td>
+      </tr>
+      <tr><td colspan="5"><%= co.commentaire %></td></tr>
+      <%end%>
+    </tbody>
+  </table>
 
-    <%end%>
+
 
 </fieldset>
 
@@ -46,8 +111,28 @@
 <div class="five column border">
 <fieldset class="outline">
   <legend><%= image_tag("icons/users.png")%> - Usagers de l'immeuble</legend>
-  <% @immeuble.users.each do |usager| %>
-    <%= link_to usager.username, [usager] %> : <%= usager.fonction%><br/>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom (détails)</th>
+        <th>date arrivée</th>
+      </tr>
+    </thead>
+    <tfoot>
+    <tr><span class="quiet small"> cliquer sur le nom pour voir les détails</span></tr>
+    </tfoot>
+    <tbody>
+      <% @immeuble.users.each do |usager| %>
+      <tr>
+        <td><%= link_to usager.username, [usager] %> (<em><%= affiche_liste(usager.fonction,'')%></em>)</td>
+        <td><%= usager.date_arrivee %></td>
+      </tr>
+    </tbody>
+
+
+  </table>
+
+    <br/>
   <% end %>
 </fieldset>
 </div>
@@ -55,9 +140,8 @@
 
 <div class="two column">
   <div class="container box">
-<%= link_to image_tag("icons/eye.png", :alt => "voir", :title => "voir"), [@dossier,@immeuble]%>&nbsp;
-<%= link_to image_tag("icons/pencil.png", :alt => "modifier", :title => "modifier"), edit_dossier_immeuble_path(@dossier,@immeuble) %>&nbsp;
-<%= link_to image_tag("icons/cross.png", :alt => "détruire", :title => "détruire"), [@dossier,@immeuble] , :confirm => 'Certain(e)??', :method => :delete %>
+<%= link_to image_tag("icons/pencil.png", :alt => "modifier", :title => "modifier")+" modifier", edit_dossier_immeuble_path(@dossier,@immeuble) %><br/>
+<%= link_to image_tag("icons/cross.png", :alt => "détruire", :title => "détruire")+" Détruire", [@dossier,@immeuble] , :confirm => 'Certain(e)??', :method => :delete %>
 </div>
   <div class="container outline quiet small">
     créé le <%= l(@immeuble.created_at) %><br/>

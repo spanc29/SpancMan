@@ -1,0 +1,60 @@
+<%= form_for @compta do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :type_facture %><br />
+    <%= f.text_field :type_facture %>
+  </p>
+  <p>
+    <%= f.label :date_emission %><br />
+    <%= f.date_select :date_emission %>
+  </p>
+  <p>
+    <%= f.label :date_limite %><br />
+    <%= f.date_select :date_limite %>
+  </p>
+  <p>
+    <%= f.label :montant_HT %><br />
+    <%= f.text_field :montant_HT %>
+  </p>
+  <p>
+    <%= f.label :montant_TVA %><br />
+    <%= f.text_field :montant_TVA %>
+  </p>
+  <p>
+    <%= f.label :montant_total %><br />
+    <%= f.text_field :montant_total %>
+  </p>
+  <p>
+    <%= f.label :bordereau %><br />
+    <%= f.text_field :bordereau %>
+  </p>
+  <p>
+    <%= f.label :titre %><br />
+    <%= f.text_field :titre %>
+  </p>
+  <p>
+    <%= f.label :ref_redevance %><br />
+    <%= f.text_field :ref_redevance %>
+  </p>
+  <p>
+    <%= f.label :regler %><br />
+    <%= f.check_box :regler %>
+  </p>
+  <p>
+    <%= f.label :etat_comptable %><br />
+    <%= f.text_field :etat_comptable %>
+  </p>
+  <p>
+    <%= f.label :commentaire %><br />
+    <%= f.text_area :commentaire %>
+  </p>
+  <p>
+    <%= f.label :destinataire %><br />
+    <%= f.text_field :destinataire %>
+  </p>
+  <p>
+    <%= f.label :dossier_id %><br />
+    <%= f.text_field :dossier_id %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,39 @@
+<% title @dossier.reference %>
+<%= render ('layouts/navigation') %>
+
+<table>
+  <tr>
+    <th>Type Facture</th>
+    <th>Date Emission</th>
+    <th>Date Limite</th>
+    <th>Montant Ht</th>
+    <th>Montant Tva</th>
+    <th>Montant Total</th>
+    <th>Bordereau</th>
+    <th>Titre</th>
+    <th>Ref Redevance</th>
+    <th>Regler</th>
+    <th>Etat Comptable</th>
+    <th>Commentaire</th>
+    <th>Destinataire</th>
+    <th>Dossier</th>
+  </tr>
+  <% for compta in @compta %>
+    <tr>
+      <td><%= compta.type_facture %></td>
+      <td><%= compta.date_emission %></td>
+      <td><%= compta.date_limite %></td>
+      <td><%= compta.montant_HT %></td>
+      <td><%= compta.montant_TVA %></td>
+      <td><%= compta.montant_total %></td>
+      <td><%= compta.bordereau %></td>
+      <td><%= compta.titre %></td>
+      <td><%= compta.ref_redevance %></td>
+      <td><%= compta.regler %></td>
+      <td><%= compta.etat_comptable %></td>
+      <td><%= compta.commentaire %></td>
+      <td><%= compta.destinataire %></td>
+      <td><%= compta.dossier_id %></td>
+    </tr>
+  <% end %>
+</table>

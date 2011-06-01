@@ -1,0 +1,64 @@
+<% title "Compta" %>
+
+<p>
+  <strong>Type Facture:</strong>
+  <%= @compta.type_facture %>
+</p>
+<p>
+  <strong>Date Emission:</strong>
+  <%= @compta.date_emission %>
+</p>
+<p>
+  <strong>Date Limite:</strong>
+  <%= @compta.date_limite %>
+</p>
+<p>
+  <strong>Montant Ht:</strong>
+  <%= @compta.montant_HT %>
+</p>
+<p>
+  <strong>Montant Tva:</strong>
+  <%= @compta.montant_TVA %>
+</p>
+<p>
+  <strong>Montant Total:</strong>
+  <%= @compta.montant_total %>
+</p>
+<p>
+  <strong>Bordereau:</strong>
+  <%= @compta.bordereau %>
+</p>
+<p>
+  <strong>Titre:</strong>
+  <%= @compta.titre %>
+</p>
+<p>
+  <strong>Ref Redevance:</strong>
+  <%= @compta.ref_redevance %>
+</p>
+<p>
+  <strong>Regler:</strong>
+  <%= @compta.regler %>
+</p>
+<p>
+  <strong>Etat Comptable:</strong>
+  <%= @compta.etat_comptable %>
+</p>
+<p>
+  <strong>Commentaire:</strong>
+  <%= @compta.commentaire %>
+</p>
+<p>
+  <strong>Destinataire:</strong>
+  <%= @compta.destinataire %>
+</p>
+<p>
+  <strong>Dossier:</strong>
+  <%= @compta.dossier_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_compta_path(@compta) %> |
+  <%= link_to "Destroy", @compta, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", compta_path %>
+</p>

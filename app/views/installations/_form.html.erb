@@ -27,7 +27,7 @@
         <%= f.simple_fields_for :epandages do |builder| %>
         <%= render "epandages/form", :f => builder %>
     <% end %>
-    <p><%= f.submit %></p>
+    <p><%= submit_or_cancel(f)%></p>
 </div>
 
 

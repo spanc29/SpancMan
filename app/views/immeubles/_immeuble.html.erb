@@ -6,8 +6,7 @@
     <th>N°</th>
     <th>Adresse</th>
     <th>liste Usager(s)</th>
-    <th>type habitat</th>
-    <th>taux occupation</th>
+    <th>type habitat (taux occupation))</th>
     <th>Annee Constr.</th>
     <th>Nb piece princ</th>
     <th>Commentaires</th>
@@ -30,7 +29,6 @@
           <% end %>
      </td>
       <td><%= affiche_liste(immeubl.type_habitat,'') %> (<%= affiche_liste(immeubl.taux_occupation,'') %>)</td>
-      <td></td>
       <td><%= immeubl.annee_constr %></td>
       <td><%= immeubl.nb_piece_princ %></td>
       <td><%= immeubl.commentaire %></td>

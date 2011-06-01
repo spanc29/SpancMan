@@ -18,5 +18,7 @@ class Dossier < ActiveRecord::Base
   accepts_nested_attributes_for :terrains, :allow_destroy => true
   has_many :entretiens, :dependent => :destroy
   accepts_nested_attributes_for :entretiens, :allow_destroy => true
+  has_many :comptas, :dependent => :destroy
+  accepts_nested_attributes_for :comptas, :allow_destroy => true
 
 end

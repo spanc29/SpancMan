@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110530193551) do
+ActiveRecord::Schema.define(:version => 20110601220602) do
 
   create_table "adresses", :force => true do |t|
     t.integer  "numero_rue"
@@ -46,6 +46,25 @@ ActiveRecord::Schema.define(:version => 20110530193551) do
   add_index "audits", ["auditable_id", "auditable_type"], :name => "auditable_index"
   add_index "audits", ["created_at"], :name => "index_audits_on_created_at"
   add_index "audits", ["user_id", "user_type"], :name => "user_index"
+
+  create_table "compta", :force => true do |t|
+    t.integer  "type_facture"
+    t.date     "date_emission"
+    t.date     "date_limite"
+    t.string   "montant_HT"
+    t.string   "montant_TVA"
+    t.string   "montant_total"
+    t.integer  "bordereau"
+    t.integer  "titre"
+    t.string   "ref_redevance"
+    t.boolean  "regler"
+    t.string   "etat_comptable"
+    t.text     "commentaire"
+    t.integer  "destinataire"
+    t.integer  "dossier_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "compteurs", :force => true do |t|
     t.integer  "type_alimentation"

@@ -27,9 +27,9 @@ module ApplicationHelper
 
   def img_boolean(test ='false',tex = 'faux')
       if test
-      image_tag("icons/tick.png", :alt => tex, :title => tex, :class =>"class")
+      image_tag("icons/tick-button.png", :alt => tex, :title => tex, :class =>"class")
       else
-      image_tag("icons/cross.png", :alt => tex, :title => tex, :class =>"class")
+      image_tag("icons/cross-button.png", :alt => tex, :title => tex, :class =>"class")
       end
   end
 
@@ -38,7 +38,7 @@ module ApplicationHelper
     if @ulist
       text + @ulist.nom.to_s
     else
-      text + "non renseigné"
+      text + " non renseigné"
     end
   end
 

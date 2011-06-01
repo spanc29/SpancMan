@@ -1,7 +1,5 @@
 SpancMan1::Application.routes.draw do
 
-  resources :termes_terrains
-
   resources :contacts
   resources :epandages
   resources :traitements
@@ -22,7 +20,7 @@ SpancMan1::Application.routes.draw do
   resources :listes
 
   resources :dossiers do
-    resources :immeubles, :users, :installations, :terrains, :audits, :entretiens
+    resources :immeubles, :users, :installations, :terrains, :audits, :entretiens, :compta
   end
 
   # The priority is based upon order of creation:

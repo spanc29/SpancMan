@@ -18,9 +18,9 @@
     <%= tab.terrain 'Terrain', dossier_terrains_path(@dossier) %>
     <%= tab.installation 'Installation(s)', dossier_installations_path(@dossier) %>
     <%= tab.entretien 'Entretien(s)', dossier_entretiens_path(@dossier) %>
-    <%= tab.controle 'Contrôle(s)', listes_path %>
-    <%= tab.compta 'Compta', listes_path %>
-    <%= tab.document 'Documents', new_user_path %>
+    <%= tab.controle 'Contrôle(s)*', listes_path %>
+    <%= tab.compta 'Compta', dossier_compta_path(@dossier) %>
+    <%= tab.document 'Documents*', new_user_path %>
     <%= tab.historique 'Historique', dossier_audits_path(@dossier) %>
 
   <% end %>

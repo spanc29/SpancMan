@@ -11,6 +11,6 @@
             <% end %>
           <div class="center box_ajout"><%= link_to_add_fields('Ajouter un sondage', f, :sondages) %></div>
 
-  <%= f.submit "Enregistrer ce terrain"%>
+  <%= submit_or_cancel(f,"Enregistrer ce terrain")%>
 <%end%>
 </div>
