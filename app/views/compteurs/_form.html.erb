@@ -1,5 +1,5 @@
 <div class="fields outline">
-    <div class="two column"><%= f.input :type_alimentation %></div>
+    <div class="two column"><%= f.input :type_alimentation, :collection => Liste.alimentation.all(:order => 'nom'), :label_method => 'nom', :as => :select %></div>
     <div class="two column center"><%= f.input :declare %></div>
     <div class="two column center"><%= f.input :analyse_OK, :as => :radio %></div>
 

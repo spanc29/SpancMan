@@ -3,10 +3,10 @@
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag "reset.css","typography.css","forms.css","fluid.gs.css", :media => 'screen, projection' %>
-    <%= stylesheet_link_tag 'application.css', :media => 'screen, projection' %>
+    <%= stylesheet_link_tag 'application.css',"event_calendar.css", :media => 'screen, projection' %>
     <%= stylesheet_link_tag 'print.css', :media => 'print' %>
     <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/cupertino/jquery-ui.css"%>
-    <%= javascript_include_tag "http://code.jquery.com/jquery-latest.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js", "application", "rails" %>
+    <%= javascript_include_tag "http://code.jquery.com/jquery-latest.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js", "application","event_calendar", "rails" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>

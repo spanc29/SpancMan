@@ -1,13 +1,13 @@
 <%= simple_form_for [@dossier,@entretien] do |f|%>
-  <%= f.input :type_entretien%>
+  <%= f.input :type_entretien, :collection => Liste.entretien.all(:order => 'nom'), :label_method => 'nom', :as => :select %>
   <%= f.input :ouvrage %>
   <%= f.input :date_entretien %>
-  <%= f.input :vidangeur %>
+  <%= f.input :vidangeur, :label => 'vidangeur/nettoyeur', :collection => Contact.vidangeur.all(:order => 'nom'), :label_method => 'nom', :as => :select %>
   <%= f.input :num_bordereau %>
   <%= f.input :num_vehicule %>
   <%= f.input :destination_boue %>
-  <%= f.input :quantite %>
+  <%= f.input :quantite, :collection => 0..12, :label=>"Quantité (m3)" %>
   <%= f.input :observations %>
 
-  <%= f.submit "ENREGISTRER"%>
+<p><%= submit_or_cancel(f)%></p>
 <%end%>

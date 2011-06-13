@@ -8,4 +8,5 @@ class Contact < ActiveRecord::Base
   accepts_nested_attributes_for :users, :allow_destroy => true
 
   scope :categorie, group(:categories)
+  scope :vidangeur, where(:categories => "162")
 end

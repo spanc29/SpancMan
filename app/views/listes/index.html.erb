@@ -21,7 +21,7 @@
             <div class="two column quiet"><%= p.pour%></div>
             <div class="two column quiet"><%= link_to p.nom, edit_liste_path(p), :class =>"edit_link" %></div>
             <div class="two column">
-            <%= link_to 'Supprimer', p, :class =>"destroy_link" %>
+            <%= link_to 'Supprimer', p, :confirm => 'Certain(e)??', :method => :delete, :class =>"destroy_link" %>
             </div>
             <% else %>
             <div class="two column"><%= p.pour %></div>

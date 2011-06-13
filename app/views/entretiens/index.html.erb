@@ -6,32 +6,31 @@
 
 <div class="outline">
 
-<table>
-  <tr>
+<table id="classic">
+  <thead><tr>
     <th>Type Entretien</th>
-    <th>Dossier</th>
     <th>Ouvrage</th>
     <th>Vidangeur</th>
-    <th>Num Vehicule</th>
-    <th>Num Bordereau</th>
     <th>Date Entretien</th>
     <th>Quantite</th>
-    <th>Destination Boue</th>
     <th>Observations</th>
+    <th></th>
   </tr>
+  </thead>
   <% for entretien in @entretiens %>
     <tr>
       <td><%= entretien.type_entretien %></td>
-      <td><%= entretien.dossier_id %></td>
       <td><%= entretien.ouvrage %></td>
       <td><%= entretien.vidangeur %></td>
-      <td><%= entretien.num_vehicule %></td>
-      <td><%= entretien.num_bordereau %></td>
-      <td><%= entretien.date_entretien %></td>
+      <td><%= l(entretien.date_entretien) %></td>
       <td><%= entretien.quantite %></td>
-      <td><%= entretien.destination_boue %></td>
-      <td><%= entretien.observations %></td>
-
+      <td><div class="small">
+      <%= simple_format(entretien.observations) %></div></td>
+      <td>
+      <%= link_to image_tag("icons/eye.png", :alt => "voir", :title => "voir"), [@dossier,entretien]%>&nbsp;
+      <%= link_to image_tag("icons/pencil.png", :alt => "modifier", :title => "modifier"), edit_dossier_entretien_path(@dossier,entretien) %>&nbsp;
+      <%= link_to image_tag("icons/cross.png", :alt => "détruire", :title => "détruire"), [@dossier,entretien] , :confirm => 'Certain(e)??', :method => :delete %>
+      </td>
     </tr>
   <% end %>
 </table>

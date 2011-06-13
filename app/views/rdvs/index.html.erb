@@ -1,0 +1,15 @@
+<% title "Calendrier" %>
+
+<h1>Calendrier</h1>
+<%= link_to "retour calendrier", calendar_path, :class =>'retour' %><br/>
+
+
+<div class="twelve_column section">
+  <div class="ten column border">
+    <%= render "rdv" %></div>
+  <div class="two column">
+    <div class="container box">
+      <%= link_to "Nouveau RDV", new_rdv_path, :class => "create_link" %>
+    </div>
+  </div>
+</div><!-- fin 12 col -->

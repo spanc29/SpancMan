@@ -1,0 +1,45 @@
+<% title "Calendrier" %>
+
+<h1>Rendez-vous</h1>
+<%= link_to "retour calendrier", calendar_path, :class =>'retour' %><br/>
+
+
+<%= affiche_liste(@rdv.type_rdv,'Type : ') %>
+<p>
+  <strong>Debut Rdv:</strong>
+  <%= l(@rdv.debut_rdv) %>
+</p>
+<p>
+  <strong>Fin Rdv:</strong>
+  <%= l(@rdv.fin_rdv )%>
+</p>
+<p>
+  <strong>Controleur:</strong>
+  <%= @rdv.controleur %>
+</p>
+<p>
+  <strong>Contact:</strong>
+  <%= @rdv.contact %>
+</p>
+<p>
+  <strong>Ref Dossier:</strong>
+  <%= @rdv.ref_dossier %>
+</p>
+<p>
+  <strong>Lieu:</strong>
+  <%= @rdv.lieu %>
+</p>
+<p>
+  <strong>Rappel:</strong>
+  <%= @rdv.rappel %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @rdv.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_rdv_path(@rdv) %> |
+  <%= link_to "Destroy", @rdv, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", rdvs_path %>
+</p>

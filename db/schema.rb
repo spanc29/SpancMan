@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110601220602) do
+ActiveRecord::Schema.define(:version => 20110604211706) do
 
   create_table "adresses", :force => true do |t|
     t.integer  "numero_rue"
@@ -47,7 +47,11 @@ ActiveRecord::Schema.define(:version => 20110601220602) do
   add_index "audits", ["created_at"], :name => "index_audits_on_created_at"
   add_index "audits", ["user_id", "user_type"], :name => "user_index"
 
-  create_table "compta", :force => true do |t|
+  create_table "calendriers", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "comptabs", :force => true do |t|
     t.integer  "type_facture"
     t.date     "date_emission"
     t.date     "date_limite"
@@ -156,6 +160,16 @@ ActiveRecord::Schema.define(:version => 20110601220602) do
     t.boolean  "porchet"
   end
 
+  create_table "hydros", :force => true do |t|
+    t.integer  "type_hydro"
+    t.integer  "surf_ou_long"
+    t.string   "distANCe"
+    t.text     "description"
+    t.boolean  "sur_ANC"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "immeubles", :force => true do |t|
     t.string   "type_habitat"
     t.string   "taux_occupation"
@@ -222,6 +236,14 @@ ActiveRecord::Schema.define(:version => 20110601220602) do
     t.datetime "updated_at"
   end
 
+  create_table "pentes", :force => true do |t|
+    t.string  "depart"
+    t.string  "arrivee"
+    t.integer "pourcentage"
+    t.integer "longueur"
+    t.integer "terrain_id"
+  end
+
   create_table "phones", :force => true do |t|
     t.string   "numero"
     t.integer  "type_phone"
@@ -230,6 +252,15 @@ ActiveRecord::Schema.define(:version => 20110601220602) do
     t.datetime "updated_at"
     t.integer  "phonable_id"
     t.string   "phonable_type"
+  end
+
+  create_table "plantations", :force => true do |t|
+    t.integer "type_plants"
+    t.integer "distance"
+    t.integer "surf_long"
+    t.boolean "sur_ANC"
+    t.text    "observations"
+    t.integer "terrain_id"
   end
 
   create_table "pretraitements", :force => true do |t|
@@ -242,6 +273,22 @@ ActiveRecord::Schema.define(:version => 20110601220602) do
     t.boolean  "ecoulement"
     t.integer  "vue"
     t.boolean  "etancheite"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rdvs", :force => true do |t|
+    t.integer  "type_rdv"
+    t.datetime "debut_rdv"
+    t.datetime "fin_rdv"
+    t.string   "controleur"
+    t.string   "contact"
+    t.string  "ref_dossier"
+    t.string   "lieu"
+    t.boolean  "rappel"
+    t.text     "description"
+    t.boolean  "all_day", :default => false
+    t.string   "color"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -280,6 +327,17 @@ ActiveRecord::Schema.define(:version => 20110601220602) do
     t.boolean  "porchet"
   end
 
+  create_table "surfaciques", :force => true do |t|
+    t.string   "type_surface"
+    t.text     "utilisation"
+    t.integer  "surf_ou_long"
+    t.boolean  "sur_ANC"
+    t.boolean  "impermeable"
+    t.boolean  "charge"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -295,14 +353,6 @@ ActiveRecord::Schema.define(:version => 20110601220602) do
 
   create_table "tags", :force => true do |t|
     t.string "name"
-  end
-
-  create_table "termes_terrains", :force => true do |t|
-    t.string   "pour"
-    t.string   "terme"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "modifiable"
   end
 
   create_table "terrains", :force => true do |t|

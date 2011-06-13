@@ -1,0 +1,13 @@
+  <%= simple_form_for [@dossier,@compta] do |f|%>
+    <%= f.input :type_facture%>
+    <%= f.input :date_emission%>
+    <%= f.input :date_limite %>
+    <%= f.input :titre %><%= f.input :bordereau %><%= f.input :ref_redevance %>
+    <%= f.input :montant_HT %><%= f.input :montant_TVA %><%= f.input :montant_total %>
+    <%= f.input :etat_comptable %>
+    <%= f.input :destinataire %>
+    <%= f.input :regler %>
+    <%= f.input :commentaire %>
+
+    <%= submit_or_cancel(f,"Enregistrer cette redevance")%>
+  <%end%>

@@ -16,6 +16,10 @@ fr:
     month_names: [~, janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre]
     abbr_month_names: [~, jan., fév., mar., avr., mai, juin, juil., août, sept., oct., nov., déc.]
     order: [ :day, :month, :year ]
+    calendar:
+      calendar_class: "my_calendar"
+      'date.first_day_of_week': "1"
+
 
   time:
     formats:

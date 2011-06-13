@@ -1,8 +1,5 @@
-<% title "Edit Entretien" %>
+<% title @dossier.reference %>
+<span class="large">Modifier un entretien</span>
+<%= render ('layouts/navigation') %>
 
 <%= render 'form' %>
-
-<p>
-  <%= link_to "Show", @entretien %> |
-  <%= link_to "View All", entretiens_path %>
-</p>

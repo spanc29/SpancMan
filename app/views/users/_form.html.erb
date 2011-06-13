@@ -2,7 +2,7 @@
   <div class="section">
 
   <div class="three column"><%= f.input :username, :label => 'Nom Prénom', :class => "cent" %></div>
-  <div class="one column"><%= f.input :fonction, :label => 'Rang/fonction' %></div>
+  <div class="one column"><%= f.input :fonction, :collection => Liste.fonction.all(:order => 'nom'), :label_method => 'nom', :label => 'Rang/fonction' %></div>
   <div class="one column"><%= f.input :date_arrivee, :as => :string %></div>
   </div><!-- fin section -->
 

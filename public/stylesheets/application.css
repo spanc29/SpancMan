@@ -22,9 +22,9 @@ img {vertical-align: middle;}
 #top-menu a {color: #fff; margin-right: 8px; font-weight: bold;}
 #top-menu #loggedas { float: right; margin-right: 0.5em; color: #fff; }
 #account {float:right;}
-#main {clear: both;width: 90%;margin: 0 auto;background-color: #FFF;padding: 20px 20px;border: solid 1px black;margin-top: 10px;}
-#margin {clear: both;width: 960px;margin: 0 auto;}
-#footer {clear: both;width: 90%;margin: 0 auto;background-color: #FFF;padding: 20px 20px;border: solid 1px black;margin-top: 10px;font-size: 0.9em; padding: 5px 20px; color: #aaa; text-align:center;}
+#main {clear: both;width: 960px;margin: 0 auto;background-color: #FFF;padding: 20px 20px;border: solid 1px black;margin-top: 10px;}
+/*#margin {clear: both;width: 960px;margin: 0 auto;}*/
+#footer {clear: both;width: 960px;margin: 0 auto;background-color: #FFF;padding: 20px 20px;border: solid 1px black;margin-top: 10px;font-size: 0.9em; padding: 5px 20px; color: #aaa; text-align:center;}
 
 
 .container {margin: 0.5em;padding:0.5em;}

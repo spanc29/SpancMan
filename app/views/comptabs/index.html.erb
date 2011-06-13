@@ -1,0 +1,12 @@
+<% title @dossier.reference %>
+<%= render ('layouts/navigation') %>
+
+<div class="twelve_column section">
+<div class="ten column border">
+<%= render "compta" %>
+</div>
+<div class="two column">
+<div class="container box">
+  <%= link_to "Ajouter redevance/facture", new_dossier_comptab_path(@dossier), :class => "ajout" %>
+</div></div>
+</div>

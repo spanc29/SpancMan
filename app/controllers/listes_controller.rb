@@ -31,4 +31,10 @@ class ListesController < ApplicationController
       render :action => 'edit'
     end
   end
+
+  def destroy
+    @liste = Liste.find(params[:id])
+    @liste.destroy
+    redirect_to listes_url, :notice => "entrée détruite définitivement."
+  end
 end

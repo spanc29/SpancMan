@@ -5,7 +5,7 @@
 
 <div class="twelve_column section">
 
-<div class="ten column">
+<div class="ten column border">
 
   <div class="section">
   <%= simple_form_for @search do |f|%>
@@ -27,7 +27,7 @@
 
 <% cont.each do |contact| %>
 <div class="outline">
-<div class="large"><%= img_boolean(contact.actif == true,'en activité') %>  <%= link_to contact.nom, contact%>  <%= link_to image_tag("icons/pencil.png", :alt => "modifier", :title => "modifier"), edit_contact_path(contact) %></div>
+<div class="large"><%= img_boolean(contact.actif == true,'en activité') %>  <%= link_to contact.nom, contact%>  <div class="right"><%= link_to image_tag("icons/pencil.png", :alt => "modifier", :title => "modifier"), edit_contact_path(contact) %></div> </div>
 <div class="container">
     agrément/charte : <%= contact.agrement %> <br/>
     <% if contact.site_web? %>
@@ -41,13 +41,10 @@
 </div>
       <%end%>
       <%end%>
-
-
-</table>
-</div><!-- fin 9 col -->
+</div><!-- fin 10 col -->
 <div class="two column">
   <div class="container box">
-    <p><%= link_to "Créer un groupe/société", new_contact_path, :class => "create_link" %></p>
+  <%= link_to "Créer un groupe/société", new_contact_path, :class => "create_link" %>
   </div>
   <div class="container box">
     trier par :

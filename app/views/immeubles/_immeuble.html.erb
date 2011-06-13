@@ -1,6 +1,6 @@
 <div class="outline">
 
-<table>
+<table id="classic">
   <thead>
   <tr>
     <th>N°</th>
@@ -25,10 +25,10 @@
             <%= immeubl.code_postal %> <strong><%= affiche_liste(immeubl.commune,'')%></strong>
      </td>
      <td> <% immeubl.users.each do |usager| %>
-            <%= link_to usager.username, [usager] %> : <%= usager.fonction%><br/>
+            <%= link_to usager.username, [usager] %><span class="small">(<%= affiche_liste(usager.fonction,'')%>)</span><br/>
           <% end %>
      </td>
-      <td><%= affiche_liste(immeubl.type_habitat,'') %> (<%= affiche_liste(immeubl.taux_occupation,'') %>)</td>
+      <td><%= affiche_liste(immeubl.type_habitat,'') %> <span class="small">(<%= affiche_liste(immeubl.taux_occupation,'') %>) </span></td>
       <td><%= immeubl.annee_constr %></td>
       <td><%= immeubl.nb_piece_princ %></td>
       <td><%= immeubl.commentaire %></td>

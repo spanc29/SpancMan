@@ -1,12 +1,12 @@
-<div class="twelve_column section">
-  <div class="three column"><%= content_tag :h1, yield(:title) if show_title? %></div>
 
-  <div class="three column"><% @dossier.immeubles.principal.each do |immeu|%>
+  <div class="center"><%= content_tag :h1, yield(:title) if show_title? %></div>
+<div class="twelve_column section">
+  <div class="four column"><% @dossier.immeubles.principal.each do |immeu|%>
        <% immeu.users.proprio_destinat.each do |proprio|%> <span class="large"><%= image_tag("icons/users.png", :alt => "Proprio") %> <%= proprio.username %></span></div>
-  <div class="three column">
+  <div class="four column">
       <%= image_tag("icons/home.png", :alt => "Commune") %> <%= affiche_liste(immeu.commune,'') %>
       <%end%><%end%></div>
-  <div class="three column"><span class="small quiet"><%= image_tag("icons/zone.png", :alt => "secteur") %>  <%= affiche_liste(@dossier.secteur,'') %></span></div>
+  <div class="four column"><span class="small quiet"><%= image_tag("icons/zone.png", :alt => "secteur") %>  <%= affiche_liste(@dossier.secteur,'') %></span></div>
 </div>
 
 
@@ -19,7 +19,7 @@
     <%= tab.installation 'Installation(s)', dossier_installations_path(@dossier) %>
     <%= tab.entretien 'Entretien(s)', dossier_entretiens_path(@dossier) %>
     <%= tab.controle 'Contrôle(s)*', listes_path %>
-    <%= tab.compta 'Compta', dossier_compta_path(@dossier) %>
+    <%= tab.compta 'Compta', dossier_comptabs_path(@dossier) %>
     <%= tab.document 'Documents*', new_user_path %>
     <%= tab.historique 'Historique', dossier_audits_path(@dossier) %>
 

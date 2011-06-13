@@ -5,7 +5,7 @@
   <%= f.error_messages %>
     <fieldset>
     <legend>dossier</legend>
-      <%= f.input :etat %>
+      <%= f.input :etat, :collection => Liste.etat.all(:order => 'nom'), :label_method => 'nom' %>
       <%= f.input :reference, :hint => 'obligatoire' %>
       <%= f.input :archivage %>
       <%= f.input :secteur, :collection => Liste.secteur.all(:order => 'nom'), :label_method => 'nom', :as => :radio %><br/><br/>

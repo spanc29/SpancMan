@@ -13,10 +13,10 @@
   </div>
   <div class="two column">
     <div class="container box">
-    <ul>
-      <li><%= link_to "Modifier le dossier", edit_dossier_path(@dossier), :class =>'edit_link'%></li>
-      <li><%= link_to "Détruire le dossier", @dossier, :confirm => 'certain?', :method => :delete, :class => 'destroy_link' %></li>
-    </ul>
+
+<%= link_to "Modifier", edit_dossier_path(@dossier), :class =>'edit_link'%><br/>
+<%= link_to "Détruire", @dossier, :confirm => 'certain?', :method => :delete, :class => 'destroy_link' %>
+
     </div>
   </div>
 </div>

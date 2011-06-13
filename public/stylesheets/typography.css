@@ -73,17 +73,17 @@ dd          { margin-left: 1.5em;}
 table       { margin-bottom: 1.4em; width:100%; }
 th          { font-weight: bold; }
 thead th    { background: #e5ecf9; border-bottom: 1px solid #666; }
-th,td,caption { padding: 4px 10px 4px 5px; }
+#classic th,td,caption { padding: 4px 10px 4px 5px; }
 /*
   You can zebra-stripe your tables in outdated browsers by adding
   the class "even" to every other table row.
  */
-tbody tr:nth-child(even) td,
-tbody tr.even td  {
+#classic tbody tr:nth-child(even) td,
+#classic tbody tr.even td  {
   background: #e5ecf9;
 }
-tfoot       { font-style: italic; }
-caption     { background: #eee; }
+#classic tfoot       { font-style: italic; }
+#classic caption     { background: #eee; }
 
 
 /* Misc classes

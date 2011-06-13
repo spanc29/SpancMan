@@ -1,0 +1,35 @@
+<fieldset class="outline">
+  Entretien fait le :
+  <strong><%= l(@entretien.date_entretien) %></strong>
+  <hr/>
+
+  <h2><%= affiche_liste(@entretien.type_entretien,'') %> ---
+<%= @entretien.ouvrage %></h2>
+  <div class="box">
+  <div class="large">
+  Vidangeur/nettoyeur :
+  <strong><%= affiche_liste(@entretien.vidangeur,'') %></strong>
+  <% @contact.each do |contact|%>
+  <%= img_boolean(contact.actif == true,'agréé') %> <%= contact.agrement %>
+  <%end %>
+  </div>
+  <br/>
+  <p>Numéro Bordereau:
+  <strong><%= @entretien.num_bordereau %></strong></p>
+  <p>Numéro Véhicule:
+  <strong><%= @entretien.num_vehicule %></strong>
+</p>
+  Quantité:
+  <strong><%= @entretien.quantite %></strong> m<sup>3</sup><br/>
+  Destination Boue:
+  <strong><%= @entretien.destination_boue %></strong><br/>
+
+  </div>
+
+
+
+
+  <br/>
+  <strong>Observations:</strong>
+  <%= simple_format(@entretien.observations) %>
+</fieldset>

@@ -1,6 +1,15 @@
 SpancMan1::Application.routes.draw do
 
+  match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+
+  resources :dossiers do
+    resources :immeubles, :users, :installations, :terrains, :audits, :entretiens, :comptabs
+  end
+
+  resources :listes
+  resources :rdvs
   resources :contacts
+
   resources :epandages
   resources :traitements
   resources :pretraitements
@@ -14,14 +23,7 @@ SpancMan1::Application.routes.draw do
 
   #match 'dossiers/:reference' => 'dossiers#show'
 
-
   root :to => 'sessions#new'
-
-  resources :listes
-
-  resources :dossiers do
-    resources :immeubles, :users, :installations, :terrains, :audits, :entretiens, :compta
-  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

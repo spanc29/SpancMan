@@ -1,16 +1,54 @@
 <p><div class="large"><%= link_to "Retour", dossier_terrains_path, :class => 'retour' %></div></p>
 
-<div id="margin">
+<div class="twelve_column section">
+
+<div class="six column border">
+  <div class="container">
 
 <%= simple_form_for ([@dossier,@terrain]) do |f|%>
   <%= f.input :type_terrain %>
   <%= f.input :observations %>
-    <hr/>
-            <%= f.simple_fields_for :sondages do |builder| %>
-              <%= render "sondages/form", :f => builder %>
-            <% end %>
-          <div class="center box_ajout"><%= link_to_add_fields('Ajouter un sondage', f, :sondages) %></div>
+  </div>
+  <fieldset class="outline">
+      <legend><%= image_tag("icons/chart-up.png")%> - pente(s) terrain </legend>
+  <%= f.simple_fields_for :pentes do |builder| %>
+    <%= render "pentes/form", :f => builder %>
+  <% end %>
+  <div class="center box_ajout"><%= link_to_add_fields('Ajouter pente', f, :pentes) %></div>
+  </fieldset>
+  <fieldset class="outline">
+      <legend><%= image_tag("icons/bamboos.png")%> - plantations </legend>
+  <%= f.simple_fields_for :plantations do |builder| %>
+    <%= render "plantations/form", :f => builder %>
+  <% end %>
+  <div class="center box_ajout"><%= link_to_add_fields('Ajouter plantations', f, :plantations) %></div>
+  </fieldset>
 
+</fieldset>
+  <fieldset class="outline">
+      <legend><%= image_tag("icons/water.png")%> - hydrologie/point d'eau </legend>
+  <%= f.simple_fields_for :hydros do |builder| %>
+    <%= render "hydros/form", :f => builder %>
+  <% end %>
+  <div class="center box_ajout"><%= link_to_add_fields('Ajouter hydrologie', f, :hydros) %></div>
+</fieldset>
+
+</fieldset>
+  <fieldset class="outline">
+      <legend><%= image_tag("icons/layer-transparent.png")%> - Utilisation surface </legend>
+  <%= f.simple_fields_for :surfaciques do |builder| %>
+    <%= render "surfaciques/form", :f => builder %>
+  <% end %>
+  <div class="center box_ajout"><%= link_to_add_fields('Ajouter surface terrain', f, :surfaciques) %></div>
+</fieldset>
+
+</div>
+<div class="six column top">
+  <%= f.simple_fields_for :sondages do |builder| %>
+    <%= render "sondages/form", :f => builder %>
+  <% end %>
+  <div class="center box_ajout"><%= link_to_add_fields('Ajouter un sondage', f, :sondages) %></div>
+</div>
+</div>
   <%= submit_or_cancel(f,"Enregistrer ce terrain")%>
 <%end%>
-</div>

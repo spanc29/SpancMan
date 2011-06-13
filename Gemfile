@@ -35,9 +35,11 @@ gem 'jquery-rails'
 gem 'acts-as-taggable-on'
 gem 'differ'
 gem "acts_as_audited", "2.0.0.rc7"
+gem 'event-calendar', :require => 'event_calendar'
 
 #essai
 gem 'cancan'
+gem 'later_dude', '>= 0.3.1'
 
 
 # Bundle gems for the local environment. Make sure to

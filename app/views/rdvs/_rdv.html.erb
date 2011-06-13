@@ -1,0 +1,29 @@
+<table id="classic">
+  <thead>
+  <tr>
+    <th>Type Rdv</th>
+    <th>Debut Rdv</th>
+    <th>Fin Rdv</th>
+    <th>Controleur</th>
+    <th>Contact</th>
+    <th>Ref Dossier</th>
+    <th>Lieu</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <% for rdv in @rdvs %>
+    <tr>
+      <td></td>
+      <td></td>
+      <td><%= rdv.fin_rdv %></td>
+      <td><%= rdv.controleur %></td>
+      <td><%= rdv.contact %></td>
+      <td><%= rdv.ref_dossier %></td>
+      <td><%= rdv.lieu %></td>
+      <td><%= rdv.description %></td>
+      <td><%= link_to "Show", rdv %></td>
+      <td><%= link_to "Edit", edit_rdv_path(rdv) %></td>
+      <td><%= link_to "Destroy", rdv, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
