@@ -140,8 +140,8 @@
 
 <div class="two column">
   <div class="container box">
-<%= link_to image_tag("icons/pencil.png", :alt => "modifier", :title => "modifier")+" modifier", edit_dossier_immeuble_path(@dossier,@immeuble) %><br/>
-<%= link_to image_tag("icons/cross.png", :alt => "détruire", :title => "détruire")+" Détruire", [@dossier,@immeuble] , :confirm => 'Certain(e)??', :method => :delete %>
+<%= link_to "modifier", edit_dossier_immeuble_path(@dossier,@immeuble), :class => "edit_link" %><br/>
+<%= link_to "Détruire", [@dossier,@immeuble] , :confirm => 'Certain(e)??', :method => :delete, :class => "destroy_link" %>
 </div>
   <div class="container outline quiet small">
     créé le <%= l(@immeuble.created_at) %><br/>

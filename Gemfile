@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '~> 3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -25,8 +25,8 @@ gem 'sqlite3'
 
 # à garder
 
-gem 'meta_where'
-gem 'meta_search'
+#gem 'meta_where'
+#gem 'meta_search'
 gem "tabs_on_rails"
 gem 'simple_form'
 gem "tabletastic"
@@ -34,7 +34,7 @@ gem 'nifty-generators', :group => :development
 gem 'jquery-rails'
 gem 'acts-as-taggable-on'
 gem 'differ'
-gem "acts_as_audited", "2.0.0.rc7"
+gem "acts_as_audited"
 gem 'event-calendar', :require => 'event_calendar'
 
 #essai

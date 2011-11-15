@@ -1,7 +1,7 @@
 <% title @dossier.reference %>
 <%= render ('layouts/navigation') %>
 
-<p><div class="large"><%= link_to "Retour", dossier_immeubles_path, :class => 'retour' %></div></p>
+<p><div class="large"><%= link_to "Retour", dossier_entretiens_path, :class => 'retour' %></div></p>
 
 <div class="twelve_column section">
 
@@ -11,7 +11,14 @@
 
 <div class="two column">
   <div class="container box">
-  <%= link_to "Edit", edit_dossier_entretien_path(@entretien) %><br/>
-  <%= link_to "Destroy", [@dossier,@entretien], :confirm => 'Are you sure?', :method => :delete %><br/>
+  <%= link_to "Modifier", edit_dossier_entretien_path(@dossier, @entretien), :class => "edit_link" %><br/>
+  <%= link_to "Effacer", [@dossier,@entretien], :confirm => 'Are you sure?', :method => :delete, :class => "destroy_link" %><br/>
   </div>
+  <div class="container outline">
+    <div class="small quiet">
+      créé le : <%= l(@entretien.created_at) %><br/>
+      modifié le : <%= l(@entretien.updated_at) %>
+    </div>
+  </div>
+</div>
 </div>

@@ -8,7 +8,7 @@ class EntretiensController < ApplicationController
 
   def show
     @entretien = @dossier.entretiens.find(params[:id])
-    @contact = Contact.where(@entretien.vidangeur)
+    @contact = Contact.find_by_id(@entretien.vidangeur)
   end
 
   def new

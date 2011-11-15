@@ -17,6 +17,12 @@ body {
   font-size: 10pt;
 }
 
+div #nav,#topmenu {
+display: none;}
+
+.noprint {
+display: none;
+}
 
 /* Layout
 -------------------------------------------------------------- */
@@ -49,6 +55,12 @@ code { font:.9em "Courier New", Monaco, Courier, monospace; }
 
 a img { border:none; }
 p img.top { margin-top: 0; }
+
+table,td
+{border-collapse:collapse;
+border:1px solid black;
+text-align:center;}
+
 
 blockquote {
   margin:1.5em;

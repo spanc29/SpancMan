@@ -10,18 +10,25 @@
   <thead><tr>
     <th>Type Entretien</th>
     <th>Ouvrage</th>
-    <th>Vidangeur</th>
+    <th>Vidangeur / nettoyeur</th>
     <th>Date Entretien</th>
-    <th>Quantite</th>
+    <th>Quantité (m<sup>3</sup>)</th>
     <th>Observations</th>
     <th></th>
   </tr>
   </thead>
   <% for entretien in @entretiens %>
     <tr>
-      <td><%= entretien.type_entretien %></td>
+      <td><%= affiche_liste(entretien.type_entretien,'') %></td>
       <td><%= entretien.ouvrage %></td>
-      <td><%= entretien.vidangeur %></td>
+      <td>
+      <% @contact = Contact.find_by_id(entretien.vidangeur)%>
+      <% if @contact.present? %>
+      <%= @contact.nom %>
+      <% else %>
+      non renseigné
+      <%end%>
+      </td>
       <td><%= l(entretien.date_entretien) %></td>
       <td><%= entretien.quantite %></td>
       <td><div class="small">
